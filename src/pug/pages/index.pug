@@ -2,17 +2,24 @@ extends ../layout/layout.pug
 
 block content
   main.main
-    .font-regular
-      | ELLANSÉ® предназначен для субдермальных инъекций. Благодаря своей когезивности, ELLANSÉ® может легко приобретать необходимую форму, обеспечивая большую точность при коррекции формы и контуров
-    .font-bold
-      | ELLANSÉ® предназначен для субдермальных инъекций. Благодаря своей когезивности, ELLANSÉ® может легко приобретать необходимую форму, обеспечивая большую точность при коррекции формы и контуров
-    .font-medium
-      | ELLANSÉ® предназначен для субдермальных инъекций. Благодаря своей когезивности, ELLANSÉ® может легко приобретать необходимую форму, обеспечивая большую точность при коррекции формы и контуров
-    .font-regular-moon
-      | ELLANSÉ® предназначен для субдермальных инъекций. Благодаря своей когезивности, ELLANSÉ® может легко приобретать необходимую форму, обеспечивая большую точность при коррекции формы и контуров
-    .image
-      img(src="../../images/header-1.jpg")
+    header
+      .main-menu.text--caption
+        .main-menu__holder
+          .main-menu__main-logo.main-logo
+            a(href='/')
+              img(src="../../images/main-logo.svg") 
+          nav.main-menu__nav-bar.nav-bar
+            a.nav-bar__link(href='') Главная
+            a.nav-bar__link(href='') Отрасли <br> применения
+            a.nav-bar__link(href='') Возможности <br> печати
+            a.nav-bar__link(href='') Специальные <br> предложения
+            a.nav-bar__link(href='') Готовые <br> штампы
+            a.nav-bar__link(href='') Видео
+            a.nav-bar__link(href='') Контакты
+          
+
+    
     .svg 
-      include ../../images/svg/sinclair.svg
-    a(href="./second-page.pug")
-      | second-page
+      //- include ../../images/svg/sinclair.svg
+    //- a(href="./second-page.pug")
+    //-   | second-page
