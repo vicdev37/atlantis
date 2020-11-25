@@ -2,10 +2,11 @@
   font-weight: $bold;
 }
 
+.font-extrabold {
+  font-weight: $extrabold;
+}
+
 .font-medium {
   font-weight: $medium;
 }
 
-.font-regular-moon {
-  font-family: $font-moon-family;
-}
