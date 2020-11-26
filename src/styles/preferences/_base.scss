@@ -1,7 +1,9 @@
-@include font-face('Raleway', "../fonts/ralewayregular", $regular, normal);
-@include font-face('Raleway', "../fonts/ralewaysemibold", $bold, normal);
-@include font-face('Raleway', "../fonts/ralewaylight", $thin, normal);
-@include font-face('TTMoons', "../fonts/TTMoons-Thin", $regular, normal);
+@include font-face('Montserrat', "../fonts/Montserrat-Regular", $regular, normal);
+@include font-face('Montserrat', "../fonts/Montserrat-Bold", $bold, normal);
+@include font-face('Montserrat', "../fonts/Montserrat-Light", $light, normal);
+@include font-face('Montserrat', "../fonts/Montserrat-ExtraBold", $extrabold, normal);
+@include font-face('Montserrat', "../fonts/Montserrat-SemiBold", $semibold, normal);
+
 
 * {
   box-sizing: border-box;
@@ -11,3 +13,13 @@ body {
   font-family: $font-family;
   font-size: 15px;
 }
+
+.container {
+  margin: 0 auto;
+  min-width: 1024px;
+  max-width: 1664px;
+  padding-left: 128px;
+  padding-right: 128px;
+}
+
+a {text-decoration: none;}

@@ -11,8 +11,11 @@ html(lang="en")
       script(src='../../js/index.js')
     block styles
       link(rel="stylesheet" href="../../styles/styles.scss")
+      link(rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css")
   body
     block content
-    block foot
-      #footer
-        p some footer content
+    script(src='https://unpkg.com/aos@next/dist/aos.js')
+    script.
+      AOS.init();
+    block foot  
+      include ../includes/footer
