@@ -85,7 +85,7 @@
 //     transition: opacity 0.3s linear;
 // }
 
-.big-block {
+.big-block.big-block--news.common-wrapper.slider-item {
   height: 100%;
   padding-top: 80px;
   padding-bottom: 110px;
@@ -284,10 +284,10 @@ margin-top: 8px;
 
 .big-block__col-text.big-block__col-text--big {
   font-weight: bold;
-font-size: 48px;
-line-height: 48px;
-letter-spacing: -0.2px;
-color: #FFFFFF;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -0.2px;
+  color: #FFFFFF;
 }
 
 
