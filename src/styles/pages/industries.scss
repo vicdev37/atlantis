@@ -1,0 +1,179 @@
+.breadcrumbs {
+  line-height: 19px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: white; }
+  .breadcrumbs--black {
+    color: #111721; }
+    .breadcrumbs--black .breadcrumbs__icon {
+      color: #24509A; }
+    .breadcrumbs--black .breadcrumbs__item:last-child {
+      opacity: .3; }
+  .breadcrumbs__icon {
+    max-width: 5px;
+    max-height: 8px;
+    opacity: .5;
+    margin: 0 10px;
+    color: white; 
+    img {
+      width: 100%;
+    }
+  }
+  .breadcrumbs__item {
+    text-decoration: none;
+    color: inherit; }
+  .breadcrumbs a.breadcrumbs__item:hover {
+    opacity: 0.7; }
+ 
+    
+.industries-filter {
+  display: flex;
+  align-items: center;
+  margin-left: -20px;
+  margin-top: 32px;
+  margin-bottom: 56px;
+  a.item {
+    background: #245099;
+    border-radius: 13px;
+    font-weight: 900;
+    font-size: 9px;
+    line-height: 11px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    padding: 6px 13px 6px 15px;
+    margin-left: 20px;
+  }
+}  
+
+.industries-filter:hover {
+  a.item {
+    opacity: 0.4;
+    background: #303748;
+  }
+  a.item:hover {
+    background: #245099;
+  }
+}
+
+.page__title {
+  font-weight: bold;
+font-size: 48px;
+line-height: 48px;
+letter-spacing: -0.2px;
+color: #111721;
+}
+
+.page__description {
+  max-width: 704px;
+  font-weight: 500;
+font-size: 14px;
+line-height: 150%;
+color: #111721;
+}
+
+.industries-gallery__wrapper {
+  margin-top: 72px;
+}
+
+.industries-gallery__line {
+  display: flex;
+  margin-top: 48px;
+}
+
+.product-block {
+  position: relative;
+  width: 252px;
+  margin-left: 6px;
+  img {
+    width: 100%;
+  }
+  // background: url(../images/gallery-1.jpg)
+}
+
+.product-block:after {
+  content: '';
+  display: none;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url(../images/loupe.svg)
+}
+
+
+.product-block.long {
+  width: 381px;
+} 
+
+.product-block__description {
+  text-align: center;
+  padding: 30px 20px;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #111721;
+  border: 1px solid transparent;
+}
+
+.product-block:hover {
+  .product-block__description {
+    border: 1px solid #DCE3EF;
+    border-top: none;
+  }
+  &:after {
+    display: block;
+  }
+}
+
+.pagination__wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 65px;
+}
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-family: 'Montserrat';
+  font-family: 'Avenir Next Demi';
+  font-weight: bold;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  color: #111721;
+  margin-bottom: 96px;
+}
+  .pagination__item {
+    width: 40px;
+    height: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    color: inherit;
+    text-decoration: none; }
+    .pagination__item:hover {
+      opacity: 0.7; }
+    .pagination__item--active {
+      background: #245099;
+      border-radius: 100%;
+      color: white; }
+      .pagination__item--active:hover {
+        opacity: 1;
+        background: #215EC3; }
+
+
+
+
+
+

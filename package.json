@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "parcel ./src/pug/pages/index.pug",
-    "build": "parcel build --no-minify ./src/pug/pages/index.pug parcel --public-url ./",
+    "build": "parcel build --no-content-hash --no-minify ./src/pug/pages/index.pug parcel --public-url ./",
+    
     "start": "npm run dev",
     "deploy:gh": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
@@ -23,6 +24,7 @@
     "babel-preset-stage-0": "^6.24.1",
     "cssnano": "^4.1.10",
     "parcel-bundler": "^1.12.3",
+    "parcel-plugin-bundle-manifest": "^0.2.0",
     "pug": "^2.0.3",
     "push-dir": "^0.4.1",
     "sass": "^1.26.3"
@@ -53,7 +55,8 @@
       ".css": "styles"
     },
     "options": {
-      "development": true
+      "development": true,
+      "contentHash": false
     }
   }
 }

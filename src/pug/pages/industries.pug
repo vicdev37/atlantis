@@ -1,0 +1,80 @@
+extends ../layout/layout.pug
+
+block content
+  main.industries
+    include ../includes/header.pug
+    .container
+      .breadcrumbs.breadcrumbs--black.mobile-hide
+        a.breadcrumbs__item(href='/') Атлантис-Пак
+        .breadcrumbs__icon
+          img(src="../../images/breadcrumbs-arrow.svg")
+        span.breadcrumbs__item Каталог
+
+      .industries-filter
+        a(href='' class="item") Ликеро-водочная продукция
+        a(href='' class="item") Мясо-молочная продукция  
+        a(href='' class="item") Голография
+        a(href='' class="item") Праздничная этикетка
+
+      h1.page__title Этикетка для <br> мясо-молочной продукции
+      p.page__description
+        | Контент примерный для понимания смысла, требует проработки>Атлантис-Пак предлагает разработку для любых видов мясо-молочных продуктов. 
+        | В нашем проиводстве мы используем только сертифициронанные технологии и используем 
+
+      .industries-gallery__wrapper
+        .industries-gallery__line
+          a(href='' class="product-block")
+            .product-block__img
+              img(src="../../images/gallery-1.jpg")
+            .product-block__description  
+              | Стикер для бренда <br> “Кремлевские Колбасы”
+          a(href='' class="product-block")
+            .product-block__img
+              img(src="../../images/gallery-2.jpg")
+            .product-block__description  
+              | Стикер для бренда <br> “Секреты Мастеров”
+          a(href='' class="product-block")
+            .product-block__img
+              img(src="../../images/gallery-3.jpg")
+            .product-block__description  
+              | Стикер для продукции бренда <br> “КампоМос”
+        .industries-gallery__line
+          a(href='' class="product-block long")
+            .product-block__img
+              img(src="../../images/gallery-4.jpg")
+            .product-block__description  
+              | Стикер для бренда <br> “Кремлевские Колбасы”
+          a(href='' class="product-block long")
+            .product-block__img
+              img(src="../../images/gallery-5.jpg")
+            .product-block__description  
+              | Стикер для продукции бренда <br> “КампоМос”
+        .industries-gallery__line
+          a(href='' class="product-block")
+            .product-block__img
+              img(src="../../images/gallery-6.jpg")
+            .product-block__description  
+              | Стикер для бренда <br> “Кремлевские Колбасы”
+          a(href='' class="product-block")
+            .product-block__img
+              img(src="../../images/gallery-7.jpg")
+            .product-block__description  
+              | Стикер для бренда <br> “Секреты Мастеров”
+          a(href='' class="product-block")
+            .product-block__img
+              img(src="../../images/gallery-8.jpg")
+            .product-block__description  
+              | Стикер для продукции бренда <br> “КампоМос”    
+
+      .pagination__wrapper
+        .pagination
+          a.pagination__item.pagination__item--active(href='') 1
+          a.pagination__item(href='') 2
+          a.pagination__item(href='') 3
+          a.pagination__item(href='') 4
+          a.pagination__item(href='') 5
+          a.pagination__item ...
+          a.pagination__item(href='') 15          
+
+
+
