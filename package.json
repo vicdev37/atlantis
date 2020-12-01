@@ -9,7 +9,7 @@
     "build": "parcel build --no-content-hash --no-minify ./src/pug/pages/index.pug parcel --public-url ./",
     
     "start": "npm run dev",
-    "deploy:gh": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "deploy:gh": "push-dir --dir=dist --branch=master --remote=static --cleanup"
   },
   "keywords": [],
   "author": "",
