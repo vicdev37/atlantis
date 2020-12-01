@@ -16,9 +16,9 @@ body {
 
 .container {
   margin: 0 auto;
-  // min-width: 1024px;
-  max-width: 1024px;
-  // max-width: 1664px;
+  min-width: 1024px;
+  // max-width: 1024px;
+  max-width: 1664px;
   padding-left: 128px;
   padding-right: 128px;
 }
@@ -27,4 +27,8 @@ a {text-decoration: none;}
 
 p {
   margin: 0;
+}
+
+ul {
+  padding: 0;
 }

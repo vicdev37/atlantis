@@ -1,0 +1,23 @@
+.offers-item__wrapper {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: wrap;
+  margin-left: -16px;
+  margin-top: -48px;
+  padding-bottom: 80px;
+}
+
+.offers-item {
+  max-width: 376px;
+  margin-left: 16px;
+  margin-top: 48px;
+}
+
+.offers-item__title {
+  font-weight: bold;
+font-size: 24px;
+line-height: 32px;
+letter-spacing: -0.5px;
+color: #111721;
+margin-bottom: 24px;
+}

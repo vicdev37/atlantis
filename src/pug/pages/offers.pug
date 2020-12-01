@@ -1,0 +1,34 @@
+extends ../layout/layout.pug
+
+block content
+  main.offers
+    include ../includes/header.pug
+    .offers-main__wrapper
+      .container
+        .breadcrumbs.breadcrumbs--black.mobile-hide
+          a.breadcrumbs__item(href='/') Атлантис-Пак
+          .breadcrumbs__icon
+            img(src="../../images/breadcrumbs-arrow.svg")
+          span.breadcrumbs__item Специальные предложения
+
+        h1.page__title Специальные предложения  
+
+        .offers-item__wrapper
+          a(href="../pages/offer-example.pug" class="offers-item")
+            .offers-item__title Праздничная этикетка
+            .offers-item__img
+              img(src="../../images/offers-img-1.jpg")
+          a(href="" class="offers-item")
+            .offers-item__title Семинар по упаковке
+            .offers-item__img
+              img(src="../../images/offers-img-2.jpg")
+          a(href="" class="offers-item")
+            .offers-item__title Разработка логотипа
+            .offers-item__img
+              img(src="../../images/offers-img-3.jpg")
+          a(href="" class="offers-item")
+            .offers-item__title Этикетки с розыгрышами
+            .offers-item__img
+              img(src="../../images/offers-img-4.jpg")
+
+

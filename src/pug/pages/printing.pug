@@ -1,0 +1,182 @@
+extends ../layout/layout.pug
+
+block content
+  main.printing
+    include ../includes/header.pug
+    .printing-main__wrapper
+      .container
+        .breadcrumbs.breadcrumbs--black.mobile-hide
+          a.breadcrumbs__item(href='/') Атлантис-Пак
+          .breadcrumbs__icon
+            img(src="../../images/breadcrumbs-arrow.svg")
+          span.breadcrumbs__item Возможности печати
+
+        h1.page__title Возможности печати
+        .page__subtitle_wrapper
+          .page__subtitle-icon
+            img(src="../../images/icon-print.svg")
+          .page__subtitle Возможности печати  
+
+        .printing-item__wrapper
+          .printing-item
+            .printing-item_icon
+              img(src="../../images/print-icon-1.svg")
+            .printing-item__title Флексопечать УФ до 9-ти цветов  
+            .printing-item__description
+              | Полноцвет – 4 цв. + 5 цв.- отделочные (золото, серебро, различные цвета по пантону и т. п.)
+          .printing-item
+            .printing-item_icon
+              img(src="../../images/print-icon-2.svg")
+            .printing-item__title Лакировка УФ-лаком 
+            .printing-item__description
+              | защита этикеток от агрессивных сред (влага, жир, рассол, масло, растворители и т. п)
+          .printing-item
+            .printing-item_icon
+              img(src="../../images/print-icon-3.svg")
+            .printing-item__title Двухсторонняя печать на прозрачных плёнках
+            .printing-item__description
+              
+          .printing-item
+            .printing-item_icon
+              img(src="../../images/print-icon-4.svg")
+            .printing-item__title Печать защитными красками
+            .printing-item__description
+              | при нагревании исчезает, охлаждаясь появляется вновь
+          .printing-item
+            .printing-item_icon
+              img(src="../../images/print-icon-5.svg")
+            .printing-item__title Совмещение при печати
+            .printing-item__description
+              | Возможность совмещения печати этикеток с различным дизайном в одном тираже
+          .printing-item
+            .printing-item_icon
+              img(src="../../images/print-icon-6.svg")
+            .printing-item__title Габариты
+            .printing-item__description
+              | Печать этикеток, термочеков, рекламных постеров и т.п. различной формы и размеров в пределах максимального габарита 270 х 435 мм.
+
+        .news-detail-page__content
+          .news-detail-page__gallery
+            .gallery
+              .gallery__holder
+                .gallery__slide.gallery__slide--active(style='background-image:url(http://lorempixel.com/640/448/business/1)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/2)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/3)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/1)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/2)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/3)')
+              .gallery__buttons-holder
+                a.gallery__button.gallery__button--prev(href='')
+                  .gallery__button-icon
+                    img(src="../../images/arrow-right.svg")
+                a.gallery__button.gallery__button--next(href='')
+                  .gallery__button-icon
+                    img(src="../../images/arrow-right.svg")
+
+        .page__subtitle_wrapper
+          .page__subtitle-icon
+            img(src="../../images/icon-print.svg")
+          .page__subtitle Широкий выбор рулонных печатных материалов
+
+        .printing-item__wrapper
+          .printing-item
+            .printing-item_icon
+              img(src="../../images/oval-1.svg")
+            .printing-item__title Бумага 
+            .printing-item__description
+              | матовая, полуглянцевая, глянцевая, винная, термо- и т.д
+          .printing-item
+            .printing-item_icon
+              img(src="../../images/oval-2.svg")
+            .printing-item__title Плёнка (PP, PE)
+            .printing-item__description
+              | белая, прозрачная, суперпрозрачная, металлизированная
+          .printing-item
+            .printing-item_icon
+              img(src="../../images/oval-3.svg")
+            .printing-item__title Металлизированная бумага
+            .printing-item__description золото, серебро
+              
+          .printing-item
+            .printing-item_icon
+              img(src="../../images/oval-4.svg")
+            .printing-item__title Пломбовая бумага
+            .printing-item__description
+              | разрушается при переклеивании  
+
+        .news-detail-page__content
+          .news-detail-page__gallery
+            .gallery
+              .gallery__holder
+                .gallery__slide.gallery__slide--active(style='background-image:url(http://lorempixel.com/640/448/business/1)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/2)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/3)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/1)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/2)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/3)')
+              .gallery__buttons-holder
+                a.gallery__button.gallery__button--prev(href='')
+                  .gallery__button-icon
+                    img(src="../../images/arrow-right.svg")
+                a.gallery__button.gallery__button--next(href='')
+                  .gallery__button-icon
+                    img(src="../../images/arrow-right.svg")
+
+        .page__subtitle_wrapper
+          .page__subtitle-icon
+            img(src="../../images/icon-print.svg")
+          .page__subtitle Дополнительная обработка    
+
+        .printing-item__wrapper
+          .printing-item
+            .printing-item_icon
+              
+            .printing-item__title Горячее тиснение фольгой
+            .printing-item__description
+              | золото, серебро, цветная, голографическая
+          .printing-item
+            .printing-item_icon
+              
+            .printing-item__title Припрессовка фирменных голограмм
+            .printing-item__description
+              | логотип, текст и т.п.
+          .printing-item
+            .printing-item_icon
+             
+            .printing-item__title Ламинирование
+            .printing-item__description      
+          .printing-item
+            .printing-item_icon
+             
+            .printing-item__title Конгрев 
+            .printing-item__description      
+
+        .news-detail-page__content
+          .news-detail-page__gallery
+            .gallery
+              .gallery__holder
+                .gallery__slide.gallery__slide--active(style='background-image:url(http://lorempixel.com/640/448/business/1)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/2)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/3)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/1)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/2)')
+                .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/3)')
+              .gallery__buttons-holder
+                a.gallery__button.gallery__button--prev(href='')
+                  .gallery__button-icon
+                    img(src="../../images/arrow-right.svg")
+                a.gallery__button.gallery__button--next(href='')
+                  .gallery__button-icon
+                    img(src="../../images/arrow-right.svg")
+
+        .page__subtitle_wrapper
+          .page__subtitle-icon
+            img(src="../../images/icon-print.svg")
+          .page__subtitle Сроки изготовления <span> (после утверждения оригинал-макета) </span>  
+
+        .printing-list
+          ul
+            li <span>Постоянные заказы: до 7 дней; </span> 
+            li <span>Новые заказы по имеющимся у нас штампам: до 10 дней </span> 
+            li <span>Новые тиражи с заказом новых штампов: до 14 дней. </span> 
+
