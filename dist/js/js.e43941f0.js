@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"g6Lu":[function(require,module,exports) {
+})({"../../js/module.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -130,7 +130,7 @@ var _default = function _default() {
 };
 
 exports.default = _default;
-},{}],"FT5O":[function(require,module,exports) {
+},{}],"../../../node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -339,7 +339,7 @@ process.chdir = function (dir) {
 process.umask = function () {
   return 0;
 };
-},{}],"lwLq":[function(require,module,exports) {
+},{}],"../../../node_modules/jquery/dist/jquery.js":[function(require,module,exports) {
 var global = arguments[3];
 var process = require("process");
 var define;
@@ -11216,7 +11216,7 @@ if ( typeof noGlobal === "undefined" ) {
 return jQuery;
 } );
 
-},{"process":"FT5O"}],"tVle":[function(require,module,exports) {
+},{"process":"../../../node_modules/process/browser.js"}],"../../js/index.js":[function(require,module,exports) {
 "use strict";
 
 var _module2 = _interopRequireDefault(require("./module"));
@@ -11229,6 +11229,7 @@ window.$ = window.jQuery = _jquery.default;
 $(document).ready(function () {
   console.log($('body'));
   (0, _module2.default)();
+  AOS.init();
   var mainSlider = document.querySelector('.slider__wrapper');
 
   if (mainSlider) {
@@ -11298,43 +11299,318 @@ $(document).ready(function () {
       }
     });
   }
-});
-AOS.init(); // You can also pass an optional settings object
-// below listed default settings
 
-AOS.init({
-  // Global settings:
-  disable: false,
-  // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
-  startEvent: 'DOMContentLoaded',
-  // name of the event dispatched on the document, that AOS should initialize on
-  initClassName: 'aos-init',
-  // class applied after initialization
-  animatedClassName: 'aos-animate',
-  // class applied on animation
-  useClassNames: false,
-  // if true, will add content of `data-aos` as classes on scroll
-  disableMutationObserver: false,
-  // disables automatic mutations' detections (advanced)
-  debounceDelay: 50,
-  // the delay on debounce used while resizing window (advanced)
-  throttleDelay: 99,
-  // the delay on throttle used while scrolling the page (advanced)
-  // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
-  offset: 120,
-  // offset (in px) from the original trigger point
-  delay: 0,
-  // values from 0 to 3000, with step 50ms
-  duration: 400,
-  // values from 0 to 3000, with step 50ms
-  easing: 'ease',
-  // default easing for AOS animations
-  once: false,
-  // whether animation should happen only once - while scrolling down
-  mirror: false,
-  // whether elements should animate out while scrolling past them
-  anchorPlacement: 'top-bottom' // defines which position of the element regarding to window should trigger the animation
+  var renderListMap = function renderListMap($el, coords, showControl) {
+    var controls = isMobile() && !showControl ? [] : ["zoomControl"];
+    var top = $(".contacts-container__map").height() / 2 - 30;
 
-});
-},{"./module":"g6Lu","jquery":"lwLq"}]},{},["tVle"], null)
-//# sourceMappingURL=../js.e43941f0.js.map
+    if ($(".contacts-fs-map-screen").length) {
+      top = $(".contacts-fs-map-screen").height() / 2 - 30;
+    }
+
+    var map = new ymaps.Map($el[0], {
+      center: coords,
+      zoom: 12,
+      controls: controls
+    }, {
+      suppressMapOpenBlock: true,
+      zoomControlSize: "small",
+      zoomControlFloat: "none",
+      zoomControlPosition: {
+        right: "20px",
+        top: top + "px"
+      }
+    });
+    var mark = new ymaps.Placemark(coords, {// hintContent: "Центральный офис",
+    }, {
+      iconLayout: "default#image",
+      iconImageHref: "../images/pin.svg",
+      iconImageSize: [68, 78],
+      iconImageOffset: [-34, -64]
+    }); // map.behaviors.disable("scrollZoom");
+    // map.behaviors.disable("dblClickZoom");
+
+    map.geoObjects.add(mark);
+    return map;
+  };
+
+  var renderItemList = function renderItemList(list, type) {
+    var $container = $("#contacts-id__" + type);
+    var $itemContainer = $container.find(".contacts-container__right").html("");
+
+    var _list = convertList(list);
+
+    $("#contacts-template").tmpl(_list).appendTo($itemContainer);
+  };
+
+  var showMobileMap = function showMobileMap(coords, address, e) {
+    e.preventDefault();
+    $("#contacts-template-map-fs").tmpl({
+      address: address
+    }).appendTo($("body"));
+    var $map = $(".contacts-fs-screen-map__content");
+
+    var _map = renderListMap($map, coords, true);
+
+    $(".contacts-fs-screen-map__close-btn").click(function (e) {
+      e.preventDefault();
+
+      _map.destroy();
+
+      $(".contacts-fs-map-screen").remove();
+    });
+  };
+
+  var renderYaMaps = function renderYaMaps() {
+    ymaps.ready(function () {
+      $(".contacts-container__map").each(function () {
+        var $el = $(this);
+        var $elContainer = $el.closest(".contacts-container__map-container").find(".contacts-container__map-holder");
+        var map = $(this).data("map");
+
+        if (map) {
+          map.destroy();
+          $elContainer.off("click");
+        }
+
+        var coords = [$(this).attr("data-lat"), $(this).attr("data-lng")];
+        var address = $(this).attr("data-address");
+        console.log(coords);
+
+        var _map = renderListMap($el, coords);
+
+        $el.data("map", _map);
+
+        if (isMobile()) {
+          $elContainer.on("click", showMobileMap.bind(null, coords, address));
+        }
+      });
+    });
+  };
+}); // // You can also pass an optional settings object
+// // below listed default settings
+// AOS.init({
+//   // Global settings:
+//   disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+//   startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+//   initClassName: 'aos-init', // class applied after initialization
+//   animatedClassName: 'aos-animate', // class applied on animation
+//   useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+//   disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+//   debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+//   throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+//   // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+//   offset: 120, // offset (in px) from the original trigger point
+//   delay: 0, // values from 0 to 3000, with step 50ms
+//   duration: 400, // values from 0 to 3000, with step 50ms
+//   easing: 'ease', // default easing for AOS animations
+//   once: false, // whether animation should happen only once - while scrolling down
+//   mirror: false, // whether elements should animate out while scrolling past them
+//   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+// });
+},{"./module":"../../js/module.js","jquery":"../../../node_modules/jquery/dist/jquery.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+var global = arguments[3];
+var OVERLAY_ID = '__parcel__error__overlay__';
+var OldModule = module.bundle.Module;
+
+function Module(moduleName) {
+  OldModule.call(this, moduleName);
+  this.hot = {
+    data: module.bundle.hotData,
+    _acceptCallbacks: [],
+    _disposeCallbacks: [],
+    accept: function (fn) {
+      this._acceptCallbacks.push(fn || function () {});
+    },
+    dispose: function (fn) {
+      this._disposeCallbacks.push(fn);
+    }
+  };
+  module.bundle.hotData = null;
+}
+
+module.bundle.Module = Module;
+var checkedAssets, assetsToAccept;
+var parent = module.bundle.parent;
+
+if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
+  var hostname = "" || location.hostname;
+  var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54241" + '/');
+
+  ws.onmessage = function (event) {
+    checkedAssets = {};
+    assetsToAccept = [];
+    var data = JSON.parse(event.data);
+
+    if (data.type === 'update') {
+      var handled = false;
+      data.assets.forEach(function (asset) {
+        if (!asset.isNew) {
+          var didAccept = hmrAcceptCheck(global.parcelRequire, asset.id);
+
+          if (didAccept) {
+            handled = true;
+          }
+        }
+      }); // Enable HMR for CSS by default.
+
+      handled = handled || data.assets.every(function (asset) {
+        return asset.type === 'css' && asset.generated.js;
+      });
+
+      if (handled) {
+        console.clear();
+        data.assets.forEach(function (asset) {
+          hmrApply(global.parcelRequire, asset);
+        });
+        assetsToAccept.forEach(function (v) {
+          hmrAcceptRun(v[0], v[1]);
+        });
+      } else if (location.reload) {
+        // `location` global exists in a web worker context but lacks `.reload()` function.
+        location.reload();
+      }
+    }
+
+    if (data.type === 'reload') {
+      ws.close();
+
+      ws.onclose = function () {
+        location.reload();
+      };
+    }
+
+    if (data.type === 'error-resolved') {
+      console.log('[parcel] ✨ Error resolved');
+      removeErrorOverlay();
+    }
+
+    if (data.type === 'error') {
+      console.error('[parcel] 🚨  ' + data.error.message + '\n' + data.error.stack);
+      removeErrorOverlay();
+      var overlay = createErrorOverlay(data);
+      document.body.appendChild(overlay);
+    }
+  };
+}
+
+function removeErrorOverlay() {
+  var overlay = document.getElementById(OVERLAY_ID);
+
+  if (overlay) {
+    overlay.remove();
+  }
+}
+
+function createErrorOverlay(data) {
+  var overlay = document.createElement('div');
+  overlay.id = OVERLAY_ID; // html encode message and stack trace
+
+  var message = document.createElement('div');
+  var stackTrace = document.createElement('pre');
+  message.innerText = data.error.message;
+  stackTrace.innerText = data.error.stack;
+  overlay.innerHTML = '<div style="background: black; font-size: 16px; color: white; position: fixed; height: 100%; width: 100%; top: 0px; left: 0px; padding: 30px; opacity: 0.85; font-family: Menlo, Consolas, monospace; z-index: 9999;">' + '<span style="background: red; padding: 2px 4px; border-radius: 2px;">ERROR</span>' + '<span style="top: 2px; margin-left: 5px; position: relative;">🚨</span>' + '<div style="font-size: 18px; font-weight: bold; margin-top: 20px;">' + message.innerHTML + '</div>' + '<pre>' + stackTrace.innerHTML + '</pre>' + '</div>';
+  return overlay;
+}
+
+function getParents(bundle, id) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return [];
+  }
+
+  var parents = [];
+  var k, d, dep;
+
+  for (k in modules) {
+    for (d in modules[k][1]) {
+      dep = modules[k][1][d];
+
+      if (dep === id || Array.isArray(dep) && dep[dep.length - 1] === id) {
+        parents.push(k);
+      }
+    }
+  }
+
+  if (bundle.parent) {
+    parents = parents.concat(getParents(bundle.parent, id));
+  }
+
+  return parents;
+}
+
+function hmrApply(bundle, asset) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return;
+  }
+
+  if (modules[asset.id] || !bundle.parent) {
+    var fn = new Function('require', 'module', 'exports', asset.generated.js);
+    asset.isNew = !modules[asset.id];
+    modules[asset.id] = [fn, asset.deps];
+  } else if (bundle.parent) {
+    hmrApply(bundle.parent, asset);
+  }
+}
+
+function hmrAcceptCheck(bundle, id) {
+  var modules = bundle.modules;
+
+  if (!modules) {
+    return;
+  }
+
+  if (!modules[id] && bundle.parent) {
+    return hmrAcceptCheck(bundle.parent, id);
+  }
+
+  if (checkedAssets[id]) {
+    return;
+  }
+
+  checkedAssets[id] = true;
+  var cached = bundle.cache[id];
+  assetsToAccept.push([bundle, id]);
+
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    return true;
+  }
+
+  return getParents(global.parcelRequire, id).some(function (id) {
+    return hmrAcceptCheck(global.parcelRequire, id);
+  });
+}
+
+function hmrAcceptRun(bundle, id) {
+  var cached = bundle.cache[id];
+  bundle.hotData = {};
+
+  if (cached) {
+    cached.hot.data = bundle.hotData;
+  }
+
+  if (cached && cached.hot && cached.hot._disposeCallbacks.length) {
+    cached.hot._disposeCallbacks.forEach(function (cb) {
+      cb(bundle.hotData);
+    });
+  }
+
+  delete bundle.cache[id];
+  bundle(id);
+  cached = bundle.cache[id];
+
+  if (cached && cached.hot && cached.hot._acceptCallbacks.length) {
+    cached.hot._acceptCallbacks.forEach(function (cb) {
+      cb();
+    });
+
+    return true;
+  }
+}
+},{}]},{},["../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","../../js/index.js"], null)
+//# sourceMappingURL=/js.e43941f0.js.map

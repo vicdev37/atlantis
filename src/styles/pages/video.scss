@@ -1,0 +1,73 @@
+.video-page__content {
+  margin-top: 56px;
+}
+
+.video-item__preview {
+  width: 224px;
+  height: 144px;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  position: relative;
+  right: -48px;
+  background-position: center center;
+  background-image: url(//img.youtube.com/vi/G-PQh9HEUvA/mqdefault.jpg);
+}
+
+a.video-item {
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-left: -16px;
+  margin-bottom: 16px;
+  position: relative;
+}
+
+
+.video-item__content {
+  background: #FFFFFF;
+  border: 1px solid #F8FAFF;
+  padding-left: 112px;
+  padding-top: 32px;
+  padding-right: 64px;
+  padding-bottom: 32px;
+  width: 100%;
+ 
+  &:hover {
+    background: #F8FAFF;
+    border: 1px solid #DCE3EF;
+  }
+}
+
+.video-item__heading {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  letter-spacing: -0.5px;
+  color: #111721;
+  margin-bottom: 24px;
+  min-height: 96px;
+}
+
+.video-item__date {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 19px;
+  color: #818FA6;
+}
+
+.video-page {
+  .pagination {
+    margin-bottom: 0;
+  }
+}
