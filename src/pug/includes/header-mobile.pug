@@ -1,0 +1,92 @@
+.header-mobile
+  .main-menu__main-logo.main-logo
+    a(href='/')
+      img(src="../../images/main-logo.svg") 
+  a.menu-btn(href='#')
+    span
+
+.menu-mobile
+  .menu-mobile__header
+    .main-menu__main-logo.main-logo
+      a(href='/')
+        img(src="../../images/main-logo.svg") 
+  .menu-mobile__body
+    .accordeon
+      ul.menu-mobile__wrapper
+        li.menu-mobile__section
+          input(type='checkbox', checked='')
+          .footer-sitemap__icon
+            img(src='../../images/mobile-menu-arrow.svg')
+          a.menu-mobile__title(href='/') Главная
+        li.menu-mobile__section
+          input(type='checkbox', checked='')
+          .footer-sitemap__icon
+            img(src='../../images/mobile-menu-arrow.svg')
+          a.menu-mobile__title(href='../pages/industries.pug')
+            | Области применения
+          p.menu-mobile__subsections
+            span
+              a.menu-mobile__subsection(href='') Ликеро-водочная продукция
+              a.menu-mobile__subsection(href='') Мясо-молочная продукция
+              a.menu-mobile__subsection(href='') Голография
+              a.menu-mobile__subsection(href='') Праздничная этикетка
+        li.menu-mobile__section
+          input(type='checkbox', checked='')
+          .footer-sitemap__icon
+            img(src='../../images/mobile-menu-arrow.svg')
+          a.menu-mobile__title(href='../pages/printing.pug')
+            | Возможности печати
+        li.menu-mobile__section
+          input(type='checkbox', checked='')
+          .footer-sitemap__icon
+            img(src='../../images/mobile-menu-arrow.svg')
+          a.menu-mobile__title(href='../pages/offers.pug')
+            | Специальные <br> возможности
+          p.menu-mobile__subsections
+            span
+              a.menu-mobile__subsection(href='') Спец предложение 1
+              a.menu-mobile__subsection(href='') Спец предложение 2
+    
+        li.menu-mobile__section
+          input(type='checkbox', checked='')
+          .footer-sitemap__icon
+            img(src='../../images/mobile-menu-arrow.svg')
+          a.menu-mobile__title(href='../pages/stamps.pug')
+            | Готовые штампы
+          p.menu-mobile__subsections
+            span
+              a.menu-mobile__subsection(href='') Каталог готовых штампов
+              a.menu-mobile__subsection(href='') Требования к дизайн-макетам
+        li.menu-mobile__section
+          input(type='checkbox', checked='')
+          .footer-sitemap__icon
+            img(src='../../images/mobile-menu-arrow.svg')
+          a.menu-mobile__title(href='../pages/video.pug')
+            | Видео
+        li.menu-mobile__section
+          input(type='checkbox', checked='')
+          .footer-sitemap__icon
+            img(src='../../images/mobile-menu-arrow.svg')
+          a.menu-mobile__title(href='../pages/contacts.pug')
+            | Контакты
+          p.menu-mobile__subsections
+            span
+              a.menu-mobile__subsection(href='') Дилеры
+              a.menu-mobile__subsection(href='') Филиалы
+    .app-buttons
+      a.app-buttons__link(href='')
+        .app-buttons__icon
+          img(src="../../images/appstore.svg")
+        .app-button__text
+          .app-button__title
+            | ЗАГРУЗИТЕ В  
+          .app-button__subtitle
+            | App Store  
+      a.app-buttons__link(href='')
+        .app-buttons__icon
+          img(src="../../images/googleplay.svg")
+        .app-button__text
+          .app-button__title
+            | ДОСТУПНО В 
+          .app-button__subtitle
+            | Google Play    

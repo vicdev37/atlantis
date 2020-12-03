@@ -1,6 +1,7 @@
 extends ../layout/layout.pug
 
 block content
+  include ../includes/header-mobile.pug
   main.main
     include ../includes/header.pug
     .slider__wrapper
@@ -56,13 +57,13 @@ block content
       .container
         .line__wrapper
           .line-text__block
-            .tag.tag--green Наше предложение    
-            .offer__title
+            .tag.tag--green(data-aos='fade-up') Наше предложение    
+            .offer__title(data-aos='fade-up')
               | Поможем найти оптимальное решение, отвечающее вашим критериям  
-            .offer__description
+            .offer__description(data-aos='fade-up')
               | Отдел дизайна возьмет на себя разработку эскизов этикетки, учитывая все пожелания и особенности проектируемого продукта.  
           .line-logo__block
-            .line-logo
+            .line-logo(data-aos='fade-up')
               img(src="../../images/batterfly.svg")
               .line-logo__title Яркое решение!
     .big-block.big-block--represent.common-wrapper
@@ -78,7 +79,7 @@ block content
             .big-block__col-icon
               img(src="../../images/print-2.svg")
             .big-block__col-text.big-block__col-text--first Детальная проработка <br> макетов отделом дизайна
-        .big-block__2col.big-block__2col--mobile-second-block
+        .big-block__2col.big-block__2col--mobile-second-block.info-desktop
           .big-block__col__second(data-aos='fade-up')
             .big-block__col-text.big-block__col-text--second География поставок:
             .big-block__col-text.big-block__col-text--big 70+
@@ -87,58 +88,69 @@ block content
             .big-block__col-text.big-block__col-text--second  
             .big-block__col-text.big-block__col-text--big 15 
             .big-block__col-text.big-block__col-text--third лет работы
-        .partners-line
-          .partners-line__heading(data-aos='fade-left') Наши партнеры:
-          .partners-line__holder
-            .partners-line__wrapper(data-aos='fade-left')
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/5c908b')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/4165a2')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/4372b7')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/039632')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/0a1bbb')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/d4f194')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/b0ffcf')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/568126')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/32ddf6')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/b282a0')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/18f703')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/910edc')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/970451')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/ff2a03')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/669ff7')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/0351f0')
-                // Можно любой размер в пределах 120х120
-              .partners-line__logo-holder
-                img.partners-line__logo(src='https://dummyimage.com/80x40/97c4ef')
-                // Можно любой размер в пределах 120х120
+
+        .big-block__2col.big-block__2col--mobile-second-block.info-mobile
+          .big-block__col__second(data-aos='fade-up')
+            .big-block__col-text.big-block__col-text--second.info-mobile__title География поставок:
+            .info-mobile__wrapper
+              .info-mobile__item
+                .big-block__col-text.big-block__col-text--big 70+
+                .big-block__col-text.big-block__col-text--third стран мира
+              .info-mobile__item.big-block__col(data-aos='fade-up' data-aos-delay='150')
+                .big-block__col-text.big-block__col-text--big 15 
+                .big-block__col-text.big-block__col-text--third лет работы    
+      .partners-line
+        .partners-line__heading Наши партнеры:
+        .partners-line__holder
+          .partners-line__wrapper
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/5c908b')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/4165a2')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/4372b7')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/039632')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/0a1bbb')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/d4f194')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/b0ffcf')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/568126')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/32ddf6')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/b282a0')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/18f703')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/910edc')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/970451')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/ff2a03')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/669ff7')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/0351f0')
+              // Можно любой размер в пределах 120х120
+            .partners-line__logo-holder
+              img.partners-line__logo(src='https://dummyimage.com/80x40/97c4ef')
+              // Можно любой размер в пределах 120х120

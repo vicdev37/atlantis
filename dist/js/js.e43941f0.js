@@ -11386,7 +11386,28 @@ $(document).ready(function () {
         }
       });
     });
-  };
+  }; // menu
+
+
+  $('.menu-btn').on('click', function (e) {
+    e.preventDefault();
+    $(this).toggleClass('menu-btn_active');
+    $('.main-nav__ul').toggleClass('menu_active');
+  });
+  $(".main-nav__li").click(function () {
+    $(".menu-btn").toggleClass('menu-btn_active');
+    $(".main-nav__ul").toggleClass('menu_active');
+  });
+  var menuBtn = document.querySelector('.menu-btn');
+  var nav = document.querySelector('.menu-mobile');
+  var main = document.querySelector('.main');
+  var headerMobile = document.querySelector('.header-mobile');
+  menuBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    this.classList.toggle('menu_active');
+    nav.classList.toggle('menu_active');
+    main.classList.toggle('overlay');
+  });
 }); // // You can also pass an optional settings object
 // // below listed default settings
 // AOS.init({
@@ -11436,7 +11457,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54241" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49939" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

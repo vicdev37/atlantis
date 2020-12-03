@@ -1,6 +1,7 @@
 extends ../layout/layout.pug
 
 block content
+  include ../includes/header-mobile.pug
   main.stamps
     include ../includes/header.pug
 
@@ -32,7 +33,7 @@ block content
           .page__description
             | За более чем 15 лет разработки этикетки, в нашем арсенале имеется более тысячи разообразных готовых штампов как сдержанных правильных форм, так и сложных: с декоративными вставками, вытянутыми пропорциями. 
         .partners-line__holder
-          .partners-line__wrapper(data-aos='fade-left')
+          .partners-line__wrapper(data-aos='fade-right')
             .partners-line__logo-holder
               img.partners-line__logo(src='https://dummyimage.com/80x40/5c908b')
               // Можно любой размер в пределах 120х120

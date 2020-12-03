@@ -174,7 +174,35 @@ $(document).ready(() => {
   };
 
 
-})
+  // menu
+  $('.menu-btn').on('click', function (e) {
+    e.preventDefault();
+    $(this).toggleClass('menu-btn_active');
+    $('.main-nav__ul').toggleClass('menu_active');
+
+
+  });
+
+  $(".main-nav__li").click(function () {
+    $(".menu-btn").toggleClass('menu-btn_active');
+    $(".main-nav__ul").toggleClass('menu_active');
+  });
+
+
+  let menuBtn = document.querySelector('.menu-btn');
+  let nav = document.querySelector('.menu-mobile');
+  let main = document.querySelector('.main');
+  let headerMobile = document.querySelector('.header-mobile');
+
+  menuBtn.addEventListener('click', function (e) {
+    e.preventDefault();
+    this.classList.toggle('menu_active');
+    nav.classList.toggle('menu_active');
+    main.classList.toggle('overlay');
+
+  });
+
+});
 
 
 
