@@ -21,3 +21,31 @@ letter-spacing: -0.5px;
 color: #111721;
 margin-bottom: 24px;
 }
+
+
+@media(max-width: 499px) {
+  .offers-main__wrapper.offers-example {
+    background-image: url(../images/fix-img-3.png)!important;
+    background-size: 140px;
+    background-position: right 40px!important;
+  }
+
+  .offers-item__wrapper {
+    margin-top: -16px!important;
+    padding-bottom: 0;
+  }
+  .offers-item {
+    max-width: 344px;
+    width: 100%;
+    margin-top: 32px;
+    .offers-item__img {
+      width: 100%;
+      img {
+        width: 100%;
+      }
+    }
+  }
+  .offers-item__title {
+    padding-left: 18px;
+  }
+}

@@ -1,10 +1,9 @@
 extends ../layout/layout.pug
 
 block content
-  include ../includes/header-mobile.pug
   main.offers
     include ../includes/header.pug
-    .offers-main__wrapper
+    .offers-main__wrapper.offers-example
       .container
         .breadcrumbs.breadcrumbs--black.mobile-hide
           a.breadcrumbs__item(href='/') Атлантис-Пак
@@ -47,8 +46,8 @@ block content
         p.offer-example__more-text
           | С помощью праздничной маркировки стимулируются продажи, тем самым позволяя выделить ваш товар среди конкурентов.  
 
-      .container
-        .offers-item__wrapper
+      .container.contaiter-offers-item-mobile
+        .offers-item__wrapper.offers-item-mobile
           a(href="../pages/offer-example.pug" class="offers-item small")
             .offers-item__title Праздничная этикетка
             .offers-item__img

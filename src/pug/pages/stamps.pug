@@ -1,7 +1,6 @@
 extends ../layout/layout.pug
 
 block content
-  include ../includes/header-mobile.pug
   main.stamps
     include ../includes/header.pug
 
@@ -16,7 +15,7 @@ block content
         .stamps-header__wrapper
           .stamps__description
             | Вырубной штамп — готовая форма вашей будущей этикетки. Выберите нужную вам форму из более чем 1000 готовых вариантов и сэкономьте на его изготовлении.   
-          .stamps-download__wrapper
+          .stamps-download__wrapper.download-desktop
             .stamps-download__item
               img(src="../../images/pdf.svg")
               a(href='') Скачать каталог готовых штампов
@@ -24,8 +23,16 @@ block content
               img(src="../../images/docx.svg")
               a(href='') Скачать требования к дизайн макетам
 
+
     .stamps-main__wrapper
       .container
+        .stamps-download__wrapper.download-mobile
+          .stamps-download__item
+            img(src="../../images/pdf.svg")
+            a(href='') Скачать каталог готовых штампов
+          .stamps-download__item
+            img(src="../../images/docx.svg")
+            a(href='') Скачать требования к дизайн макетам
         .page__subtitle_wrapper
           .page__subtitle-icon
             img(src="../../images/stumbs-icon-1.svg")
@@ -92,7 +99,7 @@ block content
           .page__description
             | Скачайте наш каталог форм — и выберите подходящую форму именно для вашей этикетки
 
-        .stamps-todo-line
+        .stamps-todo-line.stamps-todo-line__desktop
           .todo-item
             img(src="../../images/todo-icon-1.svg")
             span Скачайте каталог
@@ -107,7 +114,23 @@ block content
             img(src="../../images/todo-icon-3.svg")
             span Свяжитесь с менеджером
           .todo-next-arrow  
-
+      .stamps-todo-line.stamps-todo-line__mobile  
+        .todo-item
+          img(src="../../images/todo-icon-1.svg")
+          span Скачайте каталог
+        .todo-next-arrow
+          img(src="../../images/todo-down-arrow.svg")
+        .todo-item
+          img(src="../../images/todo-icon-2.svg")
+          span Выберите форму
+        .todo-next-arrow
+          img(src="../../images/todo-down-arrow.svg")  
+        .todo-item
+          img(src="../../images/todo-icon-3.svg")
+          span Свяжитесь с <br> менеджером
+        .todo-next-arrow   
+         
+      .container.stamps-container-mobile
         .stamps-download__item.download-long
           img(src="../../images/pdf.svg")
           a(href='') Скачать каталог готовых штампов

@@ -1,7 +1,6 @@
 extends ../layout/layout.pug
 
 block content
-  include ../includes/header-mobile.pug
   main.offers
     include ../includes/header.pug
     .offers-main__wrapper
@@ -13,7 +12,7 @@ block content
           span.breadcrumbs__item Специальные предложения
 
         h1.page__title Специальные предложения  
-
+      .container.product-container
         .offers-item__wrapper
           a(href="../pages/offer-example.pug" class="offers-item")
             .offers-item__title Праздничная этикетка
