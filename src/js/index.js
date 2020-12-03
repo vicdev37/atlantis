@@ -191,16 +191,28 @@ $(document).ready(() => {
 
   let menuBtn = document.querySelector('.menu-btn');
   let nav = document.querySelector('.menu-mobile');
-  let main = document.querySelector('.main');
-  let headerMobile = document.querySelector('.header-mobile');
+  let overlay = document.querySelector('.overlay');
+
 
   menuBtn.addEventListener('click', function (e) {
     e.preventDefault();
     this.classList.toggle('menu_active');
     nav.classList.toggle('menu_active');
-    main.classList.toggle('overlay');
-
+    overlay.classList.toggle('overlay-show');
   });
+
+
+
+  // $(document).mouseup(function (e) {
+  //   if (!$('.menu-mobile').is(e.target) && $('.menu-mobile').has(e.target).length === 0) {
+  //     $('.menu-btn').removeClass('menu-btn_active');
+  //     $('.menu-mobile').removeClass('menu_active');
+
+  //   }
+
+
+  // });
+
 
 });
 

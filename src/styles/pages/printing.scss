@@ -168,3 +168,33 @@ margin-top: 16px;
     color: #4D4F51;
   }
 }
+
+@media(max-width: 499px) {
+  .printing-item__wrapper.not-img {
+    margin-top: 0;
+    .printing-item {
+      margin-top: 24px;
+    }
+    .printing-item__title {
+      margin-top: 0;
+    }
+  }
+
+  .gallery {
+    height: 264px;
+  }
+
+  .printing-list {
+    margin-top: 10px;
+    li {
+      margin-top: 10px;
+    }
+  }
+
+  .printing-main__wrapper {
+    background-image: url(../images/fix-img-3.png);
+    background-size: 140px;
+    background-position: right 50px;
+  }
+
+}

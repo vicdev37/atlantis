@@ -1,7 +1,6 @@
 extends ../layout/layout.pug
 
 block content
-  include ../includes/header-mobile.pug
   main.printing
     include ../includes/header.pug
     .printing-main__wrapper
@@ -128,7 +127,7 @@ block content
             img(src="../../images/icon-print.svg")
           .page__subtitle Дополнительная обработка    
 
-        .printing-item__wrapper
+        .printing-item__wrapper.not-img
           .printing-item
             .printing-item_icon
               
@@ -145,12 +144,12 @@ block content
             .printing-item_icon
              
             .printing-item__title Ламинирование
-            .printing-item__description      
+            //- .printing-item__description      
           .printing-item
             .printing-item_icon
              
             .printing-item__title Конгрев 
-            .printing-item__description      
+            //- .printing-item__description      
 
         .news-detail-page__content
           .news-detail-page__gallery

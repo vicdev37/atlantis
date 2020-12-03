@@ -11400,14 +11400,18 @@ $(document).ready(function () {
   });
   var menuBtn = document.querySelector('.menu-btn');
   var nav = document.querySelector('.menu-mobile');
-  var main = document.querySelector('.main');
-  var headerMobile = document.querySelector('.header-mobile');
+  var overlay = document.querySelector('.overlay');
   menuBtn.addEventListener('click', function (e) {
     e.preventDefault();
     this.classList.toggle('menu_active');
     nav.classList.toggle('menu_active');
-    main.classList.toggle('overlay');
-  });
+    overlay.classList.toggle('overlay-show');
+  }); // $(document).mouseup(function (e) {
+  //   if (!$('.menu-mobile').is(e.target) && $('.menu-mobile').has(e.target).length === 0) {
+  //     $('.menu-btn').removeClass('menu-btn_active');
+  //     $('.menu-mobile').removeClass('menu_active');
+  //   }
+  // });
 }); // // You can also pass an optional settings object
 // // below listed default settings
 // AOS.init({
@@ -11457,7 +11461,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49939" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49248" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

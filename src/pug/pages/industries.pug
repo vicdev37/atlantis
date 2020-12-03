@@ -1,7 +1,6 @@
 extends ../layout/layout.pug
 
 block content
-  include ../includes/header-mobile.pug
   main.industries
     include ../includes/header.pug
     .container
@@ -10,17 +9,18 @@ block content
         .breadcrumbs__icon
           img(src="../../images/breadcrumbs-arrow.svg")
         span.breadcrumbs__item Каталог
-
+    .industries-filter__wrapper
       .industries-filter
         a(href='' class="item") Ликеро-водочная продукция
         a(href='' class="item") Мясо-молочная продукция  
         a(href='' class="item") Голография
         a(href='' class="item") Праздничная этикетка
-
-      h1.page__title Этикетка для <br> мясо-молочной продукции
-      p.page__description
-        | Контент примерный для понимания смысла, требует проработки>Атлантис-Пак предлагает разработку для любых видов мясо-молочных продуктов. 
-        | В нашем проиводстве мы используем только сертифициронанные технологии и используем 
+    .container.product-container
+      .product-container__text
+        h1.page__title Этикетка для <br> мясо-молочной продукции
+        p.page__description
+          | Контент примерный для понимания смысла, требует проработки>Атлантис-Пак предлагает разработку для любых видов мясо-молочных продуктов. 
+          | В нашем проиводстве мы используем только сертифициронанные технологии и используем 
 
       .industries-gallery__wrapper
         .industries-gallery__line
