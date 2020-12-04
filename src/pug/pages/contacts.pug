@@ -4,19 +4,26 @@ block content
   main.contacts
     include ../includes/header.pug
 
-    .container
+    .container(data-aos='fade-up')
       .breadcrumbs.breadcrumbs--black.mobile-hide
         a.breadcrumbs__item(href='/') Атлантис-Пак
         .breadcrumbs__icon
           img(src="../../images/breadcrumbs-arrow.svg")
         span.breadcrumbs__item Контакты
 
-      h1.page__title Контакты  
+      h1.page__title Контакты 
+    .contacts-container__map-container.map-mobile
+      .contacts-container__map(data-lat='47.093961' data-lng='39.855662' data-address='346703, Ростовская обл., Аксайский <nobr>р-н</nobr>, х. Ленина, ул.&nbsp;Онучкина, 72')
+        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adfdd289b20aa2710e7c02ffde60ffa65ff74653c85f0fe03d1a80b7495ca7e89&amp;source=constructor" width="100%" height="300" frameborder="0"></iframe>
+      .contacts-container__map-holder
+        .contacts-container__map-holder-btn
+          .contacts-container__map-holder-btn-icon
+            use(xlink:href='#spriteIcon-icon-expand-map')   
 
-
+    .container(data-aos='fade-up')
       .common-wrapper
         #contacts-id__contacts.contacts-container
-          .contacts-container__left
+          .contacts-container__left.socials-desktop
             .contacts-container__heading Соцсети
             .social-links
               a.social-links__link(href='')
@@ -31,6 +38,7 @@ block content
               a.social-links__link(href='')
                 .social-links__icon.social-links__icon--youtube
                   img(src="../../images/contact-yt.svg")  
+                  
           .contacts-container__right
             .contacts-container__heading Центральный офис
             .contacts-container__subheading-holder
@@ -53,7 +61,7 @@ block content
                 .contacts-container-2col__col1 email
                 .contacts-container-2col__col2
                   .contacts-container__row
-                    .contacts-container__main
+                    .contacts-container__main.contacts-email
                       a(href='mailto:info@atlantis-pak.ru') info@atlantis-pak.ru
             .contacts-container__subheading-holder
               .contacts-container__subheading-icon
@@ -64,15 +72,20 @@ block content
                 .contacts-container-2col__col1 офис
                 .contacts-container-2col__col2
                   .contacts-container__row
-                    .contacts-container__main
+                    .contacts-container__main.contacts-adress-desktop
                       | 346703, Ростовская обл., Аксайский 
                       nobr р-н
                       | , х. Ленина, ул. Онучкина, 72
+                    .contacts-container__main.contacts-adress-mobile
+                      a(href='https://yandex.ru/maps/?ll=39.855662%2C47.093961&mode=routes&rtext=~47.093961%2C39.855662&rtt=mt' target='_blank')
+                        | 346703, Ростовская обл., Аксайский 
+                        nobr р-н
+                        | , х. Ленина, ул. Онучкина, 72
                   a.contacts-container__btn(href='https://yandex.ru/maps/?ll=39.855662%2C47.093961&mode=routes&rtext=~47.093961%2C39.855662&rtt=mt' target='_blank')
                     .contacts-container__btn-icon
                       img(src="../../images/flag-right.svg")
                     span.contacts-container__btn-title Проложить маршрут
-              .contacts-container__map-container
+              .contacts-container__map-container.map-desktop
                 .contacts-container__map(data-lat='47.093961' data-lng='39.855662' data-address='346703, Ростовская обл., Аксайский <nobr>р-н</nobr>, х. Ленина, ул.&nbsp;Онучкина, 72')
                   <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adfdd289b20aa2710e7c02ffde60ffa65ff74653c85f0fe03d1a80b7495ca7e89&amp;source=constructor" width="100%" height="300" frameborder="0"></iframe>
                 .contacts-container__map-holder
@@ -80,3 +93,28 @@ block content
                     .contacts-container__map-holder-btn-icon
                       use(xlink:href='#spriteIcon-icon-expand-map')
 
+    hr.hr-mobile
+    .container
+      .contacts-container__left.socials-mobile
+        .contacts-container__heading Соцсети
+        .social-links
+          a.social-links__link(href='')
+            .social-links__icon.social-links__icon--fb
+              img(src="../../images/contact-fb.svg")
+          a.social-links__link(href='')
+            .social-links__icon.social-links__icon--vk
+              img(src="../../images/contact-vk.svg")
+          a.social-links__link(href='')
+            .social-links__icon.social-links__icon--instagram
+              img(src="../../images/contact-inst.svg")
+          a.social-links__link(href='')
+            .social-links__icon.social-links__icon--youtube
+              img(src="../../images/contact-yt.svg")
+    hr.hr-mobile   
+    .container
+      .contacts-container__subheading-holder.contacts-container__subheading-holder--margined.satisfaction-mobile
+        .contacts-container__subheading-icon
+          img(src="../../images/like.svg")
+        .contacts-container__subheading
+          a(href='') Анкета удовлетворенности  
+    hr.hr-mobile         
