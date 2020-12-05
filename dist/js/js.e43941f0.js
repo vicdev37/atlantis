@@ -11406,6 +11406,53 @@ $(document).ready(function () {
     this.classList.toggle('menu_active');
     nav.classList.toggle('menu_active');
     overlay.classList.toggle('overlay-show');
+  });
+
+  var galleryHandler = function galleryHandler($gallery) {
+    var $slides = $gallery.find(".gallery__slide");
+    var $buttons = $gallery.find(".gallery__button");
+    var $rightButton = $gallery.find(".gallery__button--next");
+    var $leftButton = $gallery.find(".gallery__button--prev");
+    var activeSlideClass = "gallery__slide--active";
+    var deactivateButtonClass = "gallery__button--deactivate";
+    var totalCount = $slides.length - 1;
+
+    var renderButtons = function renderButtons() {
+      var $currentSlide = $gallery.find(".".concat(activeSlideClass));
+      var index = $slides.index($currentSlide);
+      $buttons.removeClass(deactivateButtonClass);
+
+      if (index === 0) {
+        $leftButton.addClass(deactivateButtonClass);
+      }
+
+      if (index === totalCount) {
+        $rightButton.addClass(deactivateButtonClass);
+      }
+    };
+
+    var moveSlide = function moveSlide(direction, e, _this) {
+      console.log(direction, e);
+      e && e.preventDefault();
+      if ($(_this).hasClass(deactivateButtonClass)) return false;
+      var $currentSlide = $gallery.find(".".concat(activeSlideClass));
+      var $nextSlide = $currentSlide[direction]();
+      $currentSlide.removeClass(activeSlideClass);
+      $nextSlide.addClass(activeSlideClass);
+      renderButtons();
+    };
+
+    $rightButton.click(function (e) {
+      moveSlide("next", e, this);
+    });
+    $leftButton.click(function (e) {
+      moveSlide("prev", e, this);
+    });
+    renderButtons();
+  };
+
+  $(".gallery").each(function () {
+    galleryHandler($(this));
   }); // $(document).mouseup(function (e) {
   //   if (!$('.menu-mobile').is(e.target) && $('.menu-mobile').has(e.target).length === 0) {
   //     $('.menu-btn').removeClass('menu-btn_active');
@@ -11461,7 +11508,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51276" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55045" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
