@@ -201,6 +201,55 @@ $(document).ready(() => {
     overlay.classList.toggle('overlay-show');
   });
 
+  const galleryHandler = $gallery => {
+    const $slides = $gallery.find(".gallery__slide");
+    const $buttons = $gallery.find(".gallery__button");
+    const $rightButton = $gallery.find(".gallery__button--next");
+    const $leftButton = $gallery.find(".gallery__button--prev");
+    const activeSlideClass = "gallery__slide--active";
+    const deactivateButtonClass = "gallery__button--deactivate";
+    const totalCount = $slides.length - 1;
+  
+    const renderButtons = () => {
+      const $currentSlide = $gallery.find(`.${activeSlideClass}`);
+      const index = $slides.index($currentSlide);
+  
+      $buttons.removeClass(deactivateButtonClass);
+      if (index === 0) {
+        $leftButton.addClass(deactivateButtonClass);
+      }
+      if (index === totalCount) {
+        $rightButton.addClass(deactivateButtonClass);
+      }
+    };
+  
+    const moveSlide = (direction, e, _this) => {
+      console.log(direction, e);
+      e && e.preventDefault();
+  
+      if ($(_this).hasClass(deactivateButtonClass)) return false;
+  
+      const $currentSlide = $gallery.find(`.${activeSlideClass}`);
+      const $nextSlide = $currentSlide[direction]();
+      $currentSlide.removeClass(activeSlideClass);
+      $nextSlide.addClass(activeSlideClass);
+  
+      renderButtons();
+    };
+  
+    $rightButton.click(function(e) {
+      moveSlide("next", e, this);
+    });
+    $leftButton.click(function(e) {
+      moveSlide("prev", e, this);
+    });
+  
+    renderButtons();
+  };
+  
+  $(".gallery").each(function() {
+    galleryHandler($(this));
+  });
 
 
   // $(document).mouseup(function (e) {

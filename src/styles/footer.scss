@@ -7,6 +7,10 @@
   margin-left: 68px;
 }
 
+.footer-socials {
+  display: flex;
+}
+
 .bottom-footer__left {
   margin-top: 55px;
 }
@@ -452,7 +456,7 @@
   align-items: center;
 }
 
-.social-links__link {
+a.social-links__link {
   display: flex;
     width: 32px;
     height: 32px;
@@ -482,11 +486,14 @@ a.app-buttons__link {
   width: 128px;
   height: 40px;
   background: #000000;
-border-radius: 6px;
-padding-left: 10px;
-padding-right: 10px;
-margin-left: 10px;
-margin-top: 8px;
+  border-radius: 6px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+  margin-top: 8px;
+  &:hover {
+    background: #171A21;
+  }
   .app-buttons__icon {
     
     width: 20px;
