@@ -2254,8 +2254,14 @@ a.video-item {
   padding: 24px 40px 32px 20px;
 }
 
+.main-menu__main-logo {
+  transition: all 300ms ease;
+}
 .main-menu__main-logo a {
   display: block;
+}
+.main-menu__main-logo:hover {
+  transform: scale(1.07);
 }
 
 .main-menu__nav-bar {
@@ -2621,6 +2627,10 @@ a.video-item {
 
 .footer-right {
   margin-left: 68px;
+}
+
+.footer-socials {
+  display: flex;
 }
 
 .bottom-footer__left {
@@ -3142,7 +3152,7 @@ a.video-item {
   align-items: center;
 }
 
-.social-links__link {
+a.social-links__link {
   display: flex;
   width: 32px;
   height: 32px;
@@ -3174,6 +3184,9 @@ a.app-buttons__link {
   padding-right: 10px;
   margin-left: 10px;
   margin-top: 8px;
+}
+a.app-buttons__link:hover {
+  background: #171A21;
 }
 a.app-buttons__link .app-buttons__icon {
   width: 20px;

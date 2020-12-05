@@ -24,10 +24,14 @@
     justify-content: space-between; 
     padding: 24px 40px 32px 20px}
   .main-menu__main-logo {
+    transition: all 300ms ease;
     a {
       display: block;
     }
+    &:hover {
+      transform: scale(1.07);
     }
+  }
   .main-menu__nav-bar {
     -webkit-box-flex: 3;
     -ms-flex-positive: 3;
