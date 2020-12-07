@@ -11237,8 +11237,8 @@ $(document).ready(function () {
     var current = 0;
 
     function slider() {
-      for (var i = 0; i < items.length; i++) {
-        items[i].classList.add('opacity0');
+      for (var _i = 0; _i < items.length; _i++) {
+        items[_i].classList.add('opacity0');
       }
 
       items[current].classList.remove('opacity0');
@@ -11292,121 +11292,125 @@ $(document).ready(function () {
       plusSlides(1);
     });
     dotsWrap.addEventListener('click', function (event) {
-      for (var i = 0; i < dots.length + 1; i++) {
-        if (event.target.classList.contains('dot') && event.target == dots[i - 1]) {
-          currentSlide(i);
+      for (var _i2 = 0; _i2 < dots.length + 1; _i2++) {
+        if (event.target.classList.contains('dot') && event.target == dots[_i2 - 1]) {
+          currentSlide(_i2);
         }
       }
     });
-  }
+  } // const renderListMap = ($el, coords, showControl) => {
+  //   const controls = isMobile() && !showControl ? [] : ["zoomControl"];
+  //   let top = $(".contacts-container__map").height() / 2 - 30;
+  //   if ($(".contacts-fs-map-screen").length) {
+  //     top = $(".contacts-fs-map-screen").height() / 2 - 30;
+  //   }
+  //   const map = new ymaps.Map(
+  //     $el[0], {
+  //       center: coords,
+  //       zoom: 12,
+  //       controls: controls,
+  //     }, {
+  //       suppressMapOpenBlock: true,
+  //       zoomControlSize: "small",
+  //       zoomControlFloat: "none",
+  //       zoomControlPosition: {
+  //         right: "20px",
+  //         top: top + "px",
+  //       },
+  //     }
+  //   );
+  //   const mark = new ymaps.Placemark(
+  //     coords, {
+  //       // hintContent: "Центральный офис",
+  //     }, {
+  //       iconLayout: "default#image",
+  //       iconImageHref: "../images/pin.svg",
+  //       iconImageSize: [68, 78],
+  //       iconImageOffset: [-34, -64],
+  //     }
+  //   );
+  //   // map.behaviors.disable("scrollZoom");
+  //   // map.behaviors.disable("dblClickZoom");
+  //   map.geoObjects.add(mark);
+  //   return map;
+  // };
+  // const renderItemList = (list, type) => {
+  //   const $container = $("#contacts-id__" + type);
+  //   const $itemContainer = $container
+  //     .find(".contacts-container__right")
+  //     .html("");
+  //   const _list = convertList(list);
+  //   $("#contacts-template")
+  //     .tmpl(_list)
+  //     .appendTo($itemContainer);
+  // };
+  // const showMobileMap = (coords, address, e) => {
+  //   e.preventDefault();
+  //   $("#contacts-template-map-fs")
+  //     .tmpl({
+  //       address: address,
+  //     })
+  //     .appendTo($("body"));
+  //   const $map = $(".contacts-fs-screen-map__content");
+  //   const _map = renderListMap($map, coords, true);
+  //   $(".contacts-fs-screen-map__close-btn").click(e => {
+  //     e.preventDefault();
+  //     _map.destroy();
+  //     $(".contacts-fs-map-screen").remove();
+  //   });
+  // };
+  // const renderYaMaps = () => {
+  //   ymaps.ready(() => {
+  //     $(".contacts-container__map").each(function () {
+  //       const $el = $(this);
+  //       const $elContainer = $el
+  //         .closest(".contacts-container__map-container")
+  //         .find(".contacts-container__map-holder");
+  //       const map = $(this).data("map");
+  //       if (map) {
+  //         map.destroy();
+  //         $elContainer.off("click");
+  //       }
+  //       const coords = [$(this).attr("data-lat"), $(this).attr("data-lng")];
+  //       const address = $(this).attr("data-address");
+  //       console.log(coords);
+  //       const _map = renderListMap($el, coords);
+  //       $el.data("map", _map);
+  //       if (isMobile()) {
+  //         $elContainer.on("click", showMobileMap.bind(null, coords, address));
+  //       }
+  //     });
+  //   });
+  // };
+  // menu
 
-  var renderListMap = function renderListMap($el, coords, showControl) {
-    var controls = isMobile() && !showControl ? [] : ["zoomControl"];
-    var top = $(".contacts-container__map").height() / 2 - 30;
 
-    if ($(".contacts-fs-map-screen").length) {
-      top = $(".contacts-fs-map-screen").height() / 2 - 30;
-    }
-
-    var map = new ymaps.Map($el[0], {
-      center: coords,
-      zoom: 12,
-      controls: controls
-    }, {
-      suppressMapOpenBlock: true,
-      zoomControlSize: "small",
-      zoomControlFloat: "none",
-      zoomControlPosition: {
-        right: "20px",
-        top: top + "px"
-      }
-    });
-    var mark = new ymaps.Placemark(coords, {// hintContent: "Центральный офис",
-    }, {
-      iconLayout: "default#image",
-      iconImageHref: "../images/pin.svg",
-      iconImageSize: [68, 78],
-      iconImageOffset: [-34, -64]
-    }); // map.behaviors.disable("scrollZoom");
-    // map.behaviors.disable("dblClickZoom");
-
-    map.geoObjects.add(mark);
-    return map;
-  };
-
-  var renderItemList = function renderItemList(list, type) {
-    var $container = $("#contacts-id__" + type);
-    var $itemContainer = $container.find(".contacts-container__right").html("");
-
-    var _list = convertList(list);
-
-    $("#contacts-template").tmpl(_list).appendTo($itemContainer);
-  };
-
-  var showMobileMap = function showMobileMap(coords, address, e) {
-    e.preventDefault();
-    $("#contacts-template-map-fs").tmpl({
-      address: address
-    }).appendTo($("body"));
-    var $map = $(".contacts-fs-screen-map__content");
-
-    var _map = renderListMap($map, coords, true);
-
-    $(".contacts-fs-screen-map__close-btn").click(function (e) {
+  $(document).mouseup(function (e) {
+    $('.menu-btn').on('click', function (e) {
       e.preventDefault();
-
-      _map.destroy();
-
-      $(".contacts-fs-map-screen").remove();
+      $(this).toggleClass('menu-btn_active');
+      $('.menu-mobile').toggleClass('menu_active');
+      $('.overlay').toggleClass('overlay-show');
     });
-  };
 
-  var renderYaMaps = function renderYaMaps() {
-    ymaps.ready(function () {
-      $(".contacts-container__map").each(function () {
-        var $el = $(this);
-        var $elContainer = $el.closest(".contacts-container__map-container").find(".contacts-container__map-holder");
-        var map = $(this).data("map");
-
-        if (map) {
-          map.destroy();
-          $elContainer.off("click");
-        }
-
-        var coords = [$(this).attr("data-lat"), $(this).attr("data-lng")];
-        var address = $(this).attr("data-address");
-        console.log(coords);
-
-        var _map = renderListMap($el, coords);
-
-        $el.data("map", _map);
-
-        if (isMobile()) {
-          $elContainer.on("click", showMobileMap.bind(null, coords, address));
-        }
-      });
-    });
-  }; // menu
-
-
-  $('.menu-btn').on('click', function (e) {
-    e.preventDefault();
-    $(this).toggleClass('menu-btn_active');
-    $('.main-nav__ul').toggleClass('menu_active');
-  });
-  $(".main-nav__li").click(function () {
-    $(".menu-btn").toggleClass('menu-btn_active');
-    $(".main-nav__ul").toggleClass('menu_active');
-  });
-  var menuBtn = document.querySelector('.menu-btn');
-  var nav = document.querySelector('.menu-mobile');
-  var overlay = document.querySelector('.overlay');
-  menuBtn.addEventListener('click', function (e) {
-    e.preventDefault();
-    this.classList.toggle('menu_active');
-    nav.classList.toggle('menu_active');
-    overlay.classList.toggle('overlay-show');
-  });
+    if (!$('.menu-mobile').is(e.target) && $('.menu-mobile').has(e.target).length === 0) {
+      $('.menu-btn').removeClass('menu-btn_active');
+      $('.menu-mobile').removeClass('menu_active');
+      $('.overlay').removeClass('overlay-show');
+    }
+  }); // $(".main-nav__li").click(function () {
+  //   $(".menu-btn").toggleClass('menu-btn_active');
+  //   $(".main-nav__ul").toggleClass('menu_active');
+  // });
+  // let menuBtn = document.querySelector('.menu-btn');
+  // let nav = document.querySelector('.menu-mobile');
+  // let overlay = document.querySelector('.overlay');
+  // menuBtn.addEventListener('click', function (e) {
+  //   e.preventDefault();
+  //   this.classList.toggle('menu_active');
+  //   nav.classList.toggle('menu_active');
+  //   overlay.classList.toggle('overlay-show');
+  // });
 
   var galleryHandler = function galleryHandler($gallery) {
     var $slides = $gallery.find(".gallery__slide");
@@ -11453,12 +11457,56 @@ $(document).ready(function () {
 
   $(".gallery").each(function () {
     galleryHandler($(this));
-  }); // $(document).mouseup(function (e) {
-  //   if (!$('.menu-mobile').is(e.target) && $('.menu-mobile').has(e.target).length === 0) {
-  //     $('.menu-btn').removeClass('menu-btn_active');
-  //     $('.menu-mobile').removeClass('menu_active');
-  //   }
-  // });
+  });
+  var mobileWidth = 500;
+
+  var isMobile = function isMobile() {
+    return $(window).width() < mobileWidth;
+  };
+
+  if (!isMobile()) {
+    var $line = $(".partners-line__wrapper");
+
+    if ($line.length) {
+      var b = $line.outerWidth(),
+          f = $("body"),
+          h = $(".partners-line__holder");
+      h.height($line.height());
+      var i = h.children(),
+          e = $("body").width();
+      $("html").is(".mobile, .tablet") ? (i.addClass("touch-scroll"), b > e && i.scrollLeft(b - e)) : (b > e && $line.css("margin-left", e - b), $(document).mousemove(function (a) {
+        var b = $line.outerWidth(),
+            c = f.width();
+        console.log(c, b);
+        if (c >= b) return void $line.css("margin-left", "auto");
+        var d = (b - c) / (c - 200),
+            e = Math.max(a.clientX - 100, 0);
+        e > c && (e = c);
+        var h = c - b,
+            i = Math.max(d * -e, h);
+        $line.css("margin-left", i);
+      }), $(window).on("resize", function () {
+        var a = $line.outerWidth(),
+            b = f.width();
+        return b >= a ? void $line.css("margin-left", "auto") : void $line.css("margin-left", b - a);
+      }));
+    }
+  }
+
+  var partnerLineRenderOffset = function partnerLineRenderOffset() {
+    if (!isMobile()) return false;
+    var offsetLeft = $(".partners-line").offset().left;
+    $(".partners-line__wrapper").css({
+      "padding-left": offsetLeft
+    });
+  };
+
+  if ($("body").hasClass("index-page")) {
+    $(window).on("resize", function () {
+      partnerLineRenderOffset();
+    });
+    partnerLineRenderOffset();
+  }
 }); // // You can also pass an optional settings object
 // // below listed default settings
 // AOS.init({
@@ -11508,7 +11556,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55045" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58227" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
