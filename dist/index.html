@@ -6,8 +6,10 @@
     <meta name="description" content="The HTML5 Herald">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/js/js.e43941f0.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="/styles/styles.9316f574.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
   <script src="/styles.9316f574.js"></script></head>
   <body id="body">
     <main class="main">
@@ -79,9 +81,9 @@
         </div>
         <div class="overlay">                      </div>
       </header>
-      <div class="slider__wrapper">
-        <div class="slider">
-          <div class="big-block big-block--news common-wrapper slider-item">
+      <div class="slider__wrapper swiper-container">
+        <div class="slider swiper-wrapper">
+          <div class="big-block big-block--news common-wrapper slider-item swiper-slide">
             <div class="gradient-block gradient-slider">
               <div class="common-wrapper__holder">
                 <div class="big-block__tag" data-aos="fade-up">
@@ -95,7 +97,7 @@
               </div>
             </div>
           </div>
-          <div class="big-block big-block--news common-wrapper slider-item">
+          <div class="big-block big-block--news common-wrapper slider-item swiper-slide">
             <div class="gradient-block gradient-slider">
               <div class="common-wrapper__holder">
                 <div class="big-block__tag" data-aos="fade-up">
@@ -109,7 +111,7 @@
               </div>
             </div>
           </div>
-          <div class="big-block big-block--news common-wrapper slider-item">
+          <div class="big-block big-block--news common-wrapper slider-item swiper-slide">
             <div class="gradient-block gradient-slider">
               <div class="common-wrapper__holder">
                 <div class="big-block__tag" data-aos="fade-up">
@@ -123,14 +125,10 @@
               </div>
             </div>
           </div>
-          <div class="slider-dots">
-            <div class="dot dot-active"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
-          </div>
-          <div class="slider-prev"><img src="/images/arrow-right.1cb82372.svg"></div>
-          <div class="slider-next"> <img src="/images/arrow-right.1cb82372.svg"></div>
         </div>
+        <div class="swiper-pagination slider-dots"></div>
+        <div class="swiper-button-prev slider-prev"> <img src="/images/arrow-right.1cb82372.svg"></div>
+        <div class="swiper-button-next slider-next"><img src="/images/arrow-right.1cb82372.svg"></div>
       </div>
       <section class="our-offer">
         <div class="container">
