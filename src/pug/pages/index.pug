@@ -3,9 +3,9 @@ extends ../layout/layout.pug
 block content
   main.main
     include ../includes/header.pug
-    .slider__wrapper
-      .slider
-        .big-block.big-block--news.common-wrapper.slider-item
+    .slider__wrapper.swiper-container
+      .slider.swiper-wrapper
+        .big-block.big-block--news.common-wrapper.slider-item.swiper-slide
           .gradient-block.gradient-slider
             .common-wrapper__holder
               .big-block__tag(data-aos='fade-up')
@@ -18,7 +18,7 @@ block content
                   .read-more__title Читать подробности
                   .read-more__icon
                     img(src="../../images/more-arrow.svg")
-        .big-block.big-block--news.common-wrapper.slider-item
+        .big-block.big-block--news.common-wrapper.slider-item.swiper-slide
           .gradient-block.gradient-slider
             .common-wrapper__holder
               .big-block__tag(data-aos='fade-up')
@@ -31,7 +31,7 @@ block content
                   .read-more__title Читать подробности
                   .read-more__icon
                     img(src="../../images/more-arrow.svg")
-        .big-block.big-block--news.common-wrapper.slider-item
+        .big-block.big-block--news.common-wrapper.slider-item.swiper-slide
           .gradient-block.gradient-slider
             .common-wrapper__holder
               .big-block__tag(data-aos='fade-up')
@@ -44,14 +44,19 @@ block content
                   .read-more__title Читать подробности
                   .read-more__icon
                     img(src="../../images/more-arrow.svg")
-        .slider-dots
-          .dot.dot-active
-          .dot
-          .dot
-        .slider-prev
-          img(src="../../images/arrow-right.svg")
-        .slider-next  
-          img(src="../../images/arrow-right.svg")            
+        
+      .swiper-pagination.slider-dots
+        //- .dot.dot-active
+        //- .dot
+        //- .dot
+      .swiper-button-prev.slider-prev 
+        img(src="../../images/arrow-right.svg") 
+      //- .slider-prev
+      //-   img(src="../../images/arrow-right.svg")
+      .swiper-button-next.slider-next
+        img(src="../../images/arrow-right.svg") 
+      //- .slider-next  
+      //-   img(src="../../images/arrow-right.svg")            
     section.our-offer
       .container
         .line__wrapper

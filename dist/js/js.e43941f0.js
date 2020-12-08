@@ -11229,76 +11229,78 @@ window.$ = window.jQuery = _jquery.default;
 $(document).ready(function () {
   console.log($('body'));
   (0, _module2.default)();
-  AOS.init();
-  var mainSlider = document.querySelector('.slider__wrapper');
+  AOS.init(); // let mainSlider = document.querySelector('.slider__wrapper')
+  // if (mainSlider) {
+  //   let items = document.querySelectorAll('.slider-item');
+  //   let current = 0;
+  //   function slider() {
+  //     for (let i = 0; i < items.length; i++) {
+  //       items[i].classList.add('opacity0');
+  //     }
+  //     items[current].classList.remove('opacity0');
+  //     if (current + 1 == items.length) {
+  //       current = 0;
+  //     } else {
+  //       current++
+  //     }
+  //   }
+  //   let slideIndex = 1,
+  //     slides = document.querySelectorAll('.slider-item'),
+  //     prev = document.querySelector('.slider-prev'),
+  //     next = document.querySelector('.slider-next'),
+  //     dotsWrap = document.querySelector('.slider-dots'),
+  //     dots = document.querySelectorAll('.dot');
+  //   showSlides(slideIndex);
+  //   function showSlides(n) {
+  //     if (n > slides.length) {
+  //       slideIndex = 1;
+  //     }
+  //     if (n < 1) {
+  //       slideIndex = slides.length;
+  //     }
+  //     slides.forEach((item) => item.style.display = 'none');
+  //     dots.forEach((item) => item.classList.remove('dot-active'));
+  //     slides[slideIndex - 1].style.display = "block";
+  //     dots[slideIndex - 1].classList.add('dot-active');
+  //   }
+  //   function plusSlides(n) {
+  //     showSlides(slideIndex += n);
+  //   }
+  //   function currentSlide(n) {
+  //     showSlides(slideIndex = n);
+  //   }
+  //   prev.addEventListener('click', function () {
+  //     plusSlides(-1);
+  //   });
+  //   next.addEventListener('click', function () {
+  //     plusSlides(1);
+  //   });
+  //   dotsWrap.addEventListener('click', function (event) {
+  //     for (let i = 0; i < dots.length + 1; i++) {
+  //       if (event.target.classList.contains('dot') && event.target == dots[i - 1]) {
+  //         currentSlide(i);
+  //       }
+  //     }
+  //   });
+  // }
 
-  if (mainSlider) {
-    var items = document.querySelectorAll('.slider-item');
-    var current = 0;
-
-    function slider() {
-      for (var _i = 0; _i < items.length; _i++) {
-        items[_i].classList.add('opacity0');
-      }
-
-      items[current].classList.remove('opacity0');
-
-      if (current + 1 == items.length) {
-        current = 0;
-      } else {
-        current++;
-      }
+  var mySwiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets'
+    },
+    fadeEffect: {
+      crossFade: true
     }
-
-    var slideIndex = 1,
-        slides = document.querySelectorAll('.slider-item'),
-        prev = document.querySelector('.slider-prev'),
-        next = document.querySelector('.slider-next'),
-        dotsWrap = document.querySelector('.slider-dots'),
-        dots = document.querySelectorAll('.dot');
-    showSlides(slideIndex);
-
-    function showSlides(n) {
-      if (n > slides.length) {
-        slideIndex = 1;
-      }
-
-      if (n < 1) {
-        slideIndex = slides.length;
-      }
-
-      slides.forEach(function (item) {
-        return item.style.display = 'none';
-      });
-      dots.forEach(function (item) {
-        return item.classList.remove('dot-active');
-      });
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].classList.add('dot-active');
-    }
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    prev.addEventListener('click', function () {
-      plusSlides(-1);
-    });
-    next.addEventListener('click', function () {
-      plusSlides(1);
-    });
-    dotsWrap.addEventListener('click', function (event) {
-      for (var _i2 = 0; _i2 < dots.length + 1; _i2++) {
-        if (event.target.classList.contains('dot') && event.target == dots[_i2 - 1]) {
-          currentSlide(_i2);
-        }
-      }
-    });
-  } // const renderListMap = ($el, coords, showControl) => {
+  }); // const renderListMap = ($el, coords, showControl) => {
   //   const controls = isMobile() && !showControl ? [] : ["zoomControl"];
   //   let top = $(".contacts-container__map").height() / 2 - 30;
   //   if ($(".contacts-fs-map-screen").length) {
@@ -11383,7 +11385,6 @@ $(document).ready(function () {
   //   });
   // };
   // menu
-
 
   $(document).mouseup(function (e) {
     $('.menu-btn').on('click', function (e) {
@@ -11493,6 +11494,24 @@ $(document).ready(function () {
     }
   }
 
+  var videoClickHandler = function videoClickHandler() {
+    $(".video-item").click(function (e) {
+      if (!isMobile()) {
+        e.preventDefault();
+        var youtubeId = $(this).attr("data-youtube-id");
+        $(".video-modal__holder").attr("src", "https://www.youtube.com/embed/".concat(youtubeId, "?autoplay=1"));
+        $(".video-modal__wrapper").show();
+      }
+    });
+    $(".video-modal").click(function (e) {
+      e.preventDefault();
+      $(".video-modal__holder").attr("src", "");
+      $(".video-modal__wrapper").hide();
+    });
+  };
+
+  videoClickHandler();
+
   var partnerLineRenderOffset = function partnerLineRenderOffset() {
     if (!isMobile()) return false;
     var offsetLeft = $(".partners-line").offset().left;
@@ -11556,7 +11575,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58227" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55386" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

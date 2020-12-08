@@ -2,12 +2,9 @@
   display: none;
 }
 
-.menu-mobile  {
-  // display: none;
-}
 
 .menu-mobile {
-  // display: none;
+  opacity: 0;
   width: 87%;
   height: 100%;
   position: fixed;
@@ -18,7 +15,6 @@
   z-index: 3;
   transition: 0.2s;
   transform: translate(100%, 0);
-  
   overflow: auto;
 }
 .main-menu__holder {
@@ -149,8 +145,7 @@
 
 
 .menu_active {
-  // display: block!important;
-  // opacity: 1;
+  opacity: 1!important;
   transform: translateX(0%)!important;
   transition: all 0.2s ease!important;
   -webkit-transition: all 0.2s ease!important;
