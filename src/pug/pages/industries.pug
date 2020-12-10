@@ -75,7 +75,7 @@ block content
 
       include ../includes/pagination.pug    
 
-    .item-modal__wrapper
+    .item-modal__wrapper.item-modal__wrapper-industries
       .item-modal__bg
         a.item-modal__close
           img(src="../../images/close.svg")
@@ -86,8 +86,15 @@ block content
                 .gallery.industries-product-gallery
                   .gallery__holder
                     .gallery__slide.gallery__slide--active(style='background-image:url(http://lorempixel.com/640/448/business/1)')
+                      .gallery-slide__description
+                        | Стикер для бренда <br> “Кремлевские Колбасы”
+
                     .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/2)')
+                      .gallery-slide__description
+                        | Стикер для бренда <br> “Кремлевские Колбасы”
                     .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/3)')
+                      .gallery-slide__description
+                          | Стикер для бренда <br> “Кремлевские Колбасы”
                     .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/1)')
                     .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/2)')
                     .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/3)')
@@ -98,6 +105,5 @@ block content
                     a.gallery__button.gallery__button--next(href='')
                       .gallery__button-icon
                         img(src="../../images/arrow-right.svg")
-        
-
+              
 
