@@ -11295,96 +11295,102 @@ $(document).ready(function () {
     },
     pagination: {
       el: '.swiper-pagination',
-      type: 'bullets'
+      type: 'bullets',
+      clickable: true
     },
     fadeEffect: {
       crossFade: true
     }
-  }); // const renderListMap = ($el, coords, showControl) => {
-  //   const controls = isMobile() && !showControl ? [] : ["zoomControl"];
-  //   let top = $(".contacts-container__map").height() / 2 - 30;
-  //   if ($(".contacts-fs-map-screen").length) {
-  //     top = $(".contacts-fs-map-screen").height() / 2 - 30;
-  //   }
-  //   const map = new ymaps.Map(
-  //     $el[0], {
-  //       center: coords,
-  //       zoom: 12,
-  //       controls: controls,
-  //     }, {
-  //       suppressMapOpenBlock: true,
-  //       zoomControlSize: "small",
-  //       zoomControlFloat: "none",
-  //       zoomControlPosition: {
-  //         right: "20px",
-  //         top: top + "px",
-  //       },
-  //     }
-  //   );
-  //   const mark = new ymaps.Placemark(
-  //     coords, {
-  //       // hintContent: "Центральный офис",
-  //     }, {
-  //       iconLayout: "default#image",
-  //       iconImageHref: "../images/pin.svg",
-  //       iconImageSize: [68, 78],
-  //       iconImageOffset: [-34, -64],
-  //     }
-  //   );
-  //   // map.behaviors.disable("scrollZoom");
-  //   // map.behaviors.disable("dblClickZoom");
-  //   map.geoObjects.add(mark);
-  //   return map;
-  // };
-  // const renderItemList = (list, type) => {
-  //   const $container = $("#contacts-id__" + type);
-  //   const $itemContainer = $container
-  //     .find(".contacts-container__right")
-  //     .html("");
-  //   const _list = convertList(list);
-  //   $("#contacts-template")
-  //     .tmpl(_list)
-  //     .appendTo($itemContainer);
-  // };
-  // const showMobileMap = (coords, address, e) => {
-  //   e.preventDefault();
-  //   $("#contacts-template-map-fs")
-  //     .tmpl({
-  //       address: address,
-  //     })
-  //     .appendTo($("body"));
-  //   const $map = $(".contacts-fs-screen-map__content");
-  //   const _map = renderListMap($map, coords, true);
-  //   $(".contacts-fs-screen-map__close-btn").click(e => {
-  //     e.preventDefault();
-  //     _map.destroy();
-  //     $(".contacts-fs-map-screen").remove();
-  //   });
-  // };
-  // const renderYaMaps = () => {
-  //   ymaps.ready(() => {
-  //     $(".contacts-container__map").each(function () {
-  //       const $el = $(this);
-  //       const $elContainer = $el
-  //         .closest(".contacts-container__map-container")
-  //         .find(".contacts-container__map-holder");
-  //       const map = $(this).data("map");
-  //       if (map) {
-  //         map.destroy();
-  //         $elContainer.off("click");
-  //       }
-  //       const coords = [$(this).attr("data-lat"), $(this).attr("data-lng")];
-  //       const address = $(this).attr("data-address");
-  //       console.log(coords);
-  //       const _map = renderListMap($el, coords);
-  //       $el.data("map", _map);
-  //       if (isMobile()) {
-  //         $elContainer.on("click", showMobileMap.bind(null, coords, address));
-  //       }
-  //     });
-  //   });
-  // };
-  // menu
+  });
+
+  var renderListMap = function renderListMap($el, coords, showControl) {
+    var controls = isMobile() && !showControl ? [] : ["zoomControl"];
+    var top = $(".contacts-container__map").height() / 2 - 30;
+
+    if ($(".contacts-fs-map-screen").length) {
+      top = $(".contacts-fs-map-screen").height() / 2 - 30;
+    }
+
+    var map = new ymaps.Map($el[0], {
+      center: coords,
+      zoom: 12,
+      controls: controls
+    }, {
+      suppressMapOpenBlock: true,
+      zoomControlSize: "small",
+      zoomControlFloat: "none",
+      zoomControlPosition: {
+        right: "20px",
+        top: top + "px"
+      }
+    });
+    var mark = new ymaps.Placemark(coords, {// hintContent: "Центральный офис",
+    }, {
+      iconLayout: "default#image",
+      iconImageHref: "../images/pin.svg",
+      iconImageSize: [68, 78],
+      iconImageOffset: [-34, -64]
+    }); // map.behaviors.disable("scrollZoom");
+    // map.behaviors.disable("dblClickZoom");
+
+    map.geoObjects.add(mark);
+    return map;
+  };
+
+  var renderItemList = function renderItemList(list, type) {
+    var $container = $("#contacts-id__" + type);
+    var $itemContainer = $container.find(".contacts-container__right").html("");
+
+    var _list = convertList(list);
+
+    $("#contacts-template").tmpl(_list).appendTo($itemContainer);
+  };
+
+  var showMobileMap = function showMobileMap(coords, address, e) {
+    e.preventDefault();
+    $("#contacts-template-map-fs").tmpl({
+      address: address
+    }).appendTo($("body"));
+    var $map = $(".contacts-fs-screen-map__content");
+
+    var _map = renderListMap($map, coords, true);
+
+    $(".contacts-fs-screen-map__close-btn").click(function (e) {
+      e.preventDefault();
+
+      _map.destroy();
+
+      $(".contacts-fs-map-screen").remove();
+    });
+  };
+
+  var renderYaMaps = function renderYaMaps() {
+    ymaps.ready(function () {
+      $(".contacts-container__map").each(function () {
+        var $el = $(this);
+        var $elContainer = $el.closest(".contacts-container__map-container").find(".contacts-container__map-holder");
+        var map = $(this).data("map");
+
+        if (map) {
+          map.destroy();
+          $elContainer.off("click");
+        }
+
+        var coords = [$(this).attr("data-lat"), $(this).attr("data-lng")];
+        var address = $(this).attr("data-address");
+        console.log(coords);
+
+        var _map = renderListMap($el, coords);
+
+        $el.data("map", _map);
+
+        if (isMobile()) {
+          $elContainer.on("click", showMobileMap.bind(null, coords, address));
+        }
+      });
+    });
+  }; // menu
+
 
   $(document).mouseup(function (e) {
     $('.menu-btn').on('click', function (e) {
@@ -11512,6 +11518,24 @@ $(document).ready(function () {
 
   videoClickHandler();
 
+  var itemClickHandler = function itemClickHandler() {
+    $(".product-block").click(function (e) {
+      if (!isMobile()) {
+        e.preventDefault();
+        var itemId = $(this).attr("data-item-id");
+        $(".item-modal__holder").attr("src", $(itemId));
+        $(".item-modal__wrapper").show();
+      }
+    });
+    $(".item-modal__close").click(function (e) {
+      e.preventDefault();
+      $(".item-modal__holder").attr("src", "");
+      $(".item-modal__wrapper").hide();
+    });
+  };
+
+  itemClickHandler();
+
   var partnerLineRenderOffset = function partnerLineRenderOffset() {
     if (!isMobile()) return false;
     var offsetLeft = $(".partners-line").offset().left;
@@ -11575,7 +11599,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50304" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55049" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

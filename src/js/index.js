@@ -90,110 +90,113 @@ $(document).ready(() => {
     pagination: {
       el: '.swiper-pagination',
       type: 'bullets',
+      clickable: true
     },
     fadeEffect: {
       crossFade: true
     },
 
+
+
   })
 
 
-  // const renderListMap = ($el, coords, showControl) => {
-  //   const controls = isMobile() && !showControl ? [] : ["zoomControl"];
-  //   let top = $(".contacts-container__map").height() / 2 - 30;
-  //   if ($(".contacts-fs-map-screen").length) {
-  //     top = $(".contacts-fs-map-screen").height() / 2 - 30;
-  //   }
+  const renderListMap = ($el, coords, showControl) => {
+    const controls = isMobile() && !showControl ? [] : ["zoomControl"];
+    let top = $(".contacts-container__map").height() / 2 - 30;
+    if ($(".contacts-fs-map-screen").length) {
+      top = $(".contacts-fs-map-screen").height() / 2 - 30;
+    }
 
-  //   const map = new ymaps.Map(
-  //     $el[0], {
-  //       center: coords,
-  //       zoom: 12,
-  //       controls: controls,
-  //     }, {
-  //       suppressMapOpenBlock: true,
-  //       zoomControlSize: "small",
-  //       zoomControlFloat: "none",
-  //       zoomControlPosition: {
-  //         right: "20px",
-  //         top: top + "px",
-  //       },
-  //     }
-  //   );
-  //   const mark = new ymaps.Placemark(
-  //     coords, {
-  //       // hintContent: "Центральный офис",
-  //     }, {
-  //       iconLayout: "default#image",
-  //       iconImageHref: "../images/pin.svg",
-  //       iconImageSize: [68, 78],
-  //       iconImageOffset: [-34, -64],
-  //     }
-  //   );
-  //   // map.behaviors.disable("scrollZoom");
-  //   // map.behaviors.disable("dblClickZoom");
-  //   map.geoObjects.add(mark);
-  //   return map;
-  // };
+    const map = new ymaps.Map(
+      $el[0], {
+        center: coords,
+        zoom: 12,
+        controls: controls,
+      }, {
+        suppressMapOpenBlock: true,
+        zoomControlSize: "small",
+        zoomControlFloat: "none",
+        zoomControlPosition: {
+          right: "20px",
+          top: top + "px",
+        },
+      }
+    );
+    const mark = new ymaps.Placemark(
+      coords, {
+        // hintContent: "Центральный офис",
+      }, {
+        iconLayout: "default#image",
+        iconImageHref: "../images/pin.svg",
+        iconImageSize: [68, 78],
+        iconImageOffset: [-34, -64],
+      }
+    );
+    // map.behaviors.disable("scrollZoom");
+    // map.behaviors.disable("dblClickZoom");
+    map.geoObjects.add(mark);
+    return map;
+  };
 
-  // const renderItemList = (list, type) => {
-  //   const $container = $("#contacts-id__" + type);
-  //   const $itemContainer = $container
-  //     .find(".contacts-container__right")
-  //     .html("");
+  const renderItemList = (list, type) => {
+    const $container = $("#contacts-id__" + type);
+    const $itemContainer = $container
+      .find(".contacts-container__right")
+      .html("");
 
-  //   const _list = convertList(list);
+    const _list = convertList(list);
 
-  //   $("#contacts-template")
-  //     .tmpl(_list)
-  //     .appendTo($itemContainer);
-  // };
+    $("#contacts-template")
+      .tmpl(_list)
+      .appendTo($itemContainer);
+  };
 
-  // const showMobileMap = (coords, address, e) => {
-  //   e.preventDefault();
+  const showMobileMap = (coords, address, e) => {
+    e.preventDefault();
 
-  //   $("#contacts-template-map-fs")
-  //     .tmpl({
-  //       address: address,
-  //     })
-  //     .appendTo($("body"));
+    $("#contacts-template-map-fs")
+      .tmpl({
+        address: address,
+      })
+      .appendTo($("body"));
 
-  //   const $map = $(".contacts-fs-screen-map__content");
+    const $map = $(".contacts-fs-screen-map__content");
 
-  //   const _map = renderListMap($map, coords, true);
+    const _map = renderListMap($map, coords, true);
 
-  //   $(".contacts-fs-screen-map__close-btn").click(e => {
-  //     e.preventDefault();
-  //     _map.destroy();
-  //     $(".contacts-fs-map-screen").remove();
-  //   });
-  // };
+    $(".contacts-fs-screen-map__close-btn").click(e => {
+      e.preventDefault();
+      _map.destroy();
+      $(".contacts-fs-map-screen").remove();
+    });
+  };
 
-  // const renderYaMaps = () => {
-  //   ymaps.ready(() => {
-  //     $(".contacts-container__map").each(function () {
-  //       const $el = $(this);
-  //       const $elContainer = $el
-  //         .closest(".contacts-container__map-container")
-  //         .find(".contacts-container__map-holder");
-  //       const map = $(this).data("map");
+  const renderYaMaps = () => {
+    ymaps.ready(() => {
+      $(".contacts-container__map").each(function () {
+        const $el = $(this);
+        const $elContainer = $el
+          .closest(".contacts-container__map-container")
+          .find(".contacts-container__map-holder");
+        const map = $(this).data("map");
 
-  //       if (map) {
-  //         map.destroy();
-  //         $elContainer.off("click");
-  //       }
-  //       const coords = [$(this).attr("data-lat"), $(this).attr("data-lng")];
-  //       const address = $(this).attr("data-address");
-  //       console.log(coords);
-  //       const _map = renderListMap($el, coords);
-  //       $el.data("map", _map);
+        if (map) {
+          map.destroy();
+          $elContainer.off("click");
+        }
+        const coords = [$(this).attr("data-lat"), $(this).attr("data-lng")];
+        const address = $(this).attr("data-address");
+        console.log(coords);
+        const _map = renderListMap($el, coords);
+        $el.data("map", _map);
 
-  //       if (isMobile()) {
-  //         $elContainer.on("click", showMobileMap.bind(null, coords, address));
-  //       }
-  //     });
-  //   });
-  // };
+        if (isMobile()) {
+          $elContainer.on("click", showMobileMap.bind(null, coords, address));
+        }
+      });
+    });
+  };
 
 
   // menu
@@ -353,6 +356,31 @@ $(document).ready(() => {
   };
 
   videoClickHandler();
+
+
+
+  const itemClickHandler = () => {
+    $(".product-block").click(function (e) {
+      if (!isMobile()) {
+        e.preventDefault();
+        const itemId = $(this).attr("data-item-id");
+        $(".item-modal__holder").attr(
+          "src",
+          $(itemId)
+        );
+        $(".item-modal__wrapper").show();
+      }
+    });
+
+    $(".item-modal__close").click(function (e) {
+      e.preventDefault();
+      $(".item-modal__holder").attr("src", "");
+      $(".item-modal__wrapper").hide();
+    });
+  };
+
+  itemClickHandler();
+
 
 
 

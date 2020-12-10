@@ -90,11 +90,7 @@
       <div class="contacts-container__map-container map-mobile">
         <div class="contacts-container__map" data-lat="47.093961" data-lng="39.855662" data-address="346703, Ростовская обл., Аксайский &lt;nobr&gt;р-н&lt;/nobr&gt;, х. Ленина, ул.&amp;nbsp;Онучкина, 72"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adfdd289b20aa2710e7c02ffde60ffa65ff74653c85f0fe03d1a80b7495ca7e89&amp;source=constructor" width="100%" height="300" frameborder="0"></iframe></div>
         <div class="contacts-container__map-holder">
-          <div class="contacts-container__map-holder-btn">
-            <div class="contacts-container__map-holder-btn-icon">
-              <use xlink:href="#spriteIcon-icon-expand-map">  </use>
-            </div>
-          </div>
+          <div class="contacts-container__map-holder-btn"></div>
         </div>
       </div>
       <div class="container" data-aos="fade-up">
@@ -141,7 +137,7 @@
                 <div class="contacts-container__subheading-icon"><img src="/images/flag-left.bbedebec.svg"></div>
                 <div class="contacts-container__subheading">Расположение</div>
               </div>
-              <div class="contacts-item">
+              <div class="contacts-item with-map">
                 <div class="contacts-container-2col">
                   <div class="contacts-container-2col__col1">офис</div>
                   <div class="contacts-container-2col__col2">
@@ -155,15 +151,11 @@
                       <div class="contacts-container__btn-icon"><img src="/images/flag-right.922a0b1d.svg"></div><span class="contacts-container__btn-title">Проложить маршрут</span></a>
                   </div>
                 </div>
-                <div class="contacts-container__map-container map-desktop">
-                  <div class="contacts-container__map" data-lat="47.093961" data-lng="39.855662" data-address="346703, Ростовская обл., Аксайский &lt;nobr&gt;р-н&lt;/nobr&gt;, х. Ленина, ул.&amp;nbsp;Онучкина, 72"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adfdd289b20aa2710e7c02ffde60ffa65ff74653c85f0fe03d1a80b7495ca7e89&amp;source=constructor" width="100%" height="300" frameborder="0"></iframe></div>
-                  <div class="contacts-container__map-holder">
-                    <div class="contacts-container__map-holder-btn">
-                      <div class="contacts-container__map-holder-btn-icon">
-                        <use xlink:href="#spriteIcon-icon-expand-map"></use>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+              <div class="contacts-container__map-container map-desktop">
+                <div class="contacts-container__map" data-lat="47.093961" data-lng="39.855662" data-address="346703, Ростовская обл., Аксайский &lt;nobr&gt;р-н&lt;/nobr&gt;, х. Ленина, ул.&amp;nbsp;Онучкина, 72"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adfdd289b20aa2710e7c02ffde60ffa65ff74653c85f0fe03d1a80b7495ca7e89&amp;source=constructor" width="100%" height="300" frameborder="0"></iframe></div>
+                <div class="contacts-container__map-holder">
+                  <div class="contacts-container__map-holder-btn"></div>
                 </div>
               </div>
             </div>
@@ -192,9 +184,9 @@
     </main>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>AOS.init();</script>
-    <div class="footer-sitemap abnormal-wrapper">
+    <div class="footer-sitemap abnormal-wrapper footer-full-screen">
       <div class="container">
-        <div class="footer-sitemap__holder abnormal-wrapper__holder footer-menu-desktop">
+        <div class="footer-sitemap__holder abnormal-wrapper__holder">
           <div class="footer-left">
             <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/">Главная</a></div>
             <div class="footer-sitemap__section">
@@ -209,11 +201,11 @@
               </div>
             </div>
             <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/printing.html">Возможности печати</a></div>
+          </div>
+          <div class="footer-right">    
             <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/offers.html">Специальные возможности</a>
               <div class="footer-sitemap__subsections"><a class="footer-sitemap__subsection" href="">Спец предложение 1</a><a class="footer-sitemap__subsection" href="">Спец предложение 2</a></div>
             </div>
-          </div>
-          <div class="footer-right">     
             <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/stamps.html">Готовые штампы
                 <div class="footer-sitemap__icon"><img src="/images/arrow-right.1cb82372.svg"></div></a>
               <div class="footer-sitemap__subsections"><a class="footer-sitemap__subsection" href="">Каталог готовых штампов</a><a class="footer-sitemap__subsection" href="">Требования к дизайн-макетам</a></div>
@@ -226,9 +218,41 @@
             </div>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="footer-sitemap abnormal-wrapper footer-medium-screen">
+      <div class="container">
+        <div class="footer-sitemap__holder abnormal-wrapper__holder footer-menu-desktop">
+          <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/">Главная</a></div>
+          <div class="footer-sitemap__section">
+            <div><a class="footer-sitemap__title" href="/industries.html">Области применения
+                <div class="footer-sitemap__icon"><img src="/images/arrow-right.1cb82372.svg"></div></a>
+              <div class="footer-sitemap__subsections">
+                <div><a class="footer-sitemap__subsection" href="">Ликеро-водочная продукция</a></div>
+                <div><a class="footer-sitemap__subsection" href="">Мясо-молочная продукция</a></div>
+                <div><a class="footer-sitemap__subsection" href="">Голография</a></div>
+                <div><a class="footer-sitemap__subsection" href="">Праздничная этикетка</a></div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/printing.html">Возможности печати    </a></div>
+          <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/offers.html">Специальные возможности</a>
+            <div class="footer-sitemap__subsections"><a class="footer-sitemap__subsection" href="">Спец предложение 1</a><a class="footer-sitemap__subsection" href="">Спец предложение 2</a></div>
+          </div>
+          <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/stamps.html">Готовые штампы
+              <div class="footer-sitemap__icon"><img src="/images/arrow-right.1cb82372.svg"></div></a>
+            <div class="footer-sitemap__subsections"><a class="footer-sitemap__subsection" href="">Каталог готовых штампов</a><a class="footer-sitemap__subsection" href="">Требования к дизайн-макетам</a></div>
+          </div>
+          <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/video.html">Видео
+              <div class="footer-sitemap__icon"><img src="/images/arrow-right.1cb82372.svg"></div></a></div>
+          <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/contacts.html">Контакты
+              <div class="footer-sitemap__icon"><img src="/images/arrow-right.1cb82372.svg"></div></a>
+            <div class="footer-sitemap__subsections"><a class="footer-sitemap__subsection" href="">Дилеры</a><a class="footer-sitemap__subsection" href="">Филиалы</a></div>
+          </div>
+        </div>
         <div class="footer-sitemap__holder abnormal-wrapper__holder footer-menu-mobile">
           <div class="accordeon accordeon-footer">
-            <ul class="footer-left">
+            <ul>
               <li class="footer-sitemap__section"><a class="footer-sitemap__title" href="/">Главная</a></li>
               <li class="footer-sitemap__section">
                 <input type="checkbox" checked="">
@@ -244,7 +268,7 @@
                 <p class="footer-sitemap__subsections"><span><a class="footer-sitemap__subsection" href="">Спец предложение 1</a><a class="footer-sitemap__subsection" href="">Спец предложение 2</a></span></p>
               </li>
             </ul>
-            <ul class="footer-right">     
+            <ul>     
               <li class="footer-sitemap__section">
                 <input type="checkbox" checked="">
                 <div class="footer-sitemap__icon"><img src="/images/arrow-right.1cb82372.svg"></div><a class="footer-sitemap__title" href="/stamps.html">Готовые штампы</a>
@@ -254,22 +278,18 @@
               <li class="footer-sitemap__section">
                 <input type="checkbox" checked="">
                 <div class="footer-sitemap__icon"><img src="/images/arrow-right.1cb82372.svg"></div><a class="footer-sitemap__title" href="/contacts.html">Контакты</a>
-                <p class="footer-sitemap__subsections"><span><a class="footer-sitemap__subsection" href="">Дилеры</a><a class="footer-sitemap__subsection" href="">Филиалы      </a></span></p>
+                <p class="footer-sitemap__subsections"><span><a class="footer-sitemap__subsection" href="">Дилеры</a><a class="footer-sitemap__subsection" href="">Филиалы   </a></span></p>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      <div class="bottom-footer abnormal-wrapper footer-desktop">
-        <div class="container bottom-footer-container">
-          <div class="bottom-footer__holder abnormal-wrapper__holder">
-            <div class="bottom-footer__left">
-              <div class="bottom-footer__unit bottom-footer__unit--address">
-                <div class="footer-addresss">
-                  346703, Ростовская обл., Аксайский район,
-                  х. Ленина, ул. Онучкина, 72
-                </div>
-              </div>
+    </div>
+    <div class="bottom-footer abnormal-wrapper bottom-wrapper-full">
+      <div class="bottom-footer__holder abnormal-wrapper__holder">
+        <div class="bottom-footer__unit bottom-footer__unit--contacts">
+          <div class="footer-contacts">
+            <div class="footer-contacts__left">
               <div class="bottom-footer__unit bottom-footer__unit--social">
                 <div class="footer-socials"><a class="social-links__link" href="https://www.facebook.com/atlantispakcompany/">
                     <div class="social-links__icon social-links__icon--fb"><img src="/images/footer-fb.340ff45d.svg"></div></a><a class="social-links__link" href="https://vk.com/public87808028">
@@ -278,16 +298,11 @@
                     <div class="social-links__icon social-links__icon--youtube"><img src="/images/footer-youtube.05e0f6ba.svg"></div></a></div>
               </div>
             </div>
-            <div class="bottom-footer__right">
-              <div class="bottom-footer__unit bottom-footer__unit--contacts">
-                <div class="footer-contacts">
-                  <div class="footer-contacts__left"><a href="tel:88005008585">8 800 500-85-85 </a><span class="footer-contacts--minus">— </span><span class="footer-contacts--location">Россия</span><br><a class="footer-contacts--mail" href="mailto:info@atlantis-pak.ru">info@atlantis-pak.ru</a></div>
-                  <div class="footer-contacts__right"><a href="tel:+78005008585">+7 800 500-85-85 </a><span class="footer-contacts--minus">— </span><span class="footer-contacts--location">Зарубежье</span></div>
-                </div>
-              </div>
-              <div class="bottom-footer__unit bottom-footer__unit--copyright">
-                <div class="footer-copyright">
-                  <div class="footer-copyright__grey">1993 -<span class="footer-copyright__year"> </span>2019 Яркое решение</div><a class="footer-copyright__white" href="http://gridworks.ru" target="_blank">Разработано в Gridworks</a>
+            <div class="footer-contacts__center">
+              <div class="bottom-footer__unit bottom-footer__unit--address">
+                <div class="footer-addresss">
+                  346703, Ростовская обл., Аксайский район, 
+                  х. Ленина, ул. Онучкина, 72
                 </div>
               </div>
               <div class="bottom-footer__unit bottom-footer__unit--app-buttons">
@@ -306,8 +321,21 @@
                       <div class="app-buttons__icon"><img src="/images/appgallery.d3358b93.svg"></div>
                       <div class="app-button__text">
                         <div class="app-button__title">ОТКРОЙТЕ В</div>
-                        <div class="app-button__subtitle">AppGallery   </div>
+                        <div class="app-button__subtitle">AppGallery</div>
                       </div></a></div>
+                </div>
+              </div>
+            </div>
+            <div class="footer-contacts__right">
+              <div class="numbers__wrapper">
+                <div class="number-one"><a href="tel:+78005008585">8 800 500-85-85 </a><span class="footer-contacts--minus">— </span><span class="footer-contacts--location">Россия</span><br><a class="footer-contacts--mail" href="mailto:info@atlantis-pak.ru">info@atlantis-pak.ru</a></div>
+                <div class="number-two"><a href="tel:+78005008585">+7 800 500-85-85 </a><span class="footer-contacts--minus">— </span><span class="footer-contacts--location">Зарубежье        </span></div>
+              </div>
+              <div class="bottom-footer__unit bottom-footer__unit--copyright">
+                <div class="footer-copyright">
+                  <div class="footer-copyright__grey">1993-<span class="footer-copyright__year"> </span> 
+                    1993-2019 Яркое решение
+                  </div><a class="footer-copyright__white" href="http://gridworks.ru" target="_blank">Разработано в Gridworks        </a>
                 </div>
               </div>
               <div class="footer-agrocom"><a class="footer-agrocom__link" href="http://agrocomgroup.ru/" target="_blank">
@@ -316,61 +344,117 @@
           </div>
         </div>
       </div>
-      <div class="bottom-footer abnormal-wrapper footer-mobile">
-        <div class="container bottom-footer-container">
-          <div class="bottom-footer__holder abnormal-wrapper__holder">
-            <div class="bottom-footer__right">
-              <div class="bottom-footer__unit bottom-footer__unit--contacts">
-                <div class="footer-contacts">
-                  <div class="footer-contacts__left"><a href="tel:88005008585">8 800 500-85-85 </a><span class="footer-contacts--minus">— </span><span class="footer-contacts--location">Россия</span><br><a class="footer-contacts--mail" href="mailto:info@atlantis-pak.ru">info@atlantis-pak.ru</a></div>
-                  <div class="footer-contacts__right"><a href="tel:+78005008585">+7 800 500-85-85 </a><span class="footer-contacts--minus">— </span><span class="footer-contacts--location">Зарубежье</span></div>
-                </div>
+    </div>
+    <div class="bottom-footer abnormal-wrapper footer-desktop bottom-wrapper-medium">
+      <div class="container bottom-footer-container">
+        <div class="bottom-footer__holder abnormal-wrapper__holder">
+          <div class="bottom-footer__left">
+            <div class="bottom-footer__unit bottom-footer__unit--address">
+              <div class="footer-addresss">
+                346703, Ростовская обл., Аксайский район,
+                х. Ленина, ул. Онучкина, 72
               </div>
             </div>
-            <div class="bottom-footer__left">
-              <div class="bottom-footer__unit bottom-footer__unit--address">
-                <div class="footer-addresss">
-                  346703, Ростовская обл., Аксайский район,
-                  х. Ленина, ул. Онучкина, 72
-                </div>
-              </div>
-              <div class="bottom-footer__unit bottom-footer__unit--social">
-                <div class="footer-socials">
-                  <div class="social-links"><a class="social-links__link" href="https://www.facebook.com/atlantispakcompany/">
-                      <div class="social-links__icon social-links__icon--fb"><img src="/images/footer-fb.340ff45d.svg"></div></a><a class="social-links__link" href="https://vk.com/public87808028">
-                      <div class="social-links__icon social-links__icon--vk"><img src="/images/footer-vk.2230160d.svg"></div></a><a class="social-links__link" href="https://www.instagram.com/atlantis_pak_official/">
-                      <div class="social-links__icon social-links__icon--instagram"><img src="/images/footer-insta.2ecab634.svg"></div></a><a class="social-links__link" href="https://www.youtube.com/channel/UCCTvEZ5LA8mKi3D571FcxoQ">
-                      <div class="social-links__icon social-links__icon--youtube"><img src="/images/footer-youtube.05e0f6ba.svg"></div></a></div>
-                </div>
-              </div>
-              <div class="bottom-footer__unit bottom-footer__unit--copyright">
-                <div class="footer-copyright">
-                  <div class="footer-copyright__grey">1993 -<span class="footer-copyright__year"> </span>2019 Яркое решение</div><a class="footer-copyright__white" href="http://gridworks.ru" target="_blank">Разработано в Gridworks</a>
-                </div>
-              </div>
-              <div class="bottom-footer__unit bottom-footer__unit--app-buttons">
-                <div class="footer-app-button">
-                  <div class="app-buttons"><a class="app-buttons__link" href="https://apps.apple.com/au/app/atlantis-pak/id1160837268">
-                      <div class="app-buttons__iconhttps"><img src="/images/appstore.e8d90930.svg"></div>
-                      <div class="app-button__text">
-                        <div class="app-button__title">ЗАГРУЗИТЕ В  </div>
-                        <div class="app-button__subtitle">App Store  </div>
-                      </div></a><a class="app-buttons__link" href="https://play.google.com/store/apps/details?id=ru.atlantispak.catalog&amp;hl=ru">
-                      <div class="app-buttons__icon"><img src="/images/googleplay.3a2a2ad7.svg"></div>
-                      <div class="app-button__text">
-                        <div class="app-button__title">ДОСТУПНО В </div>
-                        <div class="app-button__subtitle">Google Play    </div>
-                      </div></a><a class="app-buttons__link" href="https://appgallery.huawei.com/#/app/C102595025">
-                      <div class="app-buttons__icon"><img src="/images/appgallery.d3358b93.svg"></div>
-                      <div class="app-button__text">
-                        <div class="app-button__title">ОТКРОЙТЕ В</div>
-                        <div class="app-button__subtitle">AppGallery   </div>
-                      </div></a></div>
-                </div>
-              </div>
-              <div class="footer-agrocom"><a class="footer-agrocom__link" href="http://agrocomgroup.ru/" target="_blank">
-                  <div class="footer-agrocom__logo"><img src="/images/agrocom-logo.3f44a9fd.svg"></div></a></div>
+            <div class="bottom-footer__unit bottom-footer__unit--social">
+              <div class="footer-socials"><a class="social-links__link" href="https://www.facebook.com/atlantispakcompany/">
+                  <div class="social-links__icon social-links__icon--fb"><img src="/images/footer-fb.340ff45d.svg"></div></a><a class="social-links__link" href="https://vk.com/public87808028">
+                  <div class="social-links__icon social-links__icon--vk"><img src="/images/footer-vk.2230160d.svg"></div></a><a class="social-links__link" href="https://www.instagram.com/atlantis_pak_official/">
+                  <div class="social-links__icon social-links__icon--instagram"><img src="/images/footer-insta.2ecab634.svg"></div></a><a class="social-links__link" href="https://www.youtube.com/channel/UCCTvEZ5LA8mKi3D571FcxoQ">
+                  <div class="social-links__icon social-links__icon--youtube"><img src="/images/footer-youtube.05e0f6ba.svg"></div></a></div>
             </div>
+          </div>
+          <div class="bottom-footer__right">
+            <div class="bottom-footer__unit bottom-footer__unit--contacts">
+              <div class="footer-contacts">
+                <div class="footer-contacts__left"><a href="tel:88005008585">8 800 500-85-85 </a><span class="footer-contacts--minus">— </span><span class="footer-contacts--location">Россия</span><br><a class="footer-contacts--mail" href="mailto:info@atlantis-pak.ru">info@atlantis-pak.ru</a></div>
+                <div class="footer-contacts__right"><a href="tel:+78005008585">+7 800 500-85-85 </a><span class="footer-contacts--minus">— </span><span class="footer-contacts--location">Зарубежье</span></div>
+              </div>
+            </div>
+            <div class="bottom-footer__unit bottom-footer__unit--copyright">
+              <div class="footer-copyright">
+                <div class="footer-copyright__grey">1993 -<span class="footer-copyright__year"> </span>2019 Яркое решение</div><a class="footer-copyright__white" href="http://gridworks.ru" target="_blank">Разработано в Gridworks</a>
+              </div>
+            </div>
+            <div class="bottom-footer__unit bottom-footer__unit--app-buttons">
+              <div class="footer-app-button">
+                <div class="app-buttons"><a class="app-buttons__link" href="https://apps.apple.com/au/app/atlantis-pak/id1160837268">
+                    <div class="app-buttons__icon"><img src="/images/appstore.e8d90930.svg"></div>
+                    <div class="app-button__text">
+                      <div class="app-button__title">ЗАГРУЗИТЕ В  </div>
+                      <div class="app-button__subtitle">App Store  </div>
+                    </div></a><a class="app-buttons__link" href="https://play.google.com/store/apps/details?id=ru.atlantispak.catalog&amp;hl=ru">
+                    <div class="app-buttons__icon"><img src="/images/googleplay.3a2a2ad7.svg"></div>
+                    <div class="app-button__text">
+                      <div class="app-button__title">ДОСТУПНО В </div>
+                      <div class="app-button__subtitle">Google Play    </div>
+                    </div></a><a class="app-buttons__link" href="https://appgallery.huawei.com/#/app/C102595025">
+                    <div class="app-buttons__icon"><img src="/images/appgallery.d3358b93.svg"></div>
+                    <div class="app-button__text">
+                      <div class="app-button__title">ОТКРОЙТЕ В</div>
+                      <div class="app-button__subtitle">AppGallery   </div>
+                    </div></a></div>
+              </div>
+            </div>
+            <div class="footer-agrocom"><a class="footer-agrocom__link" href="http://agrocomgroup.ru/" target="_blank">
+                <div class="footer-agrocom__logo"><img src="/images/agrocom-logo.3f44a9fd.svg"></div></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-footer abnormal-wrapper footer-mobile">
+      <div class="container bottom-footer-container">
+        <div class="bottom-footer__holder abnormal-wrapper__holder">
+          <div class="bottom-footer__right">
+            <div class="bottom-footer__unit bottom-footer__unit--contacts">
+              <div class="footer-contacts">
+                <div class="footer-contacts__left"><a href="tel:88005008585">8 800 500-85-85 </a><span class="footer-contacts--minus">— </span><span class="footer-contacts--location">Россия</span><br><a class="footer-contacts--mail" href="mailto:info@atlantis-pak.ru">info@atlantis-pak.ru</a></div>
+                <div class="footer-contacts__right"><a href="tel:+78005008585">+7 800 500-85-85 </a><span class="footer-contacts--minus">— </span><span class="footer-contacts--location">Зарубежье</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="bottom-footer__left">
+            <div class="bottom-footer__unit bottom-footer__unit--address">
+              <div class="footer-addresss">
+                346703, Ростовская обл., Аксайский район,
+                х. Ленина, ул. Онучкина, 72
+              </div>
+            </div>
+            <div class="bottom-footer__unit bottom-footer__unit--social">
+              <div class="footer-socials">
+                <div class="social-links"><a class="social-links__link" href="https://www.facebook.com/atlantispakcompany/">
+                    <div class="social-links__icon social-links__icon--fb"><img src="/images/footer-fb.340ff45d.svg"></div></a><a class="social-links__link" href="https://vk.com/public87808028">
+                    <div class="social-links__icon social-links__icon--vk"><img src="/images/footer-vk.2230160d.svg"></div></a><a class="social-links__link" href="https://www.instagram.com/atlantis_pak_official/">
+                    <div class="social-links__icon social-links__icon--instagram"><img src="/images/footer-insta.2ecab634.svg"></div></a><a class="social-links__link" href="https://www.youtube.com/channel/UCCTvEZ5LA8mKi3D571FcxoQ">
+                    <div class="social-links__icon social-links__icon--youtube"><img src="/images/footer-youtube.05e0f6ba.svg"></div></a></div>
+              </div>
+            </div>
+            <div class="bottom-footer__unit bottom-footer__unit--copyright">
+              <div class="footer-copyright">
+                <div class="footer-copyright__grey">1993 -<span class="footer-copyright__year"> </span>2019 Яркое решение</div><a class="footer-copyright__white" href="http://gridworks.ru" target="_blank">Разработано в Gridworks</a>
+              </div>
+            </div>
+            <div class="bottom-footer__unit bottom-footer__unit--app-buttons">
+              <div class="footer-app-button">
+                <div class="app-buttons"><a class="app-buttons__link" href="https://apps.apple.com/au/app/atlantis-pak/id1160837268">
+                    <div class="app-buttons__iconhttps"><img src="/images/appstore.e8d90930.svg"></div>
+                    <div class="app-button__text">
+                      <div class="app-button__title">ЗАГРУЗИТЕ В  </div>
+                      <div class="app-button__subtitle">App Store  </div>
+                    </div></a><a class="app-buttons__link" href="https://play.google.com/store/apps/details?id=ru.atlantispak.catalog&amp;hl=ru">
+                    <div class="app-buttons__icon"><img src="/images/googleplay.3a2a2ad7.svg"></div>
+                    <div class="app-button__text">
+                      <div class="app-button__title">ДОСТУПНО В </div>
+                      <div class="app-button__subtitle">Google Play    </div>
+                    </div></a><a class="app-buttons__link" href="https://appgallery.huawei.com/#/app/C102595025">
+                    <div class="app-buttons__icon"><img src="/images/appgallery.d3358b93.svg"></div>
+                    <div class="app-button__text">
+                      <div class="app-button__title">ОТКРОЙТЕ В</div>
+                      <div class="app-button__subtitle">AppGallery   </div>
+                    </div></a></div>
+              </div>
+            </div>
+            <div class="footer-agrocom"><a class="footer-agrocom__link" href="http://agrocomgroup.ru/" target="_blank">
+                <div class="footer-agrocom__logo"><img src="/images/agrocom-logo.3f44a9fd.svg"></div></a></div>
           </div>
         </div>
       </div>
