@@ -20,6 +20,15 @@
  
 }
 
+.breadcrumbs a.breadcrumbs__item.offer-link {
+  opacity: 1!important;
+}
+
+.breadcrumbs a.breadcrumbs__item.offer-link:hover {
+  opacity: 0.7!important;
+}
+
+
 p.offer-example__text {
   font-weight: 500;
   font-size: 18px;
