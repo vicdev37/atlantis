@@ -190,7 +190,8 @@ color: #111721;
         background: #215EC3; }
 
 
-.industries {
+.industries
+{
   .item-modal {
     position: fixed;
     top: 0;
@@ -224,21 +225,14 @@ color: #111721;
   .item-modal__wrapper.item-modal__wrapper-industries {
     display: none; 
     
-  .item-modal__bg {
+  .item-modal__bg,
+  .stumps-modal__bg {
     position: relative;
     z-index:1;
-    &:before {
-      z-index:-1;
-      position:absolute;
-      bottom:0;
-      content: '';
-      width: 100%;
-      height: 100%;
-      background-image: url(../images/gallery-back.png);
-      background-repeat: no-repeat;
-      background-position: bottom;
-      opacity:0.4;
-    }
+  }
+
+  .stumps-modal__wrapper.item-modal__wrapper-stumps {
+    display: block;
   }
 
   .gallery__slide.gallery__slide--active {
@@ -256,13 +250,14 @@ color: #111721;
   .item-modal__holder {
     width: 704px;
     height: 452px; }
-  .item-modal__bg {
+  .item-modal__bg,
+  .stumps-modal__bg {
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
     z-index: 300;
-    background: rgba(255, 255, 255, 1);
+    background: rgba(255, 255, 255, 0.9);
     position: fixed; }
   .item-modal__close {
     width: 24px;
@@ -281,22 +276,62 @@ color: #111721;
   }
       
 
-.industries-product-gallery {
+.swiper-container.swiper-container-industries {
   width: 500px;
-  height: 500px;
-  // .gallery__slide {
-  //   width: 100%;
-  // }
-  .gallery__slide--active {
+  height: 600px;
+
+  .swiper-slide-industries__img {
     width: 100%;
+    height: 500px;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .swiper-slide-industries__description {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #111721;
+    padding: 20px;
+  }
+  .swiper-button-prev.swiper-button-prev-industries
+   {
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    background: rgba(254, 254, 254, 0.1);
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    top: 76.4%;
+    left: 74%!important;
+    &:hover {
+      background: #DCE3EF;
+      opacity: 0.3;
+    }
   }
 
-  .gallery__buttons-holder {
-    width: 100%;
-  }
+  .swiper-button-next-industries {
+    width: 64px;
+    height: 64px;
+    background: rgba(254, 254, 254, 0.1);
+    right: 0;
+    top: 76.4%;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
 
-  .gallery__slide--active + .gallery__slide {
-    width: inherit;
+    &:hover {
+      background: #DCE3EF;
+      opacity: 0.3;
+    }
   }
 }
 

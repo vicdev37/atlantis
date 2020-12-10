@@ -80,30 +80,59 @@ block content
         a.item-modal__close
           img(src="../../images/close.svg")
         .item-modal
-          .offer-example-slider__wrapper(data-aos='fade-up')
-            .news-detail-page__content
-              .news-detail-page__gallery
-                .gallery.industries-product-gallery
-                  .gallery__holder
-                    .gallery__slide.gallery__slide--active(style='background-image:url(http://lorempixel.com/640/448/business/1)')
-                      .gallery-slide__description
-                        | Стикер для бренда <br> “Кремлевские Колбасы”
+          .swiper-container.swiper-container-industries 
+            .swiper-wrapper.swiper-wrapper-industries
+              .swiper-slide.swiper-slide-industries
+                  .swiper-slide-industries__img
+                    img(src="../../images/gallery-1.jpg")
+                  .swiper-slide-industries__description 
+                    | Стикер для бренда <br> “Кремлевские Колбасы”
+              .swiper-slide.swiper-slide-industries
+                  .swiper-slide-industries__img
+                    img(src="../../images/gallery-2.jpg")
+                  .swiper-slide-industries__description 
+                    | Стикер для бренда <br> “Секреты Мастеров” 
+              .swiper-slide.swiper-slide-industries
+                  .swiper-slide-industries__img
+                    img(src="../../images/gallery-3.jpg")
+                  .swiper-slide-industries__description 
+                    | Стикер для продукции бренда <br> “КампоМос”
 
-                    .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/2)')
-                      .gallery-slide__description
-                        | Стикер для бренда <br> “Кремлевские Колбасы”
-                    .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/3)')
-                      .gallery-slide__description
-                          | Стикер для бренда <br> “Кремлевские Колбасы”
-                    .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/1)')
-                    .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/2)')
-                    .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/3)')
-                  .gallery__buttons-holder
-                    a.gallery__button.gallery__button--prev(href='')
-                      .gallery__button-icon
-                        img(src="../../images/arrow-right.svg")
-                    a.gallery__button.gallery__button--next(href='')
-                      .gallery__button-icon
-                        img(src="../../images/arrow-right.svg")
+
+
+            .swiper-button-prev.swiper-button-prev-industries
+              img(src="../../images/slider-arrow-left.svg")
+            .swiper-button-next.swiper-button-next-industries
+              img(src="../../images/slider-arrow-right.svg")
+
+
+
+
+
+          //- .offer-example-slider__wrapper(data-aos='fade-up')
+          //-   .news-detail-page__content
+          //-     .news-detail-page__gallery
+          //-       .gallery.industries-product-gallery
+          //-         .gallery__holder
+          //-           .gallery__slide.gallery__slide--active(style='background-image:url(http://lorempixel.com/640/448/business/1)')
+          //-             .gallery-slide__description
+          //-               | Стикер для бренда <br> “Кремлевские Колбасы”
+
+          //-           .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/2)')
+          //-             .gallery-slide__description
+          //-               | Стикер для бренда <br> “Кремлевские Колбасы”
+          //-           .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/3)')
+          //-             .gallery-slide__description
+          //-                 | Стикер для бренда <br> “Кремлевские Колбасы”
+          //-           .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/1)')
+          //-           .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/2)')
+          //-           .gallery__slide(style='background-image:url(http://lorempixel.com/640/448/business/3)')
+          //-         .gallery__buttons-holder
+          //-           a.gallery__button.gallery__button--prev(href='')
+          //-             .gallery__button-icon
+          //-               img(src="../../images/arrow-right.svg")
+          //-           a.gallery__button.gallery__button--next(href='')
+          //-             .gallery__button-icon
+          //-               img(src="../../images/arrow-right.svg")
               
 
