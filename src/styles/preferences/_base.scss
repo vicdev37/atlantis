@@ -3,6 +3,8 @@
 @include font-face('Montserrat', "../fonts/Montserrat-Light", $light, normal);
 @include font-face('Montserrat', "../fonts/Montserrat-ExtraBold", $extrabold, normal);
 @include font-face('Montserrat', "../fonts/Montserrat-SemiBold", $semibold, normal);
+@include font-face('Montserrat', "../fonts/Montserrat-Medium", $medium, normal);
+@include font-face('Montserrat', "../fonts/Montserrat-Black", $black, normal);
 
 
 * {
@@ -38,7 +40,6 @@ body {
 .container {
   margin: 0 auto;
   min-width: 1024px;
-  // max-width: 1024px;
   max-width: 1664px;
   padding-left: 128px;
   padding-right: 128px;
@@ -67,6 +68,8 @@ input {
     padding-left: 32px;
     padding-right: 32px;
   }
+
+  
 }
 
 @media(max-width: 351px) {

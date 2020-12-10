@@ -24,15 +24,19 @@
     }
   }
   .breadcrumbs__item {
+    font-weight: 500;
     text-decoration: none;
     color: inherit; }
   .breadcrumbs a.breadcrumbs__item:hover {
     opacity: 0.7; }
  
 .industries-filter__wrapper {
-  padding-left: 128px;
   position: relative;
   height: 92px;
+}
+
+.industries-filter-wrapper-mobile {
+  display: none
 }
 .industries-filter {
   position: absolute;
@@ -95,7 +99,8 @@ color: #111721;
 
 .product-block {
   position: relative;
-  width: 252px;
+  // width: 252px;
+  width: 100%;
   margin-left: 6px;
   img {
     width: 100%;
@@ -116,8 +121,13 @@ color: #111721;
 
 
 .product-block.long {
-  width: 381px;
+  // width: 381px;
+  width: 100%;
 } 
+
+.news-detail-page__content {
+  height: 100%;
+}
 
 .product-block__description {
   text-align: center;
@@ -149,8 +159,6 @@ color: #111721;
   display: -ms-flexbox;
   display: flex;
   font-family: 'Montserrat';
-  font-family: 'Avenir Next Demi';
-  font-weight: bold;
   font-weight: 600;
   font-size: 16px;
   line-height: 22px;
@@ -182,16 +190,84 @@ color: #111721;
         background: #215EC3; }
 
 
+.item-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .item-modal__wrapper {
+    display: none; }
+  .item-modal__holder {
+    width: 704px;
+    height: 452px; }
+  .item-modal__bg {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 300;
+    background: rgba(255, 255, 255, 0.9);
+    position: fixed; }
+  .item-modal__close {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 48px;
+    top: 48px;
+    cursor: pointer; 
+    z-index: 1000;
+    }
+  .item-modal__close-icon {
+    max-width: 24px;
+    max-height: 24px; }
+
+.industries-product-gallery {
+  width: 710px;
+  height: 710px;
+  // .gallery__slide {
+  //   width: 100%;
+  // }
+  .gallery__slide--active {
+    width: 100%;
+  }
+
+  .gallery__buttons-holder {
+    width: 100%;
+  }
+
+  .gallery__slide--active + .gallery__slide {
+    width: inherit;
+  }
+}
+
+
+
 @media(max-width: 499px) {
   .breadcrumbs {
     display: none;
   }
 
-  .industries-filter__wrapper {
+  .industries-filter-wrapper-mobile {
+    display: block;
     padding-left: 0;
     overflow-x: auto;
     overflow-y: hidden;
     &::-webkit-scrollbar { width: 0; }
+  }
+
+  .industries-filter__wrapper.industries-filter-wrapper-desktop {
+    display: none;
   }
   .industries-filter {
     

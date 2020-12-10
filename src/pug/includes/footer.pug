@@ -1,6 +1,6 @@
-.footer-sitemap.abnormal-wrapper
+.footer-sitemap.abnormal-wrapper.footer-full-screen
   .container
-    .footer-sitemap__holder.abnormal-wrapper__holder.footer-menu-desktop
+    .footer-sitemap__holder.abnormal-wrapper__holder
       .footer-left
         .footer-sitemap__section
           a.footer-sitemap__title(href='/') Главная
@@ -22,13 +22,15 @@
         .footer-sitemap__section
           a.footer-sitemap__title(href='../pages/printing.pug')
             | Возможности печати
+      .footer-right     
         .footer-sitemap__section
           a.footer-sitemap__title(href='../pages/offers.pug')
             | Специальные возможности
           .footer-sitemap__subsections
             a.footer-sitemap__subsection(href='') Спец предложение 1
             a.footer-sitemap__subsection(href='') Спец предложение 2
-      .footer-right      
+      
+        
         .footer-sitemap__section
           a.footer-sitemap__title(href='../pages/stamps.pug')
             | Готовые штампы
@@ -50,10 +52,67 @@
           .footer-sitemap__subsections
             a.footer-sitemap__subsection(href='') Дилеры
             a.footer-sitemap__subsection(href='') Филиалы
+      
+          
+.footer-sitemap.abnormal-wrapper.footer-medium-screen
+  .container
+    .footer-sitemap__holder.abnormal-wrapper__holder.footer-menu-desktop
+      .footer-sitemap__section
+        a.footer-sitemap__title(href='/') Главная
+      .footer-sitemap__section
+        div
+          a.footer-sitemap__title(href='../pages/industries.pug')
+            | Области применения
+            .footer-sitemap__icon
+              img(src='../../images/arrow-right.svg')
+          .footer-sitemap__subsections
+            div
+              a.footer-sitemap__subsection(href='') Ликеро-водочная продукция
+            div
+              a.footer-sitemap__subsection(href='') Мясо-молочная продукция
+            div
+              a.footer-sitemap__subsection(href='') Голография
+            div
+              a.footer-sitemap__subsection(href='') Праздничная этикетка
+      .footer-sitemap__section
+        a.footer-sitemap__title(href='../pages/printing.pug')
+          | Возможности печати    
+      .footer-sitemap__section
+        a.footer-sitemap__title(href='../pages/offers.pug')
+          | Специальные возможности
+        .footer-sitemap__subsections
+          a.footer-sitemap__subsection(href='') Спец предложение 1
+          a.footer-sitemap__subsection(href='') Спец предложение 2
+      
+        
+      .footer-sitemap__section
+        a.footer-sitemap__title(href='../pages/stamps.pug')
+          | Готовые штампы
+          .footer-sitemap__icon
+            img(src='../../images/arrow-right.svg')
+        .footer-sitemap__subsections
+          a.footer-sitemap__subsection(href='') Каталог готовых штампов
+          a.footer-sitemap__subsection(href='') Требования к дизайн-макетам
+      .footer-sitemap__section
+        a.footer-sitemap__title(href='../pages/video.pug')
+          | Видео
+          .footer-sitemap__icon
+            img(src='../../images/arrow-right.svg')
+      .footer-sitemap__section
+        a.footer-sitemap__title(href='../pages/contacts.pug')
+          | Контакты
+          .footer-sitemap__icon
+            img(src='../../images/arrow-right.svg')
+        .footer-sitemap__subsections
+          a.footer-sitemap__subsection(href='') Дилеры
+          a.footer-sitemap__subsection(href='') Филиалы
+    
+        
+    
 
     .footer-sitemap__holder.abnormal-wrapper__holder.footer-menu-mobile
       .accordeon.accordeon-footer
-        ul.footer-left
+        ul
           li.footer-sitemap__section
             a.footer-sitemap__title(href='/') Главная
           li.footer-sitemap__section
@@ -82,7 +141,7 @@
               span
                 a.footer-sitemap__subsection(href='') Спец предложение 1
                 a.footer-sitemap__subsection(href='') Спец предложение 2
-        ul.footer-right      
+        ul      
           li.footer-sitemap__section
             input(type='checkbox', checked='')
             .footer-sitemap__icon
@@ -105,15 +164,14 @@
             p.footer-sitemap__subsections
               span
                 a.footer-sitemap__subsection(href='') Дилеры
-                a.footer-sitemap__subsection(href='') Филиалы      
-  .bottom-footer.abnormal-wrapper.footer-desktop
-    .container.bottom-footer-container
-      .bottom-footer__holder.abnormal-wrapper__holder
-        .bottom-footer__left
-          .bottom-footer__unit.bottom-footer__unit--address
-            .footer-addresss
-              | 346703, Ростовская обл., Аксайский район,
-              | х. Ленина, ул. Онучкина, 72
+                a.footer-sitemap__subsection(href='') Филиалы   
+
+
+.bottom-footer.abnormal-wrapper.bottom-wrapper-full
+  .bottom-footer__holder.abnormal-wrapper__holder
+    .bottom-footer__unit.bottom-footer__unit--contacts
+      .footer-contacts
+        .footer-contacts__left
           .bottom-footer__unit.bottom-footer__unit--social
             .footer-socials
               a(href='https://www.facebook.com/atlantispakcompany/' class="social-links__link")
@@ -127,33 +185,17 @@
                   img(src="../../images/footer-insta.svg")
               a(href='https://www.youtube.com/channel/UCCTvEZ5LA8mKi3D571FcxoQ' class="social-links__link")
                 .social-links__icon.social-links__icon--youtube
-                  img(src="../../images/footer-youtube.svg")    
-        .bottom-footer__right
-          .bottom-footer__unit.bottom-footer__unit--contacts
-            .footer-contacts
-              .footer-contacts__left
-                a(href='tel:88005008585') 8 800 500-85-85 
-                span.footer-contacts--minus — 
-                span.footer-contacts--location Россия
-                br
-                a.footer-contacts--mail(href='mailto:info@atlantis-pak.ru') info@atlantis-pak.ru
-              .footer-contacts__right
-                a(href='tel:+78005008585') +7 800 500-85-85 
-                span.footer-contacts--minus — 
-                span.footer-contacts--location Зарубежье
-          
-          .bottom-footer__unit.bottom-footer__unit--copyright
-            .footer-copyright
-              .footer-copyright__grey
-                | 1993 -
-                span.footer-copyright__year  
-                | 2019 Яркое решение
-              a.footer-copyright__white(href='http://gridworks.ru' target='_blank') Разработано в Gridworks
-          
+                  img(src="../../images/footer-youtube.svg")  
+               
+        .footer-contacts__center
+          .bottom-footer__unit.bottom-footer__unit--address
+            .footer-addresss
+              | 346703, Ростовская обл., Аксайский район, 
+              | х. Ленина, ул. Онучкина, 72
           .bottom-footer__unit.bottom-footer__unit--app-buttons
             .footer-app-button
               .app-buttons
-                a.app-buttons__link(href='https://apps.apple.com/au/app/atlantis-pak/id1160837268')
+                a(href='https://apps.apple.com/au/app/atlantis-pak/id1160837268' class="app-buttons__link")
                   .app-buttons__icon
                     img(src="../../images/appstore.svg")
                   .app-button__text
@@ -176,91 +218,192 @@
                     .app-button__title
                       | ОТКРОЙТЕ В
                     .app-button__subtitle
-                      | AppGallery   
-          .footer-agrocom
-            a.footer-agrocom__link(href='http://agrocomgroup.ru/' target='_blank')
-              .footer-agrocom__logo
-                img(src="../../images/agrocom-logo.svg")
+                      | AppGallery
 
-
-  .bottom-footer.abnormal-wrapper.footer-mobile
-    .container.bottom-footer-container
-      .bottom-footer__holder.abnormal-wrapper__holder
-        .bottom-footer__right
-          .bottom-footer__unit.bottom-footer__unit--contacts
-            .footer-contacts
-              .footer-contacts__left
-                a(href='tel:88005008585') 8 800 500-85-85 
-                span.footer-contacts--minus — 
-                span.footer-contacts--location Россия
-                br
-                a.footer-contacts--mail(href='mailto:info@atlantis-pak.ru') info@atlantis-pak.ru
-              .footer-contacts__right
-                a(href='tel:+78005008585') +7 800 500-85-85 
-                span.footer-contacts--minus — 
-                span.footer-contacts--location Зарубежье
-        
-        .bottom-footer__left
-          .bottom-footer__unit.bottom-footer__unit--address
-            .footer-addresss
-              | 346703, Ростовская обл., Аксайский район,
-              | х. Ленина, ул. Онучкина, 72
-          .bottom-footer__unit.bottom-footer__unit--social
-            .footer-socials
-              .social-links
-                a(href='https://www.facebook.com/atlantispakcompany/' class="social-links__link")
-                  .social-links__icon.social-links__icon--fb
-                    img(src="../../images/footer-fb.svg")
-                a(href='https://vk.com/public87808028' class="social-links__link")
-                  .social-links__icon.social-links__icon--vk
-                    img(src="../../images/footer-vk.svg")
-                a(href='https://www.instagram.com/atlantis_pak_official/' class="social-links__link")
-                  .social-links__icon.social-links__icon--instagram
-                    img(src="../../images/footer-insta.svg")
-                a(href='https://www.youtube.com/channel/UCCTvEZ5LA8mKi3D571FcxoQ' class="social-links__link")
-                  .social-links__icon.social-links__icon--youtube
-                    img(src="../../images/footer-youtube.svg")    
+        .footer-contacts__right
+          .numbers__wrapper
+            .number-one
+              a(href="tel:+78005008585") 8 800 500-85-85 
+              span.footer-contacts--minus — 
+              span.footer-contacts--location Россия
+              br
+              a.footer-contacts--mail(href="mailto:info@atlantis-pak.ru") info@atlantis-pak.ru
+            .number-two
+              a(href="tel:+78005008585") +7 800 500-85-85 
+              span.footer-contacts--minus — 
+              span.footer-contacts--location Зарубежье        
           
           .bottom-footer__unit.bottom-footer__unit--copyright
             .footer-copyright
               .footer-copyright__grey
-                | 1993 -
-                span.footer-copyright__year  
-                | 2019 Яркое решение
-              a.footer-copyright__white(href='http://gridworks.ru' target='_blank') Разработано в Gridworks
-          
-          .bottom-footer__unit.bottom-footer__unit--app-buttons
-            .footer-app-button
-              .app-buttons
-                a(href='https://apps.apple.com/au/app/atlantis-pak/id1160837268' class="app-buttons__link")
-                  .app-buttons__iconhttps
-                    img(src="../../images/appstore.svg")
-                  .app-button__text
-                    .app-button__title
-                      | ЗАГРУЗИТЕ В  
-                    .app-button__subtitle
-                      | App Store  
-                a(href='https://play.google.com/store/apps/details?id=ru.atlantispak.catalog&hl=ru' class="app-buttons__link")
-                  .app-buttons__icon
-                    img(src="../../images/googleplay.svg")
-                  .app-button__text
-                    .app-button__title
-                      | ДОСТУПНО В 
-                    .app-button__subtitle
-                      | Google Play    
-                a(href='https://appgallery.huawei.com/#/app/C102595025' class="app-buttons__link")
-                  .app-buttons__icon
-                    img(src="../../images/appgallery.svg")
-                  .app-button__text
-                    .app-button__title
-                      | ОТКРОЙТЕ В
-                    .app-button__subtitle
-                      | AppGallery   
+                | 1993-
+                span.footer-copyright__year 
+                | 
+                | 1993-2019 Яркое решение
+              a.footer-copyright__white(href="http://gridworks.ru", target="_blank") Разработано в Gridworks        
           .footer-agrocom
             a.footer-agrocom__link(href='http://agrocomgroup.ru/' target='_blank')
               .footer-agrocom__logo
                 img(src="../../images/agrocom-logo.svg")
-              
 
 
+
+
+
+.bottom-footer.abnormal-wrapper.footer-desktop.bottom-wrapper-medium
+  .container.bottom-footer-container
+    .bottom-footer__holder.abnormal-wrapper__holder
+      .bottom-footer__left
+        .bottom-footer__unit.bottom-footer__unit--address
+          .footer-addresss
+            | 346703, Ростовская обл., Аксайский район,
+            | х. Ленина, ул. Онучкина, 72
+        .bottom-footer__unit.bottom-footer__unit--social
+          .footer-socials
+            a(href='https://www.facebook.com/atlantispakcompany/' class="social-links__link")
+              .social-links__icon.social-links__icon--fb
+                img(src="../../images/footer-fb.svg")
+            a(href='https://vk.com/public87808028' class="social-links__link")
+              .social-links__icon.social-links__icon--vk
+                img(src="../../images/footer-vk.svg")
+            a(href='https://www.instagram.com/atlantis_pak_official/' class="social-links__link")
+              .social-links__icon.social-links__icon--instagram
+                img(src="../../images/footer-insta.svg")
+            a(href='https://www.youtube.com/channel/UCCTvEZ5LA8mKi3D571FcxoQ' class="social-links__link")
+              .social-links__icon.social-links__icon--youtube
+                img(src="../../images/footer-youtube.svg")    
+      .bottom-footer__right
+        .bottom-footer__unit.bottom-footer__unit--contacts
+          .footer-contacts
+            .footer-contacts__left
+              a(href='tel:88005008585') 8 800 500-85-85 
+              span.footer-contacts--minus — 
+              span.footer-contacts--location Россия
+              br
+              a.footer-contacts--mail(href='mailto:info@atlantis-pak.ru') info@atlantis-pak.ru
+            .footer-contacts__right
+              a(href='tel:+78005008585') +7 800 500-85-85 
+              span.footer-contacts--minus — 
+              span.footer-contacts--location Зарубежье
+        
+        .bottom-footer__unit.bottom-footer__unit--copyright
+          .footer-copyright
+            .footer-copyright__grey
+              | 1993 -
+              span.footer-copyright__year  
+              | 2019 Яркое решение
+            a.footer-copyright__white(href='http://gridworks.ru' target='_blank') Разработано в Gridworks
+        
+        .bottom-footer__unit.bottom-footer__unit--app-buttons
+          .footer-app-button
+            .app-buttons
+              a(href='https://apps.apple.com/au/app/atlantis-pak/id1160837268' class="app-buttons__link")
+                .app-buttons__icon
+                  img(src="../../images/appstore.svg")
+                .app-button__text
+                  .app-button__title
+                    | ЗАГРУЗИТЕ В  
+                  .app-button__subtitle
+                    | App Store  
+              a.app-buttons__link(href='https://play.google.com/store/apps/details?id=ru.atlantispak.catalog&hl=ru')
+                .app-buttons__icon
+                  img(src="../../images/googleplay.svg")
+                .app-button__text
+                  .app-button__title
+                    | ДОСТУПНО В 
+                  .app-button__subtitle
+                    | Google Play    
+              a.app-buttons__link(href='https://appgallery.huawei.com/#/app/C102595025')
+                .app-buttons__icon
+                  img(src="../../images/appgallery.svg")
+                .app-button__text
+                  .app-button__title
+                    | ОТКРОЙТЕ В
+                  .app-button__subtitle
+                    | AppGallery   
+        .footer-agrocom
+          a.footer-agrocom__link(href='http://agrocomgroup.ru/' target='_blank')
+            .footer-agrocom__logo
+              img(src="../../images/agrocom-logo.svg")
+
+
+.bottom-footer.abnormal-wrapper.footer-mobile
+  .container.bottom-footer-container
+    .bottom-footer__holder.abnormal-wrapper__holder
+      .bottom-footer__right
+        .bottom-footer__unit.bottom-footer__unit--contacts
+          .footer-contacts
+            .footer-contacts__left
+              a(href='tel:88005008585') 8 800 500-85-85 
+              span.footer-contacts--minus — 
+              span.footer-contacts--location Россия
+              br
+              a.footer-contacts--mail(href='mailto:info@atlantis-pak.ru') info@atlantis-pak.ru
+            .footer-contacts__right
+              a(href='tel:+78005008585') +7 800 500-85-85 
+              span.footer-contacts--minus — 
+              span.footer-contacts--location Зарубежье
+      
+      .bottom-footer__left
+        .bottom-footer__unit.bottom-footer__unit--address
+          .footer-addresss
+            | 346703, Ростовская обл., Аксайский район,
+            | х. Ленина, ул. Онучкина, 72
+        .bottom-footer__unit.bottom-footer__unit--social
+          .footer-socials
+            .social-links
+              a(href='https://www.facebook.com/atlantispakcompany/' class="social-links__link")
+                .social-links__icon.social-links__icon--fb
+                  img(src="../../images/footer-fb.svg")
+              a(href='https://vk.com/public87808028' class="social-links__link")
+                .social-links__icon.social-links__icon--vk
+                  img(src="../../images/footer-vk.svg")
+              a(href='https://www.instagram.com/atlantis_pak_official/' class="social-links__link")
+                .social-links__icon.social-links__icon--instagram
+                  img(src="../../images/footer-insta.svg")
+              a(href='https://www.youtube.com/channel/UCCTvEZ5LA8mKi3D571FcxoQ' class="social-links__link")
+                .social-links__icon.social-links__icon--youtube
+                  img(src="../../images/footer-youtube.svg")    
+        
+        .bottom-footer__unit.bottom-footer__unit--copyright
+          .footer-copyright
+            .footer-copyright__grey
+              | 1993 -
+              span.footer-copyright__year  
+              | 2019 Яркое решение
+            a.footer-copyright__white(href='http://gridworks.ru' target='_blank') Разработано в Gridworks
+        
+        .bottom-footer__unit.bottom-footer__unit--app-buttons
+          .footer-app-button
+            .app-buttons
+              a(href='https://apps.apple.com/au/app/atlantis-pak/id1160837268' class="app-buttons__link")
+                .app-buttons__iconhttps
+                  img(src="../../images/appstore.svg")
+                .app-button__text
+                  .app-button__title
+                    | ЗАГРУЗИТЕ В  
+                  .app-button__subtitle
+                    | App Store  
+              a(href='https://play.google.com/store/apps/details?id=ru.atlantispak.catalog&hl=ru' class="app-buttons__link")
+                .app-buttons__icon
+                  img(src="../../images/googleplay.svg")
+                .app-button__text
+                  .app-button__title
+                    | ДОСТУПНО В 
+                  .app-button__subtitle
+                    | Google Play    
+              a(href='https://appgallery.huawei.com/#/app/C102595025' class="app-buttons__link")
+                .app-buttons__icon
+                  img(src="../../images/appgallery.svg")
+                .app-button__text
+                  .app-button__title
+                    | ОТКРОЙТЕ В
+                  .app-button__subtitle
+                    | AppGallery   
+        .footer-agrocom
+          a.footer-agrocom__link(href='http://agrocomgroup.ru/' target='_blank')
+            .footer-agrocom__logo
+              img(src="../../images/agrocom-logo.svg")
+            
+  
     
