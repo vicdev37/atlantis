@@ -11467,12 +11467,10 @@ $(document).ready(function () {
 
   var itemClickHandler = function itemClickHandler() {
     $(".product-block").click(function (e) {
-      if (!isMobile()) {
-        e.preventDefault();
-        var itemId = $(this).attr("data-item-id");
-        $(".item-modal__holder").attr("src", $(itemId));
-        $(".item-modal__wrapper").show();
-      }
+      e.preventDefault();
+      var itemId = $(this).attr("data-item-id");
+      $(".item-modal__holder").attr("src", $(itemId));
+      $(".item-modal__wrapper").show();
     });
     $(".item-modal__close").click(function (e) {
       e.preventDefault();
@@ -11485,12 +11483,10 @@ $(document).ready(function () {
 
   var stampsClickHandler = function stampsClickHandler() {
     $(".choose-form-item").click(function (e) {
-      if (!isMobile()) {
-        e.preventDefault();
-        var itemId = $(this).attr("data-item-id");
-        $(".stamps-modal__holder").attr("src", $(itemId));
-        $(".stamps-modal__wrapper").show();
-      }
+      e.preventDefault();
+      var itemId = $(this).attr("data-item-id");
+      $(".stamps-modal__holder").attr("src", $(itemId));
+      $(".stamps-modal__wrapper").show();
     });
     $(".stamps-modal__close").click(function (e) {
       e.preventDefault();
@@ -11564,7 +11560,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57835" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53044" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -296,15 +296,15 @@ $(document).ready(() => {
 
   const itemClickHandler = () => {
     $(".product-block").click(function (e) {
-      if (!isMobile()) {
-        e.preventDefault();
-        const itemId = $(this).attr("data-item-id");
-        $(".item-modal__holder").attr(
-          "src",
-          $(itemId)
-        );
-        $(".item-modal__wrapper").show();
-      }
+
+      e.preventDefault();
+      const itemId = $(this).attr("data-item-id");
+      $(".item-modal__holder").attr(
+        "src",
+        $(itemId)
+      );
+      $(".item-modal__wrapper").show();
+
     });
 
     $(".item-modal__close").click(function (e) {
@@ -319,15 +319,13 @@ $(document).ready(() => {
 
   const stampsClickHandler = () => {
     $(".choose-form-item").click(function (e) {
-      if (!isMobile()) {
-        e.preventDefault();
-        const itemId = $(this).attr("data-item-id");
-        $(".stamps-modal__holder").attr(
-          "src",
-          $(itemId)
-        );
-        $(".stamps-modal__wrapper").show();
-      }
+      e.preventDefault();
+      const itemId = $(this).attr("data-item-id");
+      $(".stamps-modal__holder").attr(
+        "src",
+        $(itemId)
+      );
+      $(".stamps-modal__wrapper").show();
     });
 
     $(".stamps-modal__close").click(function (e) {

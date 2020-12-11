@@ -285,6 +285,19 @@
 
 
 @media(max-width: 499px) {
+
+  .swiper-container.swiper-container-stamps .swiper-slide-stamps__description {
+    background: white;
+  }
+
+  .swiper-container.swiper-container-stamps .swiper-button-prev.swiper-button-prev-stamps {
+    top: 86%!important;
+    left: 0% !important;
+  }
+
+  .swiper-container.swiper-container-stamps .swiper-button-next-stamps {
+    top: 86%!important;
+  }
   .stamps .big-block--represent {
     padding-bottom: 40px;
     .common-wrapper__holder {
@@ -297,6 +310,7 @@
   .download-mobile {
     display: block;
     margin-left: 0;
+    margin-top: 32px;
     .stamps-download__item {
       align-items: baseline;
       border: 1px solid #DCE3EF;

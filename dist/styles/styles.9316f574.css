@@ -867,6 +867,8 @@ input {
 @media (max-width: 1024px) {
   .swiper-container {
     margin: 0 auto;
+    min-width: 1024px;
+    max-width: 1664px;
     padding-left: 128px;
     padding-right: 128px;
   }
@@ -889,6 +891,7 @@ input {
 }
 @media (max-width: 499px) {
   .swiper-container {
+    min-width: 320px;
     padding-left: 32px;
     padding-right: 32px;
   }
@@ -1293,6 +1296,9 @@ input {
   max-width: 24px;
   max-height: 24px;
 }
+.industries .swiper-button-industries-mobile__wrapper {
+  display: none;
+}
 .industries .swiper-container.swiper-container-industries {
   width: 500px;
   height: 600px;
@@ -1348,7 +1354,49 @@ input {
   opacity: 0.3;
 }
 
+@media (max-width: 1024px) {
+  .swiper-container.swiper-container-industries {
+    min-width: inherit;
+    max-width: inherit;
+  }
+}
 @media (max-width: 499px) {
+  .industries .swiper-container.swiper-container-industries {
+    width: 343px;
+    height: 336px;
+  }
+
+  .industries .swiper-container.swiper-container-industries .swiper-slide-industries__img {
+    height: 255px;
+  }
+
+  .swiper-button-industries-mobile__wrapper {
+    display: block !important;
+    width: 100%;
+    height: 84px;
+    background: white;
+    position: absolute;
+    bottom: 101px;
+    z-index: 1;
+  }
+
+  .industries .swiper-container.swiper-container-industries .swiper-button-prev.swiper-button-prev-industries {
+    top: 85% !important;
+    left: 0% !important;
+  }
+
+  .industries .swiper-container.swiper-container-industries .swiper-button-next-industries {
+    top: 85% !important;
+  }
+
+  .swiper-slide-industries__description {
+    position: absolute;
+    bottom: 0px;
+    height: 80px;
+    width: 100%;
+    background: white;
+  }
+
   .breadcrumbs {
     display: none;
   }
@@ -1639,7 +1687,6 @@ input {
 
   .gallery {
     height: 264px;
-    width: 264px;
   }
 
   .printing-list {
@@ -1790,6 +1837,7 @@ p.offer-example__more-text:before {
 
 @media (max-width: 499px) {
   .offers-main__wrapper.offers-example {
+    width: inherit;
     background-image: url(/images/fix-img-3.c629e622.png) !important;
     background-size: 140px;
     background-position: right 50px !important;
@@ -2135,6 +2183,19 @@ p.offer-example__more-text:before {
 }
 
 @media (max-width: 499px) {
+  .swiper-container.swiper-container-stamps .swiper-slide-stamps__description {
+    background: white;
+  }
+
+  .swiper-container.swiper-container-stamps .swiper-button-prev.swiper-button-prev-stamps {
+    top: 86% !important;
+    left: 0% !important;
+  }
+
+  .swiper-container.swiper-container-stamps .swiper-button-next-stamps {
+    top: 86% !important;
+  }
+
   .stamps .big-block--represent {
     padding-bottom: 40px;
   }
@@ -2149,6 +2210,7 @@ p.offer-example__more-text:before {
   .download-mobile {
     display: block;
     margin-left: 0;
+    margin-top: 32px;
   }
   .download-mobile .stamps-download__item {
     align-items: baseline;
