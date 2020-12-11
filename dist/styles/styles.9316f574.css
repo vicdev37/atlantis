@@ -350,43 +350,43 @@ template {
 
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Regular.cc42fec2.woff") format("woff"), url("../fonts/Montserrat-Regular.ac4c05ba.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Regular.cc42fec2.woff") format("woff"), url("/fonts/Montserrat-Regular.ac4c05ba.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Bold.258148f4.woff") format("woff"), url("../fonts/Montserrat-Bold.9f4eb483.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Bold.258148f4.woff") format("woff"), url("/fonts/Montserrat-Bold.9f4eb483.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Light.43ba5e0e.woff") format("woff"), url("../fonts/Montserrat-Light.57f97785.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Light.43ba5e0e.woff") format("woff"), url("/fonts/Montserrat-Light.57f97785.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-ExtraBold.0595f226.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.2c110fb1.woff2") format("woff2");
+  src: url("/fonts/Montserrat-ExtraBold.0595f226.woff") format("woff"), url("/fonts/Montserrat-ExtraBold.2c110fb1.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-SemiBold.c7f2d8fd.woff") format("woff"), url("../fonts/Montserrat-SemiBold.7af6687b.woff2") format("woff2");
+  src: url("/fonts/Montserrat-SemiBold.c7f2d8fd.woff") format("woff"), url("/fonts/Montserrat-SemiBold.7af6687b.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Medium.2f91cf9b.woff") format("woff"), url("../fonts/Montserrat-Medium.0ebfd9f0.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Medium.2f91cf9b.woff") format("woff"), url("/fonts/Montserrat-Medium.0ebfd9f0.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Black.384b9a45.woff") format("woff"), url("../fonts/Montserrat-Black.ea06ea3c.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Black.384b9a45.woff") format("woff"), url("/fonts/Montserrat-Black.ea06ea3c.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
 }
@@ -568,7 +568,7 @@ input {
 }
 
 .big-block--news {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.501038) 0%, rgba(0, 0, 0, 0.9) 88.99%, rgba(0, 0, 0, 0.895897) 100%), url(../images/slide-1.63ae0be8.jpg);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.501038) 0%, rgba(0, 0, 0, 0.9) 88.99%, rgba(0, 0, 0, 0.895897) 100%), url(/images/slide-1.63ae0be8.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -695,7 +695,7 @@ input {
   height: fit-content;
   background-color: #35A9AD;
   padding-top: 112px;
-  background-image: url(../images/back-img.b0048497.png);
+  background-image: url(/images/back-img.b0048497.png);
   background-repeat: no-repeat;
   background-position: top 0px right 0px;
   padding-bottom: 40px;
@@ -937,7 +937,7 @@ input {
     display: block;
     width: 120px;
     height: 128px;
-    background: url(../images/fix-img-2.f7960cec.png);
+    background: url(/images/fix-img-2.f7960cec.png);
     z-index: 100;
   }
 
@@ -1167,7 +1167,7 @@ input {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: url(../images/loupe.b4f89be4.svg);
+  background: url(/images/loupe.b4f89be4.svg);
 }
 
 .product-block.long {
@@ -1361,12 +1361,13 @@ input {
   }
 }
 @media (max-width: 499px) {
-  .swiper-button-prev.swiper-button-prev-industries.desktop-arrows {
-    display: none;
+  .industries .swiper-container.swiper-container-industries {
+    width: 343px;
+    height: 336px;
   }
 
-  .swiper-button-next.swiper-button-next-industries.desktop-arrows {
-    display: none;
+  .industries .swiper-container.swiper-container-industries .swiper-slide-industries__img {
+    height: 255px;
   }
 
   .swiper-button-industries-mobile__wrapper {
@@ -1379,9 +1380,21 @@ input {
     z-index: 1;
   }
 
-  .swiper-button-prev.swiper-button-prev-industries.mobile-arrows {
-    top: 40%;
+  .industries .swiper-container.swiper-container-industries .swiper-button-prev.swiper-button-prev-industries {
+    top: 85% !important;
     left: 0% !important;
+  }
+
+  .industries .swiper-container.swiper-container-industries .swiper-button-next-industries {
+    top: 85% !important;
+  }
+
+  .swiper-slide-industries__description {
+    position: absolute;
+    bottom: 0px;
+    height: 80px;
+    width: 100%;
+    background: white;
   }
 
   .breadcrumbs {
@@ -1465,7 +1478,7 @@ input {
   }
 }
 .printing-main__wrapper {
-  background-image: url(../images/fix-img.0def4246.png);
+  background-image: url(/images/fix-img.0def4246.png);
   background-position: right 65px;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -1674,7 +1687,6 @@ input {
 
   .gallery {
     height: 264px;
-    width: 264px;
   }
 
   .printing-list {
@@ -1685,7 +1697,7 @@ input {
   }
 
   .printing-main__wrapper {
-    background-image: url(../images/fix-img-3.c629e622.png);
+    background-image: url(/images/fix-img-3.c629e622.png);
     background-size: 140px;
     background-position: right 50px;
   }
@@ -1716,7 +1728,7 @@ input {
 
 @media (max-width: 499px) {
   .offers-main__wrapper.offers-example {
-    background-image: url(../images/fix-img-3.c629e622.png) !important;
+    background-image: url(/images/fix-img-3.c629e622.png) !important;
     background-size: 140px;
     background-position: right 40px !important;
   }
@@ -1747,7 +1759,7 @@ input {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background-image: url(../images/fix-img-2.f7960cec.png);
+  background-image: url(/images/fix-img-2.f7960cec.png);
   background-position: right 65px;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -1803,7 +1815,7 @@ p.offer-example__more-text:before {
   left: -110px;
   width: 113px;
   height: 88px;
-  background: url(../images/offer-example-icon.a86c6f11.png);
+  background: url(/images/offer-example-icon.a86c6f11.png);
 }
 
 .offers-item__wrapper {
@@ -1825,7 +1837,8 @@ p.offer-example__more-text:before {
 
 @media (max-width: 499px) {
   .offers-main__wrapper.offers-example {
-    background-image: url(../images/fix-img-3.c629e622.png) !important;
+    width: inherit;
+    background-image: url(/images/fix-img-3.c629e622.png) !important;
     background-size: 140px;
     background-position: right 50px !important;
     padding-bottom: 44px !important;
@@ -1956,7 +1969,7 @@ p.offer-example__more-text:before {
 }
 
 .stamps-main__wrapper {
-  background-image: url(../images/fix-img-2.f7960cec.png);
+  background-image: url(/images/fix-img-2.f7960cec.png);
   background-position: right 65px;
   background-repeat: no-repeat;
 }
@@ -2170,6 +2183,19 @@ p.offer-example__more-text:before {
 }
 
 @media (max-width: 499px) {
+  .swiper-container.swiper-container-stamps .swiper-slide-stamps__description {
+    background: white;
+  }
+
+  .swiper-container.swiper-container-stamps .swiper-button-prev.swiper-button-prev-stamps {
+    top: 86% !important;
+    left: 0% !important;
+  }
+
+  .swiper-container.swiper-container-stamps .swiper-button-next-stamps {
+    top: 86% !important;
+  }
+
   .stamps .big-block--represent {
     padding-bottom: 40px;
   }
@@ -2184,6 +2210,7 @@ p.offer-example__more-text:before {
   .download-mobile {
     display: block;
     margin-left: 0;
+    margin-top: 32px;
   }
   .download-mobile .stamps-download__item {
     align-items: baseline;
@@ -2358,7 +2385,7 @@ a.video-item:hover .video-item__content {
 
 @media (max-width: 499px) {
   .common-wrapper.video-page {
-    background-image: url(../images/fix-img-3.c629e622.png) !important;
+    background-image: url(/images/fix-img-3.c629e622.png) !important;
     background-size: 140px;
     background-position: right 50px !important;
     padding-bottom: 44px !important;
@@ -4066,4 +4093,4 @@ a.app-buttons__link .app-buttons__icon img {
   }
 }
 
-/*# sourceMappingURL=../styles.9316f574.css.map */
+/*# sourceMappingURL=/styles.9316f574.css.map */

@@ -81,6 +81,7 @@ p.offer-example__more-text {
 
 @media(max-width: 499px) {
   .offers-main__wrapper.offers-example {
+    width: inherit;
     background-image: url(../images/fix-img-3.png)!important;
     background-size: 140px;
     background-position: right 50px!important;
