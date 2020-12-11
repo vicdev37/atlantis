@@ -11483,23 +11483,23 @@ $(document).ready(function () {
 
   itemClickHandler();
 
-  var stumpsClickHandler = function stumpsClickHandler() {
+  var stampsClickHandler = function stampsClickHandler() {
     $(".choose-form-item").click(function (e) {
       if (!isMobile()) {
         e.preventDefault();
         var itemId = $(this).attr("data-item-id");
-        $(".item-modal__holder").attr("src", $(itemId));
-        $(".item-modal__wrapper").show();
+        $(".stamps-modal__holder").attr("src", $(itemId));
+        $(".stamps-modal__wrapper").show();
       }
     });
-    $(".item-modal__close").click(function (e) {
+    $(".stamps-modal__close").click(function (e) {
       e.preventDefault();
-      $(".item-modal__holder").attr("src", "");
-      $(".item-modal__wrapper").hide();
+      $(".stamps-modal__holder").attr("src", "");
+      $(".stamps-modal__wrapper").hide();
     });
   };
 
-  stumpsClickHandler();
+  stampsClickHandler();
 
   var partnerLineRenderOffset = function partnerLineRenderOffset() {
     if (!isMobile()) return false;
@@ -11564,7 +11564,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57551" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57835" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

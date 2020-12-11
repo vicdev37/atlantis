@@ -1,5 +1,6 @@
 .offers-main__wrapper,
 .common-wrapper.video-page {
+  width: fit-content;
   background-image: url(../images/fix-img-2.png);
   background-position: right 65px;
   background-repeat: no-repeat;
@@ -127,11 +128,12 @@ line-height: 26px;
     padding-right: 0;
     overflow-x: auto;
     overflow-y: hidden;
+    padding-left: 20px;
     &::-webkit-scrollbar { width: 0; }
 }
   .offers-item-mobile {
     width: max-content;
-    position: absolute;
+    // position: absolute;
     top: 0;
     left: -192px;
     flex-direction: row;
