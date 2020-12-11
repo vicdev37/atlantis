@@ -146,12 +146,13 @@
     width: 100%;
     display: block;
   }
-  .choose-form-item__text {
-
-    &:hover {
-    border: 1px solid #DCE3EF;
-    border-top: none;
-  }
+  
+  &:hover {
+    .choose-form-item__text {
+      border: 1px solid #DCE3EF;
+      border-top: none;
+    }
+    
   }
   
 }
@@ -173,6 +174,115 @@
 .stamps-todo-line.stamps-todo-line__mobile  {
   display: none;
 }
+
+.stumps-modal__wrapper.item-modal__wrapper-stumps {
+    display: block;
+  }
+
+.stamps-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 400;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
+  .stamps-modal__wrapper {
+    display: none; }
+  .stamps-modal__holder {
+    width: 704px;
+    height: 452px; }
+  .stamps-modal__bg {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 300;
+    background: rgba(255, 255, 255, 0.9);
+    position: fixed; }
+  .stamps-modal__close {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 48px;
+    top: 48px;
+    cursor: pointer;
+    z-index: 1000; }
+  .stamps-modal__close-icon {
+    max-width: 24px;
+    max-height: 24px; }
+
+
+.swiper-container.swiper-container-stamps {
+  width: 500px;
+  height: 600px;
+  .swiper-slide-stamps__img {
+    width: 100%;
+    height: 500px;
+    background: rgba(164, 164, 164, 0.1);
+    padding: 20px 40px;
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .swiper-slide-stamps__description {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    text-align: center;
+    color: #111721;
+    padding: 20px;
+  }
+  .swiper-button-prev.swiper-button-prev-stamps
+   {
+    width: 64px;
+    height: 64px;
+    background: #fff;
+    background: rgba(254, 254, 254, 0.1);
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+    top: 76.4%;
+    left: 74%!important;
+    &:hover {
+      background: #DCE3EF;
+      opacity: 0.3;
+    }
+  }
+
+  .swiper-button-next-stamps {
+    width: 64px;
+    height: 64px;
+    background: rgba(254, 254, 254, 0.1);
+    right: 0;
+    top: 76.4%;
+    transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease;
+    -moz-transition: all 0.2s ease;
+    -ms-transition: all 0.2s ease;
+    -o-transition: all 0.2s ease;
+
+    &:hover {
+      background: #DCE3EF;
+      opacity: 0.3;
+    }
+  }
+}
+
+
+
 
 @media(max-width: 499px) {
   .stamps .big-block--represent {

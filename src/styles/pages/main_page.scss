@@ -422,8 +422,8 @@ margin-top: 8px;
 
   .swiper-container {
     margin: 0 auto;
-    min-width: 1024px;
-    max-width: 1664px;
+    // min-width: 1024px;
+    // max-width: 1664px;
     padding-left: 128px;
     padding-right: 128px;
 }
@@ -445,7 +445,7 @@ margin-top: 8px;
 @media(max-width: 499px) {
 
   .swiper-container {
-    min-width: 320px;
+    // min-width: 320px;
     padding-left: 32px;
     padding-right: 32px;
   }

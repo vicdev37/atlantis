@@ -317,27 +317,27 @@ $(document).ready(() => {
   itemClickHandler();
 
 
-  const stumpsClickHandler = () => {
+  const stampsClickHandler = () => {
     $(".choose-form-item").click(function (e) {
       if (!isMobile()) {
         e.preventDefault();
         const itemId = $(this).attr("data-item-id");
-        $(".item-modal__holder").attr(
+        $(".stamps-modal__holder").attr(
           "src",
           $(itemId)
         );
-        $(".item-modal__wrapper").show();
+        $(".stamps-modal__wrapper").show();
       }
     });
 
-    $(".item-modal__close").click(function (e) {
+    $(".stamps-modal__close").click(function (e) {
       e.preventDefault();
-      $(".item-modal__holder").attr("src", "");
-      $(".item-modal__wrapper").hide();
+      $(".stamps-modal__holder").attr("src", "");
+      $(".stamps-modal__wrapper").hide();
     });
   };
 
-  stumpsClickHandler();
+  stampsClickHandler();
 
 
 
