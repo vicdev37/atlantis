@@ -270,6 +270,10 @@ color: #111721;
 
 
   }
+ 
+.swiper-button-industries-mobile__wrapper {
+  display: none;
+}
       
 
 .swiper-container.swiper-container-industries {
@@ -334,17 +338,38 @@ color: #111721;
 
 }
 
-// @media(max-width: 1024px) {
-//   .swiper-wrapper {
-//     transform: translate3d(-500px, 0px, 0px)!important;
-//     -webkit-transform: translate3d(-500px, 0px, 0px)!important;
-//     -moz-transform: translate3d(-500px, 0px, 0px)!important;
-//     -ms-transform: translate3d(-500px, 0px, 0px)!important;
-//     -o-transform: translate3d(-500px, 0px, 0px)!important;
-// }
-// }
+@media(max-width: 1024px) {
+  .swiper-container.swiper-container-industries {
+    min-width: inherit;
+    max-width: inherit;
+  }
+}
 
 @media(max-width: 499px) {
+  .swiper-button-prev.swiper-button-prev-industries.desktop-arrows {
+    display: none;
+  }
+  .swiper-button-next.swiper-button-next-industries.desktop-arrows {
+    display: none;
+  }
+
+  .swiper-button-industries-mobile__wrapper {
+    display: block!important;
+    width: 100%;
+    height: 84px;
+    background: white;
+    position: absolute;
+    bottom: 101px;
+    z-index: 1;
+  }
+
+  .swiper-button-prev.swiper-button-prev-industries.mobile-arrows {
+      top: 40%;
+      left: 0% !important;
+    }
+
+  
+
   .breadcrumbs {
     display: none;
   }
