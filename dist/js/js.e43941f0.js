@@ -11262,6 +11262,38 @@ $(document).ready(function () {
     }
   });
 
+  var itemClickHandler = function itemClickHandler() {
+    $(".product-block").click(function (e) {
+      e.preventDefault();
+      var itemId = $(this).attr("data-item-id");
+      $(".item-modal__holder").attr("src", $(itemId));
+      $(".item-modal__wrapper").show();
+    });
+    $(".item-modal__close").click(function (e) {
+      e.preventDefault();
+      $(".item-modal__holder").attr("src", "");
+      $(".item-modal__wrapper").hide();
+    });
+  };
+
+  itemClickHandler();
+
+  var stampsClickHandler = function stampsClickHandler() {
+    $(".choose-form-item").click(function (e) {
+      e.preventDefault();
+      var itemId = $(this).attr("data-item-id");
+      $(".stamps-modal__holder").attr("src", $(itemId));
+      $(".stamps-modal__wrapper").show();
+    });
+    $(".stamps-modal__close").click(function (e) {
+      e.preventDefault();
+      $(".stamps-modal__holder").attr("src", "");
+      $(".stamps-modal__wrapper").hide();
+    });
+  };
+
+  stampsClickHandler();
+
   var renderListMap = function renderListMap($el, coords, showControl) {
     var controls = isMobile() && !showControl ? [] : ["zoomControl"];
     var top = $(".contacts-container__map").height() / 2 - 30;
@@ -11286,7 +11318,7 @@ $(document).ready(function () {
     var mark = new ymaps.Placemark(coords, {// hintContent: "Центральный офис",
     }, {
       iconLayout: "default#image",
-      iconImageHref: "../images/pin.svg",
+      iconImageHref: "./images/pin.svg",
       iconImageSize: [68, 78],
       iconImageOffset: [-34, -64]
     }); // map.behaviors.disable("scrollZoom");
@@ -11348,6 +11380,35 @@ $(document).ready(function () {
         }
       });
     });
+    renderYaMaps();
+  };
+
+  var contactsMap = function contactsMap() {
+    var $map = $(".contacts-container__map");
+    var lat = $map.attr("data-lat") || 47.09741888;
+    var lng = $map.attr("data-lng") || 39.85679054;
+    console.log(lat, lng);
+    if (!$map.length) return;
+    var mainOfficeCoords = [lat, lng];
+    var map = new ymaps.Map($map[0], {
+      center: mainOfficeCoords,
+      zoom: 12,
+      controls: ["zoomControl"]
+    }, {
+      suppressMapOpenBlock: true // zoomControlPosition: "bottom",
+
+    });
+    var mark = new ymaps.Placemark(mainOfficeCoords, {
+      hintContent: "Центральный офис"
+    }, {
+      iconLayout: "default#image",
+      iconImageHref: "/theme/assets/map-mark.svg",
+      iconImageSize: [68, 78],
+      iconImageOffset: [-34, -64]
+    }); // map.behaviors.disable("scrollZoom");
+    // map.behaviors.disable("dblClickZoom");
+
+    map.geoObjects.add(mark);
   }; // menu
 
 
@@ -11465,38 +11526,6 @@ $(document).ready(function () {
 
   videoClickHandler();
 
-  var itemClickHandler = function itemClickHandler() {
-    $(".product-block").click(function (e) {
-      e.preventDefault();
-      var itemId = $(this).attr("data-item-id");
-      $(".item-modal__holder").attr("src", $(itemId));
-      $(".item-modal__wrapper").show();
-    });
-    $(".item-modal__close").click(function (e) {
-      e.preventDefault();
-      $(".item-modal__holder").attr("src", "");
-      $(".item-modal__wrapper").hide();
-    });
-  };
-
-  itemClickHandler();
-
-  var stampsClickHandler = function stampsClickHandler() {
-    $(".choose-form-item").click(function (e) {
-      e.preventDefault();
-      var itemId = $(this).attr("data-item-id");
-      $(".stamps-modal__holder").attr("src", $(itemId));
-      $(".stamps-modal__wrapper").show();
-    });
-    $(".stamps-modal__close").click(function (e) {
-      e.preventDefault();
-      $(".stamps-modal__holder").attr("src", "");
-      $(".stamps-modal__wrapper").hide();
-    });
-  };
-
-  stampsClickHandler();
-
   var partnerLineRenderOffset = function partnerLineRenderOffset() {
     if (!isMobile()) return false;
     var offsetLeft = $(".partners-line").offset().left;
@@ -11560,7 +11589,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53044" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58293" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

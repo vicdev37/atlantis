@@ -444,6 +444,13 @@ margin-top: 8px;
 
 @media(max-width: 499px) {
 
+  .big-block--news{
+    background-position: 61%;
+}   
+
+  .swiper-pagination.slider-dots.swiper-pagination-bullets {
+    left: 40%;
+  }
   .swiper-container {
     min-width: 320px;
     padding-left: 32px;
@@ -581,6 +588,10 @@ margin-top: 8px;
   .partners-line {
     margin-top: 0;
     padding-left: 0;
+    .container {
+      padding-left: 0;
+    }
+
   }
   .partners-line__wrapper {
     padding-left: 28px;

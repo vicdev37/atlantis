@@ -34,7 +34,6 @@ p.offer-example__text {
   font-weight: 500;
   font-size: 18px;
   line-height: 32px;
-  letter-spacing: 0.2px;
   color: #111721;
 }
 
@@ -50,7 +49,7 @@ p.offer-example__more-text {
   font-size: 16px;
   line-height: 150%;
   color: #111721;
-  margin-top: 112px;
+  margin-top: 80px;
   &:before {
     content: '';
     position: absolute;
@@ -80,6 +79,12 @@ p.offer-example__more-text {
 }
 
 @media(max-width: 499px) {
+  .offers-main__wrapper {
+    background-image: url(../images/fix-img-3.png)!important;
+    background-size: 140px;
+    background-position: right 50px!important;
+    padding-bottom: 44px!important;
+  }
   .offers-main__wrapper.offers-example {
     width: inherit;
     background-image: url(../images/fix-img-3.png)!important;
@@ -111,15 +116,21 @@ p.offer-example__more-text {
 line-height: 26px;
   }
   .offer-example__more-text {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 15px;
+    padding-right: 15px;
     margin-top: 80px;
-
-      
   }
+  p.offer-example__more-text {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
   p.offer-example__more-text:before {
-    bottom: 117px;
-    left: -26px;
+    top: -50px;
+    left: -20px;
+    background-size: 73px;
+    background-repeat: no-repeat;
     }
 
   .contaiter-offers-item-mobile {
@@ -130,6 +141,7 @@ line-height: 26px;
     overflow-x: auto;
     overflow-y: hidden;
     padding-left: 20px;
+    margin-top: 80px;
     &::-webkit-scrollbar { width: 0; }
 }
   .offers-item-mobile {

@@ -10,7 +10,6 @@
     font-weight: bold;
     font-size: 48px;
     line-height: 48px;
-    letter-spacing: -0.2px;
     color: #FFFFFF;
     margin-top: 64px;
   }
@@ -224,6 +223,7 @@
 .swiper-container.swiper-container-stamps {
   width: 500px;
   height: 600px;
+  min-width: inherit;
   .swiper-slide-stamps__img {
     width: 100%;
     height: 500px;
@@ -282,9 +282,21 @@
 }
 
 
-
+@media(max-width: 1024px) {
+  
+}
 
 @media(max-width: 499px) {
+
+  .stamps.swiper-container.swiper-container-stumps {
+    width: 343px;
+    height: 336px;
+  }
+
+
+  .stamps-main__wrapper {
+    background-image: none;
+  }
 
   .swiper-container.swiper-container-stamps .swiper-slide-stamps__description {
     background: white;

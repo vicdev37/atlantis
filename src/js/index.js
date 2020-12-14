@@ -29,9 +29,11 @@ $(document).ready(() => {
       crossFade: true
     },
 
-
-
   })
+
+
+
+
 
   var mySwiperIndustries = new Swiper('.swiper-container-industries', '.swiper-container-stumps', {
     // Optional parameters
@@ -50,7 +52,55 @@ $(document).ready(() => {
 
 
 
+
+
   })
+
+
+
+  const itemClickHandler = () => {
+    $(".product-block").click(function (e) {
+
+      e.preventDefault();
+      const itemId = $(this).attr("data-item-id");
+      $(".item-modal__holder").attr(
+        "src",
+        $(itemId)
+      );
+      $(".item-modal__wrapper").show();
+
+    });
+
+    $(".item-modal__close").click(function (e) {
+      e.preventDefault();
+      $(".item-modal__holder").attr("src", "");
+      $(".item-modal__wrapper").hide();
+    });
+  };
+
+  itemClickHandler();
+
+
+  const stampsClickHandler = () => {
+    $(".choose-form-item").click(function (e) {
+      e.preventDefault();
+      const itemId = $(this).attr("data-item-id");
+      $(".stamps-modal__holder").attr(
+        "src",
+        $(itemId)
+      );
+      $(".stamps-modal__wrapper").show();
+    });
+
+    $(".stamps-modal__close").click(function (e) {
+      e.preventDefault();
+      $(".stamps-modal__holder").attr("src", "");
+      $(".stamps-modal__wrapper").hide();
+    });
+  };
+
+  stampsClickHandler();
+
 
 
   const renderListMap = ($el, coords, showControl) => {
@@ -80,7 +130,7 @@ $(document).ready(() => {
         // hintContent: "Центральный офис",
       }, {
         iconLayout: "default#image",
-        iconImageHref: "../images/pin.svg",
+        iconImageHref: "./images/pin.svg",
         iconImageSize: [68, 78],
         iconImageOffset: [-34, -64],
       }
@@ -148,15 +198,62 @@ $(document).ready(() => {
         }
       });
     });
+    renderYaMaps();
   };
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+  const contactsMap = () => {
+    const $map = $(".contacts-container__map");
+    const lat = $map.attr("data-lat") || 47.09741888;
+    const lng = $map.attr("data-lng") || 39.85679054;
+    console.log(lat, lng);
+    if (!$map.length) return;
+    const mainOfficeCoords = [lat, lng];
+    const map = new ymaps.Map(
+      $map[0], {
+        center: mainOfficeCoords,
+        zoom: 12,
+        controls: ["zoomControl"],
+      }, {
+        suppressMapOpenBlock: true,
+        // zoomControlPosition: "bottom",
+      }
+    );
+    const mark = new ymaps.Placemark(
+      mainOfficeCoords, {
+        hintContent: "Центральный офис",
+      }, {
+        iconLayout: "default#image",
+        iconImageHref: "/theme/assets/map-mark.svg",
+        iconImageSize: [68, 78],
+        iconImageOffset: [-34, -64],
+      }
+    );
+    // map.behaviors.disable("scrollZoom");
+    // map.behaviors.disable("dblClickZoom");
+    map.geoObjects.add(mark);
+  };
+
+
+
+
+
+
+
+
   // menu
-
-
-
-
-
   $(document).mouseup(function (e) {
     $('.menu-btn').on('click', function (e) {
       e.preventDefault();
@@ -294,48 +391,6 @@ $(document).ready(() => {
 
 
 
-  const itemClickHandler = () => {
-    $(".product-block").click(function (e) {
-
-      e.preventDefault();
-      const itemId = $(this).attr("data-item-id");
-      $(".item-modal__holder").attr(
-        "src",
-        $(itemId)
-      );
-      $(".item-modal__wrapper").show();
-
-    });
-
-    $(".item-modal__close").click(function (e) {
-      e.preventDefault();
-      $(".item-modal__holder").attr("src", "");
-      $(".item-modal__wrapper").hide();
-    });
-  };
-
-  itemClickHandler();
-
-
-  const stampsClickHandler = () => {
-    $(".choose-form-item").click(function (e) {
-      e.preventDefault();
-      const itemId = $(this).attr("data-item-id");
-      $(".stamps-modal__holder").attr(
-        "src",
-        $(itemId)
-      );
-      $(".stamps-modal__wrapper").show();
-    });
-
-    $(".stamps-modal__close").click(function (e) {
-      e.preventDefault();
-      $(".stamps-modal__holder").attr("src", "");
-      $(".stamps-modal__wrapper").hide();
-    });
-  };
-
-  stampsClickHandler();
 
 
 
