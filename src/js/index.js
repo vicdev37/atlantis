@@ -2,8 +2,7 @@ import module from './module'
 import jquery from 'jquery'
 window.$ = window.jQuery = jquery;
 
-
-$(document).ready(() => {
+$(() => {
   console.log($('body'))
   module()
 
@@ -31,11 +30,7 @@ $(document).ready(() => {
 
   })
 
-
-
-
-
-  var mySwiperIndustries = new Swiper('.swiper-container-industries', '.swiper-container-stumps', {
+  const industriesSlider = new Swiper('.swiper-container-industries', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
@@ -45,31 +40,38 @@ $(document).ready(() => {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-
     fadeEffect: {
       crossFade: true
     },
-
-
-
-
-
   })
 
+  const stumpsSlider = new Swiper('.swiper-container-stamps', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
 
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    fadeEffect: {
+      crossFade: true
+    },
+  })
 
   const itemClickHandler = () => {
-    $(".product-block").click(function (e) {
-
+    $(".product-block").on('click', function (e) {
       e.preventDefault();
       const itemId = $(this).attr("data-item-id");
       $(".item-modal__holder").attr(
         "src",
         $(itemId)
-      );
-      $(".item-modal__wrapper").show();
+        );
+        $(".item-modal__wrapper").show();
 
-    });
+        industriesSlider.update();
+    }) 
 
     $(".item-modal__close").click(function (e) {
       e.preventDefault();
@@ -90,6 +92,7 @@ $(document).ready(() => {
         $(itemId)
       );
       $(".stamps-modal__wrapper").show();
+      stumpsSlider.update();
     });
 
     $(".stamps-modal__close").click(function (e) {
