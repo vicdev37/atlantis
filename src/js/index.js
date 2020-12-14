@@ -2,59 +2,65 @@ import jquery from 'jquery'
 window.$ = window.jQuery = jquery;
 
 $(() => {
-  AOS.init();
+  if ($('.swiper-container')[0]) {
+    new Swiper('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+  
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+  
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      fadeEffect: {
+        crossFade: true
+      },
+    })
+  }
 
-  var mySwiper = new Swiper('.swiper-container', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
+  let industriesSlider,
+      stumpsSlider
+  if ($('.swiper-container')[0]) {
+    industriesSlider = new Swiper('.swiper-container-industries', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+  
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      fadeEffect: {
+        crossFade: true
+      },
+    })
+  }
 
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+  if ($('.swiper-container-stamps')[0]) {
+    stumpsSlider = new Swiper('.swiper-container-stamps', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+  
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      fadeEffect: {
+        crossFade: true
+      },
+    })
+  }
 
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    fadeEffect: {
-      crossFade: true
-    },
-
-  })
-
-  const industriesSlider = new Swiper('.swiper-container-industries', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    fadeEffect: {
-      crossFade: true
-    },
-  })
-
-  const stumpsSlider = new Swiper('.swiper-container-stamps', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    fadeEffect: {
-      crossFade: true
-    },
-  })
 
   const itemClickHandler = () => {
     $(".product-block").on('click', function (e) {
@@ -66,7 +72,7 @@ $(() => {
         );
         $(".item-modal__wrapper").show();
 
-        industriesSlider.update();
+        industriesSlider && industriesSlider.update();
     }) 
 
     $(".item-modal__close").click(function (e) {
@@ -88,7 +94,7 @@ $(() => {
         $(itemId)
       );
       $(".stamps-modal__wrapper").show();
-      stumpsSlider.update();
+      stumpsSlider && stumpsSlider.update();
     });
 
     $(".stamps-modal__close").click(function (e) {
@@ -175,7 +181,7 @@ $(() => {
   };
 
   const renderYaMaps = () => {
-    ymaps.ready(() => {
+    (typeof ymaps !== 'undefined') && ymaps.ready(() => {
       $(".contacts-container__map").each(function () {
         const $el = $(this);
         const $elContainer = $el
