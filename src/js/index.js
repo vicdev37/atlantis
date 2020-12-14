@@ -2,59 +2,65 @@ import jquery from 'jquery'
 window.$ = window.jQuery = jquery;
 
 $(() => {
-  AOS.init();
+  if ($('.swiper-container')[0]) {
+    new Swiper('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
 
-  var mySwiper = new Swiper('.swiper-container', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
 
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      fadeEffect: {
+        crossFade: true
+      },
+    })
+  }
 
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    fadeEffect: {
-      crossFade: true
-    },
+  let industriesSlider,
+    stumpsSlider
+  if ($('.swiper-container')[0]) {
+    industriesSlider = new Swiper('.swiper-container-industries', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
 
-  })
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      fadeEffect: {
+        crossFade: true
+      },
+    })
+  }
 
-  const industriesSlider = new Swiper('.swiper-container-industries', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
+  if ($('.swiper-container-stamps')[0]) {
+    stumpsSlider = new Swiper('.swiper-container-stamps', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
 
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    fadeEffect: {
-      crossFade: true
-    },
-  })
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      fadeEffect: {
+        crossFade: true
+      },
+    })
+  }
 
-  const stumpsSlider = new Swiper('.swiper-container-stamps', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    fadeEffect: {
-      crossFade: true
-    },
-  })
 
   const itemClickHandler = () => {
     $(".product-block").on('click', function (e) {
@@ -63,11 +69,11 @@ $(() => {
       $(".item-modal__holder").attr(
         "src",
         $(itemId)
-        );
-        $(".item-modal__wrapper").show();
+      );
+      $(".item-modal__wrapper").show();
 
-        industriesSlider.update();
-    }) 
+      industriesSlider && industriesSlider.update();
+    })
 
     $(".item-modal__close").click(function (e) {
       e.preventDefault();
@@ -88,7 +94,7 @@ $(() => {
         $(itemId)
       );
       $(".stamps-modal__wrapper").show();
-      stumpsSlider.update();
+      stumpsSlider && stumpsSlider.update();
     });
 
     $(".stamps-modal__close").click(function (e) {
@@ -134,7 +140,6 @@ $(() => {
         iconImageOffset: [-34, -64],
       }
     );
-    console.log('mark', mark)
     // map.behaviors.disable("scrollZoom");
     // map.behaviors.disable("dblClickZoom");
     map.geoObjects.add(mark);
@@ -175,7 +180,7 @@ $(() => {
   };
 
   const renderYaMaps = () => {
-    ymaps.ready(() => {
+    (typeof ymaps !== 'undefined') && ymaps.ready(() => {
       $(".contacts-container__map").each(function () {
         const $el = $(this);
         const $elContainer = $el
@@ -189,7 +194,6 @@ $(() => {
         }
         const coords = [$(this).attr("data-lat"), $(this).attr("data-lng")];
         const address = $(this).attr("data-address");
-        console.log(coords);
         const _map = renderListMap($el, coords);
         $el.data("map", _map);
 
@@ -218,7 +222,6 @@ $(() => {
     const $map = $(".contacts-container__map");
     const lat = $map.attr("data-lat") || 47.09741888;
     const lng = $map.attr("data-lng") || 39.85679054;
-    console.log(lat, lng);
     if (!$map.length) return;
     const mainOfficeCoords = [lat, lng];
     const map = new ymaps.Map(
@@ -299,7 +302,6 @@ $(() => {
     };
 
     const moveSlide = (direction, e, _this) => {
-      console.log(direction, e);
       e && e.preventDefault();
 
       if ($(_this).hasClass(deactivateButtonClass)) return false;
@@ -347,7 +349,6 @@ $(() => {
           $(document).mousemove(function (a) {
             var b = $line.outerWidth(),
               c = f.width();
-            console.log(c, b);
             if (c >= b) return void $line.css("margin-left", "auto");
             var d = (b - c) / (c - 200),
               e = Math.max(a.clientX - 100, 0);

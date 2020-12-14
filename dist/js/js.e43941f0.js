@@ -11214,51 +11214,60 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 window.$ = window.jQuery = _jquery.default;
 $(function () {
-  AOS.init();
-  var mySwiper = new Swiper('.swiper-container', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    fadeEffect: {
-      crossFade: true
-    }
-  });
-  var industriesSlider = new Swiper('.swiper-container-industries', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    fadeEffect: {
-      crossFade: true
-    }
-  });
-  var stumpsSlider = new Swiper('.swiper-container-stamps', {
-    // Optional parameters
-    direction: 'horizontal',
-    loop: true,
-    // Navigation arrows
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev'
-    },
-    fadeEffect: {
-      crossFade: true
-    }
-  });
+  if ($('.swiper-container')[0]) {
+    new Swiper('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        type: 'bullets',
+        clickable: true
+      },
+      fadeEffect: {
+        crossFade: true
+      }
+    });
+  }
+
+  var industriesSlider, stumpsSlider;
+
+  if ($('.swiper-container')[0]) {
+    industriesSlider = new Swiper('.swiper-container-industries', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      fadeEffect: {
+        crossFade: true
+      }
+    });
+  }
+
+  if ($('.swiper-container-stamps')[0]) {
+    stumpsSlider = new Swiper('.swiper-container-stamps', {
+      // Optional parameters
+      direction: 'horizontal',
+      loop: true,
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+      },
+      fadeEffect: {
+        crossFade: true
+      }
+    });
+  }
 
   var itemClickHandler = function itemClickHandler() {
     $(".product-block").on('click', function (e) {
@@ -11266,7 +11275,7 @@ $(function () {
       var itemId = $(this).attr("data-item-id");
       $(".item-modal__holder").attr("src", $(itemId));
       $(".item-modal__wrapper").show();
-      industriesSlider.update();
+      industriesSlider && industriesSlider.update();
     });
     $(".item-modal__close").click(function (e) {
       e.preventDefault();
@@ -11283,7 +11292,7 @@ $(function () {
       var itemId = $(this).attr("data-item-id");
       $(".stamps-modal__holder").attr("src", $(itemId));
       $(".stamps-modal__wrapper").show();
-      stumpsSlider.update();
+      stumpsSlider && stumpsSlider.update();
     });
     $(".stamps-modal__close").click(function (e) {
       e.preventDefault();
@@ -11322,8 +11331,7 @@ $(function () {
       iconImageHref: require('../images/pin.svg'),
       iconImageSize: [68, 78],
       iconImageOffset: [-34, -64]
-    });
-    console.log('mark', mark); // map.behaviors.disable("scrollZoom");
+    }); // map.behaviors.disable("scrollZoom");
     // map.behaviors.disable("dblClickZoom");
 
     map.geoObjects.add(mark);
@@ -11358,7 +11366,7 @@ $(function () {
   };
 
   var renderYaMaps = function renderYaMaps() {
-    ymaps.ready(function () {
+    typeof ymaps !== 'undefined' && ymaps.ready(function () {
       $(".contacts-container__map").each(function () {
         var $el = $(this);
         var $elContainer = $el.closest(".contacts-container__map-container").find(".contacts-container__map-holder");
@@ -11371,7 +11379,6 @@ $(function () {
 
         var coords = [$(this).attr("data-lat"), $(this).attr("data-lng")];
         var address = $(this).attr("data-address");
-        console.log(coords);
 
         var _map = renderListMap($el, coords);
 
@@ -11390,7 +11397,6 @@ $(function () {
     var $map = $(".contacts-container__map");
     var lat = $map.attr("data-lat") || 47.09741888;
     var lng = $map.attr("data-lng") || 39.85679054;
-    console.log(lat, lng);
     if (!$map.length) return;
     var mainOfficeCoords = [lat, lng];
     var map = new ymaps.Map($map[0], {
@@ -11454,7 +11460,6 @@ $(function () {
     };
 
     var moveSlide = function moveSlide(direction, e, _this) {
-      console.log(direction, e);
       e && e.preventDefault();
       if ($(_this).hasClass(deactivateButtonClass)) return false;
       var $currentSlide = $gallery.find(".".concat(activeSlideClass));
@@ -11495,7 +11500,6 @@ $(function () {
       $("html").is(".mobile, .tablet") ? (i.addClass("touch-scroll"), b > e && i.scrollLeft(b - e)) : (b > e && $line.css("margin-left", e - b), $(document).mousemove(function (a) {
         var b = $line.outerWidth(),
             c = f.width();
-        console.log(c, b);
         if (c >= b) return void $line.css("margin-left", "auto");
         var d = (b - c) / (c - 200),
             e = Math.max(a.clientX - 100, 0);
@@ -11592,7 +11596,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59626" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51274" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
