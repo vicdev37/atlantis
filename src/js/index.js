@@ -1,11 +1,7 @@
-import module from './module'
 import jquery from 'jquery'
 window.$ = window.jQuery = jquery;
 
 $(() => {
-  console.log($('body'))
-  module()
-
   AOS.init();
 
   var mySwiper = new Swiper('.swiper-container', {
@@ -130,14 +126,15 @@ $(() => {
     );
     const mark = new ymaps.Placemark(
       coords, {
-        // hintContent: "Центральный офис",
+        hintContent: "Центральный офис",
       }, {
         iconLayout: "default#image",
-        iconImageHref: "./images/pin.svg",
+        iconImageHref: require('../images/pin.svg'),
         iconImageSize: [68, 78],
         iconImageOffset: [-34, -64],
       }
     );
+    console.log('mark', mark)
     // map.behaviors.disable("scrollZoom");
     // map.behaviors.disable("dblClickZoom");
     map.geoObjects.add(mark);
@@ -201,8 +198,8 @@ $(() => {
         }
       });
     });
-    renderYaMaps();
   };
+  renderYaMaps();
 
 
 
