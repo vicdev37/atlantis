@@ -1321,6 +1321,8 @@ input {
   display: block;
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .industries .swiper-container.swiper-container-industries .swiper-slide-industries__description {
   font-weight: normal;

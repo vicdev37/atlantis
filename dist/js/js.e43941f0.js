@@ -117,20 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../../js/module.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _default = function _default() {
-  return console.log('module');
-};
-
-exports.default = _default;
-},{}],"../../../node_modules/process/browser.js":[function(require,module,exports) {
+})({"../../../node_modules/process/browser.js":[function(require,module,exports) {
 
 // shim for using process in browser
 var process = module.exports = {}; // cached from whatever global is present so that test runners that stub it
@@ -11216,19 +11203,17 @@ if ( typeof noGlobal === "undefined" ) {
 return jQuery;
 } );
 
-},{"process":"../../../node_modules/process/browser.js"}],"../../js/index.js":[function(require,module,exports) {
+},{"process":"../../../node_modules/process/browser.js"}],"../../images/pin.svg":[function(require,module,exports) {
+module.exports = "/images/pin.041c314b.svg";
+},{}],"../../js/index.js":[function(require,module,exports) {
 "use strict";
-
-var _module2 = _interopRequireDefault(require("./module"));
 
 var _jquery = _interopRequireDefault(require("jquery"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 window.$ = window.jQuery = _jquery.default;
-$(document).ready(function () {
-  console.log($('body'));
-  (0, _module2.default)();
+$(function () {
   AOS.init();
   var mySwiper = new Swiper('.swiper-container', {
     // Optional parameters
@@ -11248,7 +11233,20 @@ $(document).ready(function () {
       crossFade: true
     }
   });
-  var mySwiperIndustries = new Swiper('.swiper-container-industries', '.swiper-container-stumps', {
+  var industriesSlider = new Swiper('.swiper-container-industries', {
+    // Optional parameters
+    direction: 'horizontal',
+    loop: true,
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev'
+    },
+    fadeEffect: {
+      crossFade: true
+    }
+  });
+  var stumpsSlider = new Swiper('.swiper-container-stamps', {
     // Optional parameters
     direction: 'horizontal',
     loop: true,
@@ -11263,11 +11261,12 @@ $(document).ready(function () {
   });
 
   var itemClickHandler = function itemClickHandler() {
-    $(".product-block").click(function (e) {
+    $(".product-block").on('click', function (e) {
       e.preventDefault();
       var itemId = $(this).attr("data-item-id");
       $(".item-modal__holder").attr("src", $(itemId));
       $(".item-modal__wrapper").show();
+      industriesSlider.update();
     });
     $(".item-modal__close").click(function (e) {
       e.preventDefault();
@@ -11284,6 +11283,7 @@ $(document).ready(function () {
       var itemId = $(this).attr("data-item-id");
       $(".stamps-modal__holder").attr("src", $(itemId));
       $(".stamps-modal__wrapper").show();
+      stumpsSlider.update();
     });
     $(".stamps-modal__close").click(function (e) {
       e.preventDefault();
@@ -11315,13 +11315,15 @@ $(document).ready(function () {
         top: top + "px"
       }
     });
-    var mark = new ymaps.Placemark(coords, {// hintContent: "Центральный офис",
+    var mark = new ymaps.Placemark(coords, {
+      hintContent: "Центральный офис"
     }, {
       iconLayout: "default#image",
-      iconImageHref: "./images/pin.svg",
+      iconImageHref: require('../images/pin.svg'),
       iconImageSize: [68, 78],
       iconImageOffset: [-34, -64]
-    }); // map.behaviors.disable("scrollZoom");
+    });
+    console.log('mark', mark); // map.behaviors.disable("scrollZoom");
     // map.behaviors.disable("dblClickZoom");
 
     map.geoObjects.add(mark);
@@ -11380,8 +11382,9 @@ $(document).ready(function () {
         }
       });
     });
-    renderYaMaps();
   };
+
+  renderYaMaps();
 
   var contactsMap = function contactsMap() {
     var $map = $(".contacts-container__map");
@@ -11561,7 +11564,7 @@ $(document).ready(function () {
 //   mirror: false, // whether elements should animate out while scrolling past them
 //   anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
 // });
-},{"./module":"../../js/module.js","jquery":"../../../node_modules/jquery/dist/jquery.js"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"jquery":"../../../node_modules/jquery/dist/jquery.js","../images/pin.svg":"../../images/pin.svg"}],"../../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -11589,7 +11592,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "58293" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59626" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
