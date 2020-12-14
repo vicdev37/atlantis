@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/js/js.e43941f0.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=90111bff-969b-4d53-bb36-4becf3d89e6d&amp;lang=ru_RU" type="text/javascript"></script>
     <link rel="stylesheet" href="/styles/styles.9316f574.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
@@ -32,22 +33,16 @@
           <div class="menu-mobile__body">
             <div class="accordeon">
               <ul class="menu-mobile__wrapper">
-                <li class="menu-mobile__section">
-                  <input type="checkbox" checked="">
-                  <div class="footer-sitemap__icon"><img src="/images/mobile-menu-arrow.f60ff3f5.svg"></div><a class="menu-mobile__title" href="/">Главная</a>
-                </li>
+                <li class="menu-mobile__section"><a class="menu-mobile__title" href="/">Главная</a></li>
                 <li class="menu-mobile__section">
                   <input type="checkbox" checked="">
                   <div class="footer-sitemap__icon"><img src="/images/mobile-menu-arrow.f60ff3f5.svg"></div><a class="menu-mobile__title" href="/industries.html">Области применения</a>
                   <p class="menu-mobile__subsections"><span><a class="menu-mobile__subsection" href="">Ликеро-водочная продукция</a><a class="menu-mobile__subsection" href="">Мясо-молочная продукция</a><a class="menu-mobile__subsection" href="">Голография</a><a class="menu-mobile__subsection" href="">Праздничная этикетка</a></span></p>
                 </li>
+                <li class="menu-mobile__section"><a class="menu-mobile__title" href="/printing.html">Возможности печати</a></li>
                 <li class="menu-mobile__section">
                   <input type="checkbox" checked="">
-                  <div class="footer-sitemap__icon"><img src="/images/mobile-menu-arrow.f60ff3f5.svg"></div><a class="menu-mobile__title" href="/printing.html">Возможности печати</a>
-                </li>
-                <li class="menu-mobile__section">
-                  <input type="checkbox" checked="">
-                  <div class="footer-sitemap__icon"><img src="/images/mobile-menu-arrow.f60ff3f5.svg"></div><a class="menu-mobile__title" href="/offers.html">Специальные <br> возможности</a>
+                  <div class="footer-sitemap__icon"><img src="/images/mobile-menu-arrow.f60ff3f5.svg"></div><a class="menu-mobile__title" href="/offers.html">Специальные <br> предложения</a>
                   <p class="menu-mobile__subsections"><span><a class="menu-mobile__subsection" href="">Спец предложение 1</a><a class="menu-mobile__subsection" href="">Спец предложение 2</a></span></p>
                 </li>
                 <li class="menu-mobile__section">
@@ -55,10 +50,7 @@
                   <div class="footer-sitemap__icon"><img src="/images/mobile-menu-arrow.f60ff3f5.svg"></div><a class="menu-mobile__title" href="/stamps.html">Готовые штампы</a>
                   <p class="menu-mobile__subsections"><span><a class="menu-mobile__subsection" href="">Каталог готовых штампов</a><a class="menu-mobile__subsection" href="">Требования к дизайн-макетам</a></span></p>
                 </li>
-                <li class="menu-mobile__section">
-                  <input type="checkbox" checked="">
-                  <div class="footer-sitemap__icon"><img src="/images/mobile-menu-arrow.f60ff3f5.svg"></div><a class="menu-mobile__title" href="/video.html">Видео</a>
-                </li>
+                <li class="menu-mobile__section"><a class="menu-mobile__title" href="/video.html">Видео</a></li>
                 <li class="menu-mobile__section">
                   <input type="checkbox" checked="">
                   <div class="footer-sitemap__icon"><img src="/images/mobile-menu-arrow.f60ff3f5.svg"></div><a class="menu-mobile__title" href="/contacts.html">Контакты</a>
@@ -75,7 +67,12 @@
                 <div class="app-buttons__icon"><img src="/images/googleplay.3a2a2ad7.svg"></div>
                 <div class="app-button__text">
                   <div class="app-button__title">ДОСТУПНО В </div>
-                  <div class="app-button__subtitle">Google Play  </div>
+                  <div class="app-button__subtitle">Google Play </div>
+                </div></a><a class="app-buttons__link" href="https://appgallery.huawei.com/#/app/C102595025">
+                <div class="app-buttons__icon"><img src="/images/appgallery.d3358b93.svg"></div>
+                <div class="app-button__text">
+                  <div class="app-button__title">ОТКРОЙТЕ В</div>
+                  <div class="app-button__subtitle">AppGallery       </div>
                 </div></a></div>
           </div>
         </div>
@@ -90,7 +87,9 @@
       <div class="contacts-container__map-container map-mobile">
         <div class="contacts-container__map" data-lat="47.093961" data-lng="39.855662" data-address="346703, Ростовская обл., Аксайский &lt;nobr&gt;р-н&lt;/nobr&gt;, х. Ленина, ул.&amp;nbsp;Онучкина, 72"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adfdd289b20aa2710e7c02ffde60ffa65ff74653c85f0fe03d1a80b7495ca7e89&amp;source=constructor" width="100%" height="300" frameborder="0"></iframe></div>
         <div class="contacts-container__map-holder">
-          <div class="contacts-container__map-holder-btn"></div>
+          <div class="contacts-container__map-holder-btn">
+            <div class="contacts-container__map-holder-btn-icon"></div>
+          </div>
         </div>
       </div>
       <div class="container" data-aos="fade-up">
@@ -153,9 +152,11 @@
                 </div>
               </div>
               <div class="contacts-container__map-container map-desktop">
-                <div class="contacts-container__map" data-lat="47.093961" data-lng="39.855662" data-address="346703, Ростовская обл., Аксайский &lt;nobr&gt;р-н&lt;/nobr&gt;, х. Ленина, ул.&amp;nbsp;Онучкина, 72"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adfdd289b20aa2710e7c02ffde60ffa65ff74653c85f0fe03d1a80b7495ca7e89&amp;source=constructor" width="100%" height="300" frameborder="0"></iframe></div>
+                <div class="contacts-container__map" id="map" data-lat="47.093961" data-lng="39.855662" data-address="346703, Ростовская обл., Аксайский &lt;nobr&gt;р-н&lt;/nobr&gt;, х. Ленина, ул.&amp;nbsp;Онучкина, 72"><iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Adfdd289b20aa2710e7c02ffde60ffa65ff74653c85f0fe03d1a80b7495ca7e89&amp;source=constructor" width="100%" height="300" frameborder="0"></iframe></div>
                 <div class="contacts-container__map-holder">
-                  <div class="contacts-container__map-holder-btn"></div>
+                  <div class="contacts-container__map-holder-btn">
+                    <div class="contacts-container__map-holder-btn-icon"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -203,7 +204,7 @@
             <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/printing.html">Возможности печати</a></div>
           </div>
           <div class="footer-right">    
-            <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/offers.html">Специальные возможности</a>
+            <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/offers.html">Специальные предложения</a>
               <div class="footer-sitemap__subsections"><a class="footer-sitemap__subsection" href="">Спец предложение 1</a><a class="footer-sitemap__subsection" href="">Спец предложение 2</a></div>
             </div>
             <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/stamps.html">Готовые штампы
@@ -236,7 +237,7 @@
             </div>
           </div>
           <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/printing.html">Возможности печати    </a></div>
-          <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/offers.html">Специальные возможности</a>
+          <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/offers.html">Специальные предложения</a>
             <div class="footer-sitemap__subsections"><a class="footer-sitemap__subsection" href="">Спец предложение 1</a><a class="footer-sitemap__subsection" href="">Спец предложение 2</a></div>
           </div>
           <div class="footer-sitemap__section"><a class="footer-sitemap__title" href="/stamps.html">Готовые штампы
@@ -264,7 +265,7 @@
               </li>
               <li class="footer-sitemap__section">
                 <input type="checkbox" checked="">
-                <div class="footer-sitemap__icon"><img src="/images/arrow-right.1cb82372.svg"></div><a class="footer-sitemap__title" href="/offers.html">Специальные <br> возможности</a>
+                <div class="footer-sitemap__icon"><img src="/images/arrow-right.1cb82372.svg"></div><a class="footer-sitemap__title" href="/offers.html">Специальные <br> предложения</a>
                 <p class="footer-sitemap__subsections"><span><a class="footer-sitemap__subsection" href="">Спец предложение 1</a><a class="footer-sitemap__subsection" href="">Спец предложение 2</a></span></p>
               </li>
             </ul>

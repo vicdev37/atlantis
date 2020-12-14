@@ -17,7 +17,6 @@
   font-weight: bold;
 font-size: 24px;
 line-height: 32px;
-letter-spacing: -0.5px;
 color: #111721;
 margin-bottom: 24px;
 }
@@ -28,6 +27,14 @@ margin-bottom: 24px;
     background-image: url(../images/fix-img-3.png)!important;
     background-size: 140px;
     background-position: right 40px!important;
+    .page__title {
+      margin-bottom: 64px;  
+    }
+
+    .news-detail-page__gallery {
+      margin-top: 55px;
+      margin-bottom: 50px;
+    }
   }
 
   .offers-item__wrapper {
@@ -48,4 +55,6 @@ margin-bottom: 24px;
   .offers-item__title {
     padding-left: 18px;
   }
+
+
 }
