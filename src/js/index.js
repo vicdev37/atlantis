@@ -210,14 +210,6 @@ $(() => {
 
 
 
-
-
-
-
-
-
-
-
   const contactsMap = () => {
     const $map = $(".contacts-container__map");
     const lat = $map.attr("data-lat") || 47.09741888;
