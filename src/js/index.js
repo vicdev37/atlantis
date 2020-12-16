@@ -25,6 +25,15 @@ $(() => {
     })
   }
 
+  const lightBoxItemsClasses = ['product-block', 'choose-form-item']
+
+  lightBoxItemsClasses.forEach((item) => {
+    const items = document.querySelectorAll(`.${item}`)
+    items.forEach((el, index) => {
+      el.setAttribute('data-item-id', index)
+    })
+  })
+
   let industriesSlider,
     stumpsSlider
   if ($('.swiper-container')[0]) {
@@ -66,13 +75,16 @@ $(() => {
     $(".product-block").on('click', function (e) {
       e.preventDefault();
       const itemId = $(this).attr("data-item-id");
+    
       $(".item-modal__holder").attr(
         "src",
         $(itemId)
       );
       $(".item-modal__wrapper").show();
-
-      industriesSlider && industriesSlider.update();
+      if (industriesSlider) {
+        industriesSlider.update();
+        industriesSlider.slideTo(Number(itemId) + 1, 0);
+      }
     })
 
     $(".item-modal__close").click(function (e) {
@@ -94,7 +106,11 @@ $(() => {
         $(itemId)
       );
       $(".stamps-modal__wrapper").show();
-      stumpsSlider && stumpsSlider.update();
+
+      if (stumpsSlider) {
+        stumpsSlider.update();
+        stumpsSlider.slideTo(Number(itemId) + 1, 0);
+      }
     });
 
     $(".stamps-modal__close").click(function (e) {
@@ -105,8 +121,6 @@ $(() => {
   };
 
   stampsClickHandler();
-
-
 
   const renderListMap = ($el, coords, showControl) => {
     const controls = isMobile() && !showControl ? [] : ["zoomControl"];
@@ -204,14 +218,6 @@ $(() => {
     });
   };
   renderYaMaps();
-
-
-
-
-
-
-
-
 
 
 

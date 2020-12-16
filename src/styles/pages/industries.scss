@@ -338,6 +338,17 @@ color: #111721;
 
 }
 
+.product-block__img {
+      width: 100%;
+      height: 252px;
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
 @media(max-width: 1024px) {
   .swiper-container.swiper-container-industries {
     min-width: inherit;
@@ -432,17 +443,9 @@ color: #111721;
     max-width: 343px;
     width: 100%;
     margin: 16px auto;
-    .product-block__img {
-      width: 100%;
-      height: 252px;
-      img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-    }
   }
+
+  
 
   .product-container {
     padding-left: 16px;

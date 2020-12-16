@@ -350,43 +350,43 @@ template {
 
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Regular.cc42fec2.woff") format("woff"), url("../fonts/Montserrat-Regular.ac4c05ba.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Regular.cc42fec2.woff") format("woff"), url("/fonts/Montserrat-Regular.ac4c05ba.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Bold.258148f4.woff") format("woff"), url("../fonts/Montserrat-Bold.9f4eb483.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Bold.258148f4.woff") format("woff"), url("/fonts/Montserrat-Bold.9f4eb483.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Light.43ba5e0e.woff") format("woff"), url("../fonts/Montserrat-Light.57f97785.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Light.43ba5e0e.woff") format("woff"), url("/fonts/Montserrat-Light.57f97785.woff2") format("woff2");
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-ExtraBold.0595f226.woff") format("woff"), url("../fonts/Montserrat-ExtraBold.2c110fb1.woff2") format("woff2");
+  src: url("/fonts/Montserrat-ExtraBold.0595f226.woff") format("woff"), url("/fonts/Montserrat-ExtraBold.2c110fb1.woff2") format("woff2");
   font-weight: 800;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-SemiBold.c7f2d8fd.woff") format("woff"), url("../fonts/Montserrat-SemiBold.7af6687b.woff2") format("woff2");
+  src: url("/fonts/Montserrat-SemiBold.c7f2d8fd.woff") format("woff"), url("/fonts/Montserrat-SemiBold.7af6687b.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Medium.2f91cf9b.woff") format("woff"), url("../fonts/Montserrat-Medium.0ebfd9f0.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Medium.2f91cf9b.woff") format("woff"), url("/fonts/Montserrat-Medium.0ebfd9f0.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
 @font-face {
   font-family: "Montserrat";
-  src: url("../fonts/Montserrat-Black.384b9a45.woff") format("woff"), url("../fonts/Montserrat-Black.ea06ea3c.woff2") format("woff2");
+  src: url("/fonts/Montserrat-Black.384b9a45.woff") format("woff"), url("/fonts/Montserrat-Black.ea06ea3c.woff2") format("woff2");
   font-weight: 900;
   font-style: normal;
 }
@@ -568,7 +568,7 @@ input {
 }
 
 .big-block--news {
-  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.501038) 0%, rgba(0, 0, 0, 0.9) 88.99%, rgba(0, 0, 0, 0.895897) 100%), url(../images/slide-1.63ae0be8.jpg);
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.501038) 0%, rgba(0, 0, 0, 0.9) 88.99%, rgba(0, 0, 0, 0.895897) 100%), url(/images/slide-1.63ae0be8.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -695,7 +695,7 @@ input {
   height: fit-content;
   background-color: #35A9AD;
   padding-top: 112px;
-  background-image: url(../images/back-img.b0048497.png);
+  background-image: url(/images/back-img.b0048497.png);
   background-repeat: no-repeat;
   background-position: top 0px right 0px;
   padding-bottom: 40px;
@@ -766,6 +766,11 @@ input {
 
 .partners-line {
   margin-top: 100px;
+}
+
+.partners-line__logo {
+  max-width: 100%;
+  transform: scale(1);
 }
 
 .partners-line {
@@ -945,7 +950,7 @@ input {
     display: block;
     width: 120px;
     height: 128px;
-    background: url(../images/fix-img-2.f7960cec.png);
+    background: url(/images/fix-img-2.f7960cec.png);
     z-index: 100;
   }
 
@@ -1177,7 +1182,7 @@ input {
   position: absolute;
   top: 10px;
   right: 10px;
-  background: url(../images/loupe.b4f89be4.svg);
+  background: url(/images/loupe.b4f89be4.svg);
 }
 
 .product-block.long {
@@ -1366,6 +1371,18 @@ input {
   opacity: 0.3;
 }
 
+.product-block__img {
+  width: 100%;
+  height: 252px;
+}
+.product-block__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 @media (max-width: 1024px) {
   .swiper-container.swiper-container-industries {
     min-width: inherit;
@@ -1450,17 +1467,6 @@ input {
     width: 100%;
     margin: 16px auto;
   }
-  .product-block .product-block__img {
-    width: 100%;
-    height: 252px;
-  }
-  .product-block .product-block__img img {
-    display: block;
-    width: 100%;
-    height: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-  }
 
   .product-container {
     padding-left: 16px;
@@ -1491,7 +1497,7 @@ input {
   }
 }
 .printing-main__wrapper {
-  background-image: url(../images/fix-img.0def4246.png);
+  background-image: url(/images/fix-img.0def4246.png);
   background-position: right 65px;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -1506,6 +1512,15 @@ input {
   letter-spacing: -0.5px;
   color: #000000;
   margin-top: 10px;
+}
+
+.page__subtitle-icon {
+  width: 25px;
+  height: 24px;
+}
+.page__subtitle-icon img {
+  width: 100%;
+  height: 100%;
 }
 
 .printing-item__wrapper {
@@ -1710,7 +1725,7 @@ input {
   }
 
   .printing-main__wrapper {
-    background-image: url(../images/fix-img-3.c629e622.png);
+    background-image: url(/images/fix-img-3.c629e622.png);
     background-size: 140px;
     background-position: right 50px;
   }
@@ -1738,9 +1753,19 @@ input {
   margin-bottom: 24px;
 }
 
+.offers-item__img {
+  width: 100%;
+  height: 280px;
+}
+.offers-item__img img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 @media (max-width: 499px) {
   .offers-main__wrapper.offers-example {
-    background-image: url(../images/fix-img-3.c629e622.png) !important;
+    background-image: url(/images/fix-img-3.c629e622.png) !important;
     background-size: 140px;
     background-position: right 40px !important;
   }
@@ -1778,7 +1803,7 @@ input {
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
-  background-image: url(../images/fix-img-2.f7960cec.png);
+  background-image: url(/images/fix-img-2.f7960cec.png);
   background-position: right 65px;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -1833,7 +1858,7 @@ p.offer-example__more-text:before {
   left: -110px;
   width: 113px;
   height: 88px;
-  background: url(../images/offer-example-icon.a86c6f11.png);
+  background: url(/images/offer-example-icon.a86c6f11.png);
 }
 
 .offers-item__wrapper {
@@ -1855,7 +1880,7 @@ p.offer-example__more-text:before {
 
 @media (max-width: 499px) {
   .offers-main__wrapper {
-    background-image: url(../images/fix-img-3.c629e622.png) !important;
+    background-image: url(/images/fix-img-3.c629e622.png) !important;
     background-size: 140px;
     background-position: right 50px !important;
     padding-bottom: 44px !important;
@@ -1863,7 +1888,7 @@ p.offer-example__more-text:before {
 
   .offers-main__wrapper.offers-example {
     width: inherit;
-    background-image: url(../images/fix-img-3.c629e622.png) !important;
+    background-image: url(/images/fix-img-3.c629e622.png) !important;
     background-size: 140px;
     background-position: right 50px !important;
     padding-bottom: 44px !important;
@@ -2002,7 +2027,7 @@ p.offer-example__more-text:before {
 }
 
 .stamps-main__wrapper {
-  background-image: url(../images/fix-img-2.f7960cec.png);
+  background-image: url(/images/fix-img-2.f7960cec.png);
   background-position: right 65px;
   background-repeat: no-repeat;
 }
@@ -2078,12 +2103,20 @@ p.offer-example__more-text:before {
 }
 
 .choose-form-item {
+  max-width: 187px;
+  width: 100%;
+  min-height: 336px;
   margin-left: 6px;
   margin-top: 10px;
 }
-.choose-form-item img {
+.choose-form-item .choose-form-item__img {
   width: 100%;
+  height: 252px;
+}
+.choose-form-item img {
   display: block;
+  width: 100%;
+  height: 100%;
 }
 .choose-form-item:hover .choose-form-item__text {
   border: 1px solid #DCE3EF;
@@ -2428,7 +2461,7 @@ a.video-item:hover .video-item__content {
 
 @media (max-width: 499px) {
   .common-wrapper.video-page {
-    background-image: url(../images/fix-img-3.c629e622.png) !important;
+    background-image: url(/images/fix-img-3.c629e622.png) !important;
     background-size: 140px;
     background-position: right 50px !important;
     padding-bottom: 44px !important;
@@ -4138,4 +4171,4 @@ a.app-buttons__link .app-buttons__icon img {
   }
 }
 
-/*# sourceMappingURL=../styles.9316f574.css.map */
+/*# sourceMappingURL=/styles.9316f574.css.map */
