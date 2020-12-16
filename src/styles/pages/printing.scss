@@ -15,6 +15,15 @@ color: #000000;
 margin-top: 10px;
 }
 
+.page__subtitle-icon {
+  width: 25px;
+  height: 24px;
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
 .printing-item__wrapper {
   display: flex;
   align-items: stretch;

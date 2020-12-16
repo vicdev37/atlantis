@@ -21,6 +21,16 @@ color: #111721;
 margin-bottom: 24px;
 }
 
+.offers-item__img {
+  width: 100%;
+  height: 280px;
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
 
 @media(max-width: 499px) {
   .offers-main__wrapper.offers-example {
