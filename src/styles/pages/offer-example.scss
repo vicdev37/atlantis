@@ -1,6 +1,6 @@
-.offers-main__wrapper,
+.offers-main__wrapper.offers-example,
 .common-wrapper.video-page {
-  width: fit-content;
+  width: fit-content!important;
   background-image: url(../images/fix-img-2.png);
   background-position: right 65px;
   background-repeat: no-repeat;
@@ -67,6 +67,9 @@ p.offer-example__more-text {
 
 .offers-item.small {
   max-width: 240px;
+  .offers-item__img {
+    height: 160px;
+  }
   img {
     width: 100%;
   }
@@ -82,14 +85,15 @@ p.offer-example__more-text {
   .offers-main__wrapper {
     background-image: url(../images/fix-img-3.png)!important;
     background-size: 140px;
-    background-position: right 50px!important;
+    background-position: right 0px!important;
     padding-bottom: 44px!important;
+    background-repeat: no-repeat;
   }
   .offers-main__wrapper.offers-example {
-    width: inherit;
+    width: inherit!important;
     background-image: url(../images/fix-img-3.png)!important;
     background-size: 140px;
-    background-position: right 50px!important;
+    background-position: right 0px!important;
     padding-bottom: 44px!important;
   }
 

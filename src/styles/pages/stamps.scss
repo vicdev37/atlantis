@@ -61,6 +61,7 @@
 
 
 .stamps-main__wrapper {
+  width: fit-content;
   background-image: url(../images/fix-img-2.png);
   background-position: right 65px;
   background-repeat: no-repeat;
@@ -291,7 +292,10 @@
 
 
 @media(max-width: 1024px) {
-  
+  .swiper-container.swiper-container-stamps {
+    width: 500px;
+    height: 600px;
+  }
 }
 
 @media(max-width: 499px) {

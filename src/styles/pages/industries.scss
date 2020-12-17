@@ -351,15 +351,19 @@ color: #111721;
 
 @media(max-width: 1024px) {
   .swiper-container.swiper-container-industries {
+    width: 650px!important;
     min-width: inherit;
-    max-width: inherit;
+    // max-width: inherit;
+    
   }
+
+  
 }
 
 @media(max-width: 499px) {
 
   .industries .swiper-container.swiper-container-industries {
-    width: 343px;
+    width: 343px!important;
     height: 336px;
   }
 

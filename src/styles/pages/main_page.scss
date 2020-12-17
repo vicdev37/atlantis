@@ -266,13 +266,7 @@ margin-top: 16px;
   margin-top: 24px;
 }
 
-.big-block__col {
-  max-width: 320px;
-  // margin-right: 242px;
-  color: white;
-  font-size: 18px;
-  line-height: 24px;
-}
+
 
 .big-block__col:nth-child(2) {
   margin-right: 0;
@@ -283,8 +277,16 @@ margin-top: 16px;
   align-items: baseline;
   margin-top: 138px;
 
+  .big-block__col {
+    width: 320px;
+    // margin-right: 242px;
+    color: white;
+    font-size: 18px;
+    line-height: 24px;
+}
+
   .big-block__col.big-block__col--mobile-row:not(:first-child) {
-    margin-left: 280px;
+    margin-left: 125px;
   }
 }
 

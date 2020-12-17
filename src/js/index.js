@@ -22,6 +22,8 @@ $(() => {
       fadeEffect: {
         crossFade: true
       },
+
+
     })
   }
 
@@ -75,7 +77,7 @@ $(() => {
     $(".product-block").on('click', function (e) {
       e.preventDefault();
       const itemId = $(this).attr("data-item-id");
-    
+
       $(".item-modal__holder").attr(
         "src",
         $(itemId)
