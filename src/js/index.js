@@ -84,7 +84,7 @@ $(() => {
       );
       $(".item-modal__wrapper").show();
       if (industriesSlider) {
-        industriesSlider.update();
+        window.dispatchEvent(new Event('resize'));
         industriesSlider.slideTo(Number(itemId) + 1, 0);
       }
     })
@@ -110,7 +110,7 @@ $(() => {
       $(".stamps-modal__wrapper").show();
 
       if (stumpsSlider) {
-        stumpsSlider.update();
+        window.dispatchEvent(new Event('resize'));
         stumpsSlider.slideTo(Number(itemId) + 1, 0);
       }
     });
