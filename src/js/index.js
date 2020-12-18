@@ -38,21 +38,28 @@ $(() => {
 
   let industriesSlider,
     stumpsSlider
+
+
   if ($('.swiper-container')[0]) {
     industriesSlider = new Swiper('.swiper-container-industries', {
       // Optional parameters
       direction: 'horizontal',
       loop: true,
 
+
+
       // Navigation arrows
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
+
       fadeEffect: {
         crossFade: true
       },
+
     })
+
   }
 
   if ($('.swiper-container-stamps')[0]) {
